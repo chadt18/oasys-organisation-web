@@ -8,7 +8,7 @@
   <meta property="og:title" content="OASYS Organisation — Morning Brief">
   <meta property="og:description" content="See what needs your attention before you open six different tabs.">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261014-7">
+  <link rel="stylesheet" href="styles.css?v=20261014-8">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -45,10 +45,10 @@
       <aside class="role-start-card" aria-label="Role-specific onboarding">
         <p class="micro">Built around the role</p>
         <h2>Start with the job description, not a generic template.</h2>
-        <p>During onboarding, send us the role or job description. We map the responsibilities, recurring decisions and information sources into a first dashboard prototype. Where useful, approved targets, budgets or forecasts can also be added so OASYS can compare what the organisation expected with what is actually happening.</p>
+        <p>During onboarding, send us the role or job description. We map the responsibilities, recurring decisions, decision rights, approval limits, operating rhythm and information sources into a first dashboard prototype. Where useful, approved targets, budgets or forecasts can also be added so OASYS can compare what the organisation expected with what is actually happening.</p>
         <div class="role-start-steps">
-          <span><b>1</b> Role / job description</span>
-          <span><b>2</b> Targets / forecast + sources</span>
+          <span><b>1</b> Role + decision rights</span>
+          <span><b>2</b> Targets + approved sources</span>
           <span><b>3</b> Prototype + manager review</span>
         </div>
         <small>No live-system access is needed for this first design step.</small>
@@ -64,7 +64,10 @@
             <p id="role-label" class="demo-role">Ecommerce / Commercial Manager</p>
           </div>
           <div class="demo-header-meta">
-            <span class="demo-badge">Demo data · 3 sources refreshed</span>
+            <div class="demo-mode-badges">
+              <span class="demo-badge">Level 1 · Brief</span>
+              <span class="demo-badge demo-badge-muted">Illustrative snapshot · 3 sources aligned</span>
+            </div>
             <button id="demo-home" class="demo-home" type="button">⌂ Dashboard home</button>
             <form id="header-ask-form" class="header-ask-form" role="search">
               <label for="header-ask-input">Ask OASYS</label>
@@ -122,6 +125,7 @@
               <p class="micro"><span class="status-icon" aria-hidden="true">!</span> Evidence-backed exception</p>
               <h3 id="exception-title">Margin + stock pressure on SKU-104</h3>
               <p id="exception-text">Supplier unit cost increased while the product remains a strong seller and available cover is below four days.</p>
+              <p id="why-now" class="why-now"><strong>Why now:</strong> stock cover is below the defined threshold while unit cost has changed in the current trading period.</p>
               <button class="evidence-toggle" type="button" aria-expanded="false" aria-controls="evidence-detail">
                 <span class="toggle-track" aria-hidden="true"><span></span></span>
                 <span class="toggle-label">Show evidence</span>
@@ -132,6 +136,7 @@
                   <div><dt>Calculation</dt><dd id="evidence-calculation">373 ÷ 151 = 2.5 days stock cover.</dd></div>
                   <div><dt>Source</dt><dd id="evidence-source">Cost export + inventory snapshot + commercial transactions.</dd></div>
                   <div><dt>Boundary</dt><dd id="evidence-boundary">Promotion is active, but this evidence does not prove it caused the stock issue.</dd></div>
+                  <div><dt>Decision authority</dt><dd id="evidence-authority">The commercial manager owns the decision. OASYS does not alter promotion settings or approve supplier spend.</dd></div>
                 </dl>
               </div>
             </article>
@@ -178,7 +183,7 @@
           <div class="source-zone">
             <div>
               <span class="source-title">Evidence trail</span>
-              <span class="source-helper">Important claims stay linked to their source.</span>
+              <span class="source-helper">Important claims stay linked to their source and operating period.</span>
             </div>
             <div id="source-list" class="source-tags" aria-label="Source provenance"></div>
           </div>
@@ -200,8 +205,8 @@
         <h2>Four clear steps from scattered information to a decision-ready brief.</h2>
       </div>
       <div class="steps">
-        <article><span class="step-number">1</span><h3>Bring together approved context</h3><p>Start with the role, current evidence and, where useful, the organisation's targets, budget or forecast.</p></article>
-        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates, ownership and source confidence are made explicit before interpretation.</p></article>
+        <article><span class="step-number">1</span><h3>Bring together approved context</h3><p>Start with the role, decision rights, operating rhythm, current evidence and, where useful, the organisation's targets, budget or forecast.</p></article>
+        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates, ownership, cadence and source confidence are made explicit before interpretation.</p></article>
         <article><span class="step-number">3</span><h3>Compare plan with reality</h3><p>OASYS surfaces meaningful variance and defined exceptions while preserving the evidence trail.</p></article>
         <article><span class="step-number">4</span><h3>Human decides</h3><p>The Morning Brief frames attention and evidence. The manager owns the decision.</p></article>
       </div>
@@ -232,7 +237,7 @@
         <p>OASYS Organisation is currently being validated with ecommerce and commercial managers. We start with a short personalised prototype using demonstration data. If the dashboard helps the manager orient faster, identify a real exception or make a better-supported decision, the next gate is a controlled own-data test.</p>
         <div class="onboarding-callout">
           <strong>Role-specific onboarding:</strong>
-          <span>Send the role or job description and we will shape the first prototype around that manager's responsibilities, recurring decisions and approved information sources. Where relevant, approved targets, budgets or forecasts can be added so the dashboard can show plan vs actual. The manager reviews and tweaks the prototype before any own-data test.</span>
+          <span>Send the role or job description and we will shape the first prototype around that manager's responsibilities, recurring decisions, decision rights, approval limits, operating rhythm and approved information sources. Where relevant, approved targets, budgets or forecasts can be added so the dashboard can show plan vs actual. The manager reviews and tweaks the prototype before any own-data test.</span>
         </div>
         <div class="process-flow" aria-label="Design partner process">
           <div class="process-step">
@@ -356,6 +361,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261014-7"></script>
+  <script src="script.js?v=20261014-8"></script>
 </body>
 </html>

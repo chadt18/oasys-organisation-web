@@ -13,6 +13,8 @@ const sectors = {
     ],
     exceptionTitle: "Margin and stock pressure on SKU-104",
     exceptionText: "Supplier unit cost increased while the product remains a strong seller and available cover is below four days.",
+    whyNow: "Stock cover is below the defined four-day threshold while unit cost has changed in the current trading period.",
+    authority: "The commercial manager owns the promotion / replenishment decision. OASYS does not alter campaign settings or approve supplier spend.",
     decision: "Review promotion, accept the stockout risk, or investigate expedited replenishment and revised supplier terms.",
     sources: ["Shared Drive / Sales / Daily sales", "Shared Drive / Finance / Product costs", "Shared Drive / Stock / Inventory snapshot", "Commercial rule / stock-cover threshold"],
     observed: "Unit cost £18.40 → £21.80; 373 available units; 151 average units/day.",
@@ -76,6 +78,8 @@ const sectors = {
     ],
     exceptionTitle: "Client A retainer is running ahead of plan",
     exceptionText: "Client A has used 68% of monthly retainer hours by mid-month against a 52% planned run-rate.",
+    whyNow: "Retainer usage is materially ahead of the agreed mid-month run-rate while client-critical deliverables remain open.",
+    authority: "The account / operations lead owns any scope, capacity or commercial decision. OASYS does not change scope or commit the team to an overage.",
     decision: "Raise a scope discussion, reallocate capacity, approve an overage route, or consciously absorb the variance.",
     sources: ["Shared Drive / Clients / Client A / Timesheets", "Shared Drive / Clients / Client A / Statement of Work", "Projects / Client A / Delivery status"],
     observed: "68% of monthly retainer hours used; four deliverables remain open.",
@@ -138,6 +142,8 @@ const sectors = {
     ],
     exceptionTitle: "Priority orders are running late",
     exceptionText: "Priority orders are 47 minutes beyond the agreed service target and the queue has increased from 24 to 38 items.",
+    whyNow: "Priority work is outside the agreed service threshold and the queue has continued to grow across checks.",
+    authority: "The operations manager owns rerouting and capacity decisions. OASYS does not reassign people or reroute work autonomously.",
     decision: "Reallocate capacity, use an alternative route, or accept the service impact.",
     sources: ["Shared Drive / Operations / Dispatch queue", "Shared Drive / Operations / Service standards", "Shared Drive / Operations / Capacity plan"],
     observed: "Priority orders are 47 minutes beyond target; 38 items are waiting, up from 24 earlier.",
@@ -204,12 +210,14 @@ const roleLabel = document.getElementById("role-label");
 const summaryText = document.getElementById("summary-text");
 const exceptionTitle = document.getElementById("exception-title");
 const exceptionText = document.getElementById("exception-text");
+const whyNow = document.getElementById("why-now");
 const decisionText = document.getElementById("decision-text");
 const sourceList = document.getElementById("source-list");
 const observed = document.getElementById("evidence-observed");
 const calculation = document.getElementById("evidence-calculation");
 const evidenceSource = document.getElementById("evidence-source");
 const boundary = document.getElementById("evidence-boundary");
+const authority = document.getElementById("evidence-authority");
 const panel = document.getElementById("sector-panel");
 const workspaceContent = document.getElementById("workspace-content");
 const emailActionLabel = document.getElementById("email-action-label");
@@ -339,12 +347,14 @@ function setSector(key, focusPanel=false){
   renderMetrics(data.metrics);
   exceptionTitle.textContent=data.exceptionTitle;
   exceptionText.textContent=data.exceptionText;
+  whyNow.innerHTML="<strong>Why now:</strong> "+escapeHtml(data.whyNow);
   decisionText.textContent=data.decision;
   renderSources(data.sources);
   observed.textContent=data.observed;
   calculation.textContent=data.calculation;
   evidenceSource.textContent=data.source;
   boundary.textContent=data.boundary;
+  authority.textContent=data.authority;
   updateShortcuts(data);
   setWorkspace(currentWorkspace==="ask" ? "email" : currentWorkspace);
   if(focusPanel) panel.focus();
