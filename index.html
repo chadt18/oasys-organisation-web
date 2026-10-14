@@ -8,7 +8,7 @@
   <meta property="og:title" content="OASYS Organisation — Morning Brief">
   <meta property="og:description" content="See what needs your attention before you open six different tabs.">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261014-5">
+  <link rel="stylesheet" href="styles.css?v=20261014-6">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -66,6 +66,13 @@
           <div class="demo-header-meta">
             <span class="demo-badge">Demo data · 3 sources refreshed</span>
             <button id="demo-home" class="demo-home" type="button">⌂ Dashboard home</button>
+            <form id="header-ask-form" class="header-ask-form" role="search">
+              <label for="header-ask-input">Ask OASYS</label>
+              <div>
+                <input id="header-ask-input" type="search" placeholder="Find a metric, email or file">
+                <button type="submit" aria-label="Search OASYS">⌕</button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -93,7 +100,6 @@
               <p class="demo-label">Morning Brief</p>
               <p id="summary-text" class="demo-summary-text">Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.</p>
             </div>
-            <span class="three-click">Designed around a three-click rule</span>
           </div>
 
           <div id="metrics" class="metrics-grid demo-metrics" aria-label="Morning Brief metrics"></div>
@@ -136,16 +142,17 @@
             <div class="workspace-grid">
               <div class="workspace-actions" role="tablist" aria-label="Workspace demonstration">
                 <button type="button" class="workspace-action is-active" data-workspace="email" role="tab" aria-selected="true">
-                  <span class="workspace-icon">✉</span><span><strong>Email</strong><small id="email-action-label">Related supplier update</small></span>
+                  <span class="workspace-icon">✉</span>
+                  <span><strong>Email</strong><small id="email-action-label">6 unread · 2 need attention</small></span>
+                  <span id="email-count-badge" class="workspace-count">6</span>
                 </button>
                 <button type="button" class="workspace-action" data-workspace="calendar" role="tab" aria-selected="false">
-                  <span class="workspace-icon">▣</span><span><strong>Calendar</strong><small id="calendar-action-label">Next relevant meeting</small></span>
+                  <span class="workspace-icon">▣</span>
+                  <span><strong>Calendar</strong><small id="calendar-action-label">Supplier review · Today 14:00</small></span>
                 </button>
                 <button type="button" class="workspace-action" data-workspace="files" role="tab" aria-selected="false">
-                  <span class="workspace-icon">⌑</span><span><strong>Files</strong><small>Open supporting evidence</small></span>
-                </button>
-                <button type="button" class="workspace-action" data-workspace="ask" role="tab" aria-selected="false">
-                  <span class="workspace-icon">⌕</span><span><strong>Ask OASYS</strong><small>Find a metric or fact</small></span>
+                  <span class="workspace-icon">⌑</span>
+                  <span><strong>Shared Drive</strong><small id="files-action-label">4 related items</small></span>
                 </button>
               </div>
               <div id="workspace-panel" class="workspace-panel" role="tabpanel" tabindex="0">
@@ -185,7 +192,7 @@
         <article><span class="step-number">3</span><h3>Apply defined exception rules</h3><p>Material conditions are surfaced using evidence-backed rules, with provenance retained.</p></article>
         <article><span class="step-number">4</span><h3>Human decides</h3><p>The Morning Brief frames attention and evidence. The manager owns the decision.</p></article>
       </div>
-      <p class="boundary">If evidence is incomplete, stale or contradictory, your OASYS dashboard surfaces the uncertainty rather than inventing an answer.</p>
+      <p class="boundary">If evidence is incomplete, stale or contradictory, your OASYS dashboard surfaces the uncertainty rather than inventing an answer. The interface is designed so important information and actions remain within three interactions of the main dashboard.</p>
     </section>
 
     <section class="band">
@@ -259,39 +266,39 @@
 
         <div class="permission-grid">
           <article class="permission-card is-current">
-            <div class="permission-card-top"><span>01</span><em>Available now</em></div>
+            <div class="permission-card-top"><span>Level 1</span><em>Available now</em></div>
             <h3>Brief</h3>
             <p class="permission-outcome">Know what matters before opening the other systems.</p>
             <ul><li>Morning Brief</li><li>Evidence-backed exceptions</li><li>Decisions waiting</li><li>Source provenance</li></ul>
-            <p class="permission-human"><strong>Human role:</strong> interpret and decide.</p>
+            <p class="permission-human"><strong>Human control:</strong> the manager interprets the brief, challenges it where needed and makes every decision.</p>
           </article>
           <article class="permission-card">
-            <div class="permission-card-top"><span>02</span><em>Next permission</em></div>
+            <div class="permission-card-top"><span>Level 2</span><em>Recommend</em></div>
             <h3>Recommend</h3>
             <p class="permission-outcome">See credible options without handing over the decision.</p>
             <ul><li>Constrained options</li><li>Recommendation rationale</li><li>Risks and trade-offs</li></ul>
-            <p class="permission-human"><strong>Human role:</strong> choose what happens next.</p>
+            <p class="permission-human"><strong>Human control:</strong> OASYS can recommend, but the manager selects the option and owns the decision.</p>
           </article>
           <article class="permission-card">
-            <div class="permission-card-top"><span>03</span><em>Prepare</em></div>
+            <div class="permission-card-top"><span>Level 3</span><em>Prepare</em></div>
             <h3>Draft</h3>
             <p class="permission-outcome">Turn a decision into review-ready work.</p>
             <ul><li>Draft emails</li><li>Draft updates</li><li>Prepared actions</li></ul>
-            <p class="permission-human"><strong>Human role:</strong> review and release.</p>
+            <p class="permission-human"><strong>Human control:</strong> drafts remain private until a person reviews, edits and releases them.</p>
           </article>
           <article class="permission-card">
-            <div class="permission-card-top"><span>04</span><em>Approve</em></div>
+            <div class="permission-card-top"><span>Level 4</span><em>Approve</em></div>
             <h3>Approval-gated action</h3>
             <p class="permission-outcome">Let approved routine actions happen without losing control.</p>
             <ul><li>Explicit approval gate</li><li>Action log</li><li>Defined permissions</li></ul>
-            <p class="permission-human"><strong>Human role:</strong> authorise higher-impact actions.</p>
+            <p class="permission-human"><strong>Human control:</strong> OASYS cannot execute the action until an authorised person explicitly approves it.</p>
           </article>
           <article class="permission-card">
-            <div class="permission-card-top"><span>05</span><em>Automate</em></div>
+            <div class="permission-card-top"><span>Level 5</span><em>Automate</em></div>
             <h3>Bounded automation</h3>
             <p class="permission-outcome">Automate mature, low-risk work inside agreed limits.</p>
             <ul><li>Pre-agreed tasks</li><li>Monitoring and audit</li><li>Escalation rules</li></ul>
-            <p class="permission-human"><strong>Human role:</strong> govern, review and intervene.</p>
+            <p class="permission-human"><strong>Human control:</strong> people set the rules, review performance and retain a manual override to pause or stop automation.</p>
           </article>
         </div>
 
@@ -310,7 +317,7 @@
         </div>
         <div class="trust-grid">
           <p><strong>Start with controlled information.</strong><br>The first test uses agreed exports rather than giving OASYS broad access to your live systems.</p>
-          <p><strong>No passwords required.</strong><br>You do not need to hand over login credentials or API secrets for the first test.</p>
+          <p><strong>No system credentials for the first test.</strong><br>We begin with controlled exports, so you do not need to connect live systems just to find out whether the dashboard is useful.</p>
           <p><strong>See where a claim came from.</strong><br>Important conclusions keep a route back to the approved source and calculation.</p>
           <p><strong>The human stays accountable.</strong><br>At Level 1, OASYS prepares the operating picture. The manager decides what to do.</p>
         </div>
@@ -335,6 +342,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261014-5"></script>
+  <script src="script.js?v=20261014-6"></script>
 </body>
 </html>

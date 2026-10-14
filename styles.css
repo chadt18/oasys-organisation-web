@@ -1327,3 +1327,175 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
 @media (max-width:460px){
   .demo-metrics{grid-template-columns:1fr}
 }
+
+
+/* =========================================================
+   OASYS Organisation v1.5 — manager day-in-the-life demo
+   ========================================================= */
+.header-ask-form{
+  width:280px;
+}
+.header-ask-form label{
+  display:block;
+  margin-bottom:5px;
+  color:#9FB0C3;
+  font-size:.68rem;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.header-ask-form>div{
+  display:flex;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:11px;
+  background:#0A111E;
+  overflow:hidden;
+}
+.header-ask-form input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  padding:10px 11px;
+  background:transparent;
+  color:#fff;
+  font-size:.82rem;
+}
+.header-ask-form input::placeholder{color:#718398}
+.header-ask-form button{
+  width:44px;
+  border:0;
+  background:#2E8B8B;
+  color:#fff;
+  font-size:1.05rem;
+  cursor:pointer;
+}
+.header-ask-form button:hover,.header-ask-form button:focus{background:#247574}
+
+.workspace-actions{grid-template-columns:1fr!important}
+.workspace-action{position:relative}
+.workspace-count{
+  display:grid;
+  place-items:center;
+  min-width:28px;
+  height:28px;
+  margin-left:auto;
+  padding:0 7px;
+  border-radius:999px;
+  background:var(--coral);
+  color:#111827;
+  font-size:.72rem;
+  font-weight:900;
+}
+.email-list,.calendar-list,.file-list{
+  display:grid;
+  gap:8px;
+  margin:14px 0;
+}
+.email-row,.calendar-row,.file-row{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:11px;
+  background:#0D1726;
+}
+.email-row{
+  padding:12px 13px;
+  border-left:3px solid transparent;
+}
+.email-row.needs-attention{
+  border-left-color:#F0AA25;
+  background:#171B22;
+}
+.email-row-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:#DCE5EE;
+}
+.email-row-top time{color:#8294A8;font-size:.72rem}
+.email-row>b{
+  display:block;
+  margin:4px 0;
+  color:#fff;
+  font-size:.88rem;
+}
+.email-row p{
+  margin:0;
+  color:#9EADBE!important;
+  font-size:.78rem;
+  line-height:1.45;
+}
+.calendar-row,.file-row{
+  display:grid;
+  grid-template-columns:75px 1fr;
+  gap:12px;
+  align-items:start;
+  padding:11px 12px;
+}
+.calendar-row time{
+  color:#78C9C7;
+  font-size:.78rem;
+  font-weight:850;
+}
+.calendar-row strong,.calendar-row small,.file-row strong,.file-row small{display:block}
+.calendar-row small,.file-row small{
+  margin-top:3px;
+  color:#8495A8;
+  font-size:.72rem;
+}
+.file-row{grid-template-columns:34px 1fr}
+.file-icon{
+  display:grid;
+  place-items:center;
+  width:30px;height:30px;
+  border-radius:8px;
+  background:rgba(46,139,139,.12);
+  color:#8FD4D1;
+}
+.ask-suggestions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+.ask-suggestions button{
+  padding:7px 9px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;
+  background:#0D1726;
+  color:#B9C6D4;
+  cursor:pointer;
+  font-size:.72rem;
+}
+.ask-suggestions button:hover,.ask-suggestions button:focus{
+  border-color:#2E8B8B;
+  color:#fff;
+}
+
+.permission-card-top span{
+  font-size:.86rem;
+  letter-spacing:.02em;
+  color:#66758A;
+}
+.permission-card.is-current .permission-card-top span{color:var(--coral-dark)}
+.permission-human{
+  min-height:84px;
+  padding:12px;
+  border-top:0;
+  border-radius:10px;
+  background:#F4F7FA;
+  color:#465468;
+  line-height:1.45;
+}
+.permission-card.is-current .permission-human{background:#FFF0EC}
+.permission-human strong{display:block;margin-bottom:4px;color:var(--ink)}
+
+@media (max-width:950px){
+  .header-ask-form{width:min(100%,360px)}
+}
+@media (max-width:700px){
+  .demo-header-meta{width:100%}
+  .header-ask-form{width:100%}
+  .header-ask-form input{min-height:44px;font-size:1rem}
+  .workspace-grid{grid-template-columns:1fr}
+  .workspace-panel{min-height:0}
+}
