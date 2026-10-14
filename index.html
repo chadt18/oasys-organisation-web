@@ -8,7 +8,7 @@
   <meta property="og:title" content="OASYS Organisation — Morning Brief">
   <meta property="og:description" content="See what needs your attention before you open six different tabs.">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261014-4">
+  <link rel="stylesheet" href="styles.css?v=20261014-5">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -21,7 +21,7 @@
       </a>
       <nav aria-label="Primary">
         <a href="#how">How it works</a>
-        <a href="#partner">Design Partner</a>
+        <a href="#demo">Dashboard demo</a>
         <a href="#levels">Levels</a>
         <a href="#trust">Trust</a>
         <a class="button button-small" href="mailto:chad@oasys-cloud.com?subject=OASYS%20prototype%20test">Book prototype test</a>
@@ -30,7 +30,7 @@
   </header>
 
   <main id="main">
-    <section id="top" class="hero shell">
+    <section id="top" class="hero hero-simple shell">
       <div class="hero-copy">
         <p class="eyebrow">OASYS Organisation · Human-centred decision support</p>
         <h1>See what needs your attention before you open six different tabs.</h1>
@@ -38,22 +38,40 @@
         <p class="principle hero-mantra"><strong>AI prepares. Humans decide. Evidence stays traceable.</strong></p>
         <p class="hero-support">OASYS reduces the time spent assembling information so managers can spend more time applying judgement, coordinating action and owning the decision.</p>
         <div class="cta-row">
-          <a class="button" href="mailto:chad@oasys-cloud.com?subject=OASYS%20prototype%20test">Book a 20-minute prototype test</a>
+          <a class="button" href="#demo">Explore the dashboard demo</a>
+          <a class="secondary-cta" href="mailto:chad@oasys-cloud.com?subject=OASYS%20prototype%20test">Book a 20-minute prototype test</a>
         </div>
       </div>
+      <aside class="role-start-card" aria-label="Role-specific onboarding">
+        <p class="micro">Built around the role</p>
+        <h2>Start with the job description, not a generic template.</h2>
+        <p>During onboarding, send us the role or job description. We map the responsibilities, recurring decisions and information sources into a first dashboard prototype for the manager to review and tweak.</p>
+        <div class="role-start-steps">
+          <span><b>1</b> Role / job description</span>
+          <span><b>2</b> Prototype dashboard</span>
+          <span><b>3</b> Manager review</span>
+        </div>
+        <small>No live-system access is needed for this first design step.</small>
+      </aside>
+    </section>
 
-      <div id="brief" class="product-panel" aria-labelledby="brief-heading">
-        <div class="product-topline">
+    <section id="demo" class="dashboard-demo-section">
+      <div class="demo-shell">
+        <div class="demo-header">
           <div>
-            <p class="micro">OASYS Dashboard · Morning Brief · Demonstration</p>
-            <h2 id="brief-heading"><span id="person-name">Alex</span>, what needs your attention today?</h2>
+            <p class="demo-kicker">OASYS Dashboard · Interactive demonstration</p>
+            <h2><span id="person-name">Alex</span>, what needs your attention today?</h2>
+            <p id="role-label" class="demo-role">Ecommerce / Commercial Manager</p>
           </div>
-          <span class="confidence">Demo data · 3 sources refreshed</span>
+          <div class="demo-header-meta">
+            <span class="demo-badge">Demo data · 3 sources refreshed</span>
+            <button id="demo-home" class="demo-home" type="button">⌂ Dashboard home</button>
+          </div>
         </div>
 
-        <div class="sector-control">
-          <p id="sector-label">See an example Morning Brief for:</p>
-          <div class="sector-tabs" role="tablist" aria-labelledby="sector-label">
+        <div class="demo-sector-row">
+          <p id="sector-label">Switch role example:</p>
+          <div class="sector-tabs demo-sector-tabs" role="tablist" aria-labelledby="sector-label">
             <button class="sector-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="sector-panel" id="tab-ecommerce" data-sector="ecommerce">
               E-commerce &amp; Retail
               <span>Active focus</span>
@@ -69,20 +87,26 @@
           </div>
         </div>
 
-        <div id="sector-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-ecommerce">
-          <div class="brief-intro">
-            <span id="role-label" class="role-label">Ecommerce / Commercial Manager</span>
-            <p id="summary-text">Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.</p>
+        <div id="sector-panel" class="demo-main" role="tabpanel" tabindex="0" aria-labelledby="tab-ecommerce">
+          <div class="demo-summary">
+            <div>
+              <p class="demo-label">Morning Brief</p>
+              <p id="summary-text" class="demo-summary-text">Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.</p>
+            </div>
+            <span class="three-click">Designed around a three-click rule</span>
           </div>
 
-          <div id="metrics" class="metrics-grid" aria-label="Morning Brief metrics"></div>
+          <div id="metrics" class="metrics-grid demo-metrics" aria-label="Morning Brief metrics"></div>
 
-          <div class="brief-grid">
-            <article class="brief-card warning-card">
-              <p class="micro"><span class="status-dot status-amber" aria-hidden="true"></span> Evidence-backed exception · Needs attention</p>
+          <div class="demo-focus-grid">
+            <article class="brief-card warning-card demo-exception">
+              <p class="micro"><span class="status-icon" aria-hidden="true">!</span> Evidence-backed exception</p>
               <h3 id="exception-title">Margin + stock pressure on SKU-104</h3>
               <p id="exception-text">Supplier unit cost increased while the product remains a strong seller and available cover is below four days.</p>
-              <button class="evidence-toggle" type="button" aria-expanded="false" aria-controls="evidence-detail">Show evidence</button>
+              <button class="evidence-toggle" type="button" aria-expanded="false" aria-controls="evidence-detail">
+                <span class="toggle-track" aria-hidden="true"><span></span></span>
+                <span class="toggle-label">Show evidence</span>
+              </button>
               <div id="evidence-detail" class="evidence-detail" hidden>
                 <dl>
                   <div><dt>Observed</dt><dd id="evidence-observed">Unit cost £18.40 → £21.80; 373 available units; 151 average units/day.</dd></div>
@@ -93,17 +117,50 @@
               </div>
             </article>
 
-            <article class="brief-card decision-card">
-              <p class="micro"><span class="status-dot status-amber" aria-hidden="true"></span> Decision waiting · Needs attention</p>
+            <article class="brief-card decision-card demo-decision">
+              <p class="micro">Decision waiting</p>
               <h3 id="decision-heading">Alex, this needs your attention</h3>
               <p id="decision-text">Review promotion, accept the stockout risk, or investigate expedited replenishment / revised supplier terms.</p>
-              <span class="human-tag">You decide. OASYS prepares the evidence.</span>
+              <div class="decision-principle">You decide. OASYS prepares the evidence.</div>
             </article>
           </div>
 
-          <div class="source-strip">
-            <span>Source provenance:</span>
-            <span id="source-list">transactions.csv · costs.csv · inventory.csv · approved commercial rule</span>
+          <div class="workspace-zone">
+            <div class="workspace-heading">
+              <div>
+                <p class="demo-label">Workspace shortcuts</p>
+                <h3>Move from insight to the next piece of work.</h3>
+              </div>
+              <span>Illustrative connected workspace</span>
+            </div>
+            <div class="workspace-grid">
+              <div class="workspace-actions" role="tablist" aria-label="Workspace demonstration">
+                <button type="button" class="workspace-action is-active" data-workspace="email" role="tab" aria-selected="true">
+                  <span class="workspace-icon">✉</span><span><strong>Email</strong><small id="email-action-label">Related supplier update</small></span>
+                </button>
+                <button type="button" class="workspace-action" data-workspace="calendar" role="tab" aria-selected="false">
+                  <span class="workspace-icon">▣</span><span><strong>Calendar</strong><small id="calendar-action-label">Next relevant meeting</small></span>
+                </button>
+                <button type="button" class="workspace-action" data-workspace="files" role="tab" aria-selected="false">
+                  <span class="workspace-icon">⌑</span><span><strong>Files</strong><small>Open supporting evidence</small></span>
+                </button>
+                <button type="button" class="workspace-action" data-workspace="ask" role="tab" aria-selected="false">
+                  <span class="workspace-icon">⌕</span><span><strong>Ask OASYS</strong><small>Find a metric or fact</small></span>
+                </button>
+              </div>
+              <div id="workspace-panel" class="workspace-panel" role="tabpanel" tabindex="0">
+                <div id="workspace-content"></div>
+              </div>
+            </div>
+            <p class="demo-disclaimer">Demonstration only. This page does not connect to, read from or send anything through email, calendar or external systems.</p>
+          </div>
+
+          <div class="source-zone">
+            <div>
+              <span class="source-title">Evidence trail</span>
+              <span class="source-helper">Important claims stay linked to their source.</span>
+            </div>
+            <div id="source-list" class="source-tags" aria-label="Source provenance"></div>
           </div>
         </div>
       </div>
@@ -153,6 +210,10 @@
         <p class="eyebrow">Design Partner Validation</p>
         <h2>Help us pressure-test the dashboard.</h2>
         <p>OASYS Organisation is currently being validated with ecommerce and commercial managers. We start with a short personalised prototype using demonstration data. If the dashboard helps the manager orient faster, identify a real exception or make a better-supported decision, the next gate is a controlled own-data test.</p>
+        <div class="onboarding-callout">
+          <strong>Role-specific onboarding:</strong>
+          <span>Send the role or job description and we will use it to shape the first prototype around that manager's responsibilities, recurring decisions and approved information sources. The manager can then review and tweak it before any own-data test.</span>
+        </div>
         <div class="process-flow" aria-label="Design partner process">
           <div class="process-step">
             <span class="process-number">1</span>
@@ -182,35 +243,63 @@
       </aside>
     </section>
 
-    <section id="levels" class="levels-section shell section">
-      <div class="section-heading">
-        <p class="eyebrow">OASYS Levels 1–5</p>
-        <h2>One dashboard. Five permission levels.</h2>
-        <p class="levels-explainer">The levels describe how much OASYS is allowed to do — not five different products you have to buy at once. Start with the lowest useful level and increase permission only when the evidence, controls and governance justify it.</p>
+    <section id="levels" class="permission-section">
+      <div class="shell section">
+        <div class="permission-heading">
+          <div>
+            <p class="eyebrow">OASYS Levels 1–5</p>
+            <h2>Start with visibility. Increase permission as trust is earned.</h2>
+          </div>
+          <p>The levels describe how much OASYS is permitted to do. You do not need five separate products. The same operating layer can move from briefing the manager to bounded automation as the use case, controls and governance mature.</p>
+        </div>
+
+        <div class="permission-scale" aria-label="OASYS permission progression">
+          <span>Human-led</span><span class="permission-line"></span><span>Bounded autonomy</span>
+        </div>
+
+        <div class="permission-grid">
+          <article class="permission-card is-current">
+            <div class="permission-card-top"><span>01</span><em>Available now</em></div>
+            <h3>Brief</h3>
+            <p class="permission-outcome">Know what matters before opening the other systems.</p>
+            <ul><li>Morning Brief</li><li>Evidence-backed exceptions</li><li>Decisions waiting</li><li>Source provenance</li></ul>
+            <p class="permission-human"><strong>Human role:</strong> interpret and decide.</p>
+          </article>
+          <article class="permission-card">
+            <div class="permission-card-top"><span>02</span><em>Next permission</em></div>
+            <h3>Recommend</h3>
+            <p class="permission-outcome">See credible options without handing over the decision.</p>
+            <ul><li>Constrained options</li><li>Recommendation rationale</li><li>Risks and trade-offs</li></ul>
+            <p class="permission-human"><strong>Human role:</strong> choose what happens next.</p>
+          </article>
+          <article class="permission-card">
+            <div class="permission-card-top"><span>03</span><em>Prepare</em></div>
+            <h3>Draft</h3>
+            <p class="permission-outcome">Turn a decision into review-ready work.</p>
+            <ul><li>Draft emails</li><li>Draft updates</li><li>Prepared actions</li></ul>
+            <p class="permission-human"><strong>Human role:</strong> review and release.</p>
+          </article>
+          <article class="permission-card">
+            <div class="permission-card-top"><span>04</span><em>Approve</em></div>
+            <h3>Approval-gated action</h3>
+            <p class="permission-outcome">Let approved routine actions happen without losing control.</p>
+            <ul><li>Explicit approval gate</li><li>Action log</li><li>Defined permissions</li></ul>
+            <p class="permission-human"><strong>Human role:</strong> authorise higher-impact actions.</p>
+          </article>
+          <article class="permission-card">
+            <div class="permission-card-top"><span>05</span><em>Automate</em></div>
+            <h3>Bounded automation</h3>
+            <p class="permission-outcome">Automate mature, low-risk work inside agreed limits.</p>
+            <ul><li>Pre-agreed tasks</li><li>Monitoring and audit</li><li>Escalation rules</li></ul>
+            <p class="permission-human"><strong>Human role:</strong> govern, review and intervene.</p>
+          </article>
+        </div>
+
+        <div class="permission-commercial">
+          <div><strong>Level 1 is the current standardised design-partner offer.</strong><span>£500 setup + £149/month.</span></div>
+          <p>Levels 2–5 show the direction of the permission model. They can be explored during validation but are not yet standard commercial packages.</p>
+        </div>
       </div>
-      <div class="levels-grid">
-        <article class="level-card is-current">
-          <span class="level-badge">1</span>
-          <div><h3>Brief</h3><p>OASYS organises the evidence, surfaces exceptions and shows decisions waiting. The human interprets and decides.</p><small>Current design-partner offer</small></div>
-        </article>
-        <article class="level-card">
-          <span class="level-badge">2</span>
-          <div><h3>Recommend</h3><p>OASYS adds constrained options and recommendations. The human chooses what happens next.</p></div>
-        </article>
-        <article class="level-card">
-          <span class="level-badge">3</span>
-          <div><h3>Draft</h3><p>OASYS prepares messages, actions or outputs. Nothing is released without human review.</p></div>
-        </article>
-        <article class="level-card">
-          <span class="level-badge">4</span>
-          <div><h3>Approval-gated action</h3><p>OASYS can carry out approved tasks after explicit human sign-off, with an audit trail.</p></div>
-        </article>
-        <article class="level-card">
-          <span class="level-badge">5</span>
-          <div><h3>Bounded automation</h3><p>Pre-agreed low-risk tasks can run within defined limits, monitoring and human governance.</p></div>
-        </article>
-      </div>
-      <p class="levels-note"><strong>Commercial boundary:</strong> Level 1 is the only standardised priced offer today. Levels 2–5 show the permission pathway and can be discussed during validation; they are not yet standard commercial packages.</p>
     </section>
 
     <section id="trust" class="band trust-band">
@@ -246,6 +335,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261014-3"></script>
+  <script src="script.js?v=20261014-5"></script>
 </body>
 </html>
