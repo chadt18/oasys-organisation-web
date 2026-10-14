@@ -1592,3 +1592,14 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
 @media(max-width:700px){
   .demo-mode-badges{width:100%}
 }
+
+.decision-owner{
+  margin:12px 0 8px;
+  padding:9px 10px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:9px;
+  background:#0d1726;
+  color:#aab9c9;
+  font-size:.75rem;
+}
+.decision-owner strong{color:#fff}

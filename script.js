@@ -3,6 +3,7 @@ const sectors = {
     tab: "tab-ecommerce",
     person: "Alex",
     role: "Ecommerce / Commercial Manager",
+    decisionOwner: "Alex · Commercial Manager",
     summary: "Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.",
     plan: {title:"Today's revenue plan", plan:"£15,900", actual:"£16,427", variance:"+3.3%", state:"good", note:"Revenue is ahead of plan, but margin and stock-cover exceptions still require attention."},
     metrics: [
@@ -68,6 +69,7 @@ const sectors = {
     tab: "tab-agency",
     person: "Priya",
     role: "Managing Director / Operations Lead",
+    decisionOwner: "Priya · Managing Director / Operations Lead",
     summary: "Client delivery is broadly on plan, but one retainer is using hours faster than expected while important deliverables remain open.",
     plan: {title:"Retainer hours plan", plan:"52%", actual:"68%", variance:"+16pp", state:"warn", note:"Hours are running ahead of the planned mid-month position while four deliverables remain open."},
     metrics: [
@@ -132,6 +134,7 @@ const sectors = {
     tab: "tab-operations",
     person: "Jordan",
     role: "Operations / General Manager",
+    decisionOwner: "Jordan · Operations / General Manager",
     summary: "Overall throughput is on plan, but priority orders are running 47 minutes late and the queue has grown from 24 to 38 items.",
     plan: {title:"Priority service target", plan:"≤ 30 min", actual:"77 min", variance:"+47 min", state:"warn", note:"Overall throughput is on plan, but priority work is outside the organisation's agreed service threshold."},
     metrics: [
@@ -212,6 +215,7 @@ const exceptionTitle = document.getElementById("exception-title");
 const exceptionText = document.getElementById("exception-text");
 const whyNow = document.getElementById("why-now");
 const decisionText = document.getElementById("decision-text");
+const decisionOwner = document.getElementById("decision-owner");
 const sourceList = document.getElementById("source-list");
 const observed = document.getElementById("evidence-observed");
 const calculation = document.getElementById("evidence-calculation");
@@ -349,6 +353,7 @@ function setSector(key, focusPanel=false){
   exceptionText.textContent=data.exceptionText;
   whyNow.innerHTML="<strong>Why now:</strong> "+escapeHtml(data.whyNow);
   decisionText.textContent=data.decision;
+  decisionOwner.textContent=data.decisionOwner;
   renderSources(data.sources);
   observed.textContent=data.observed;
   calculation.textContent=data.calculation;
