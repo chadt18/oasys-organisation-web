@@ -8,7 +8,7 @@
   <meta property="og:title" content="OASYS Organisation — Morning Brief">
   <meta property="og:description" content="See what needs your attention before you open six different tabs.">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261014-6">
+  <link rel="stylesheet" href="styles.css?v=20261014-7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -45,11 +45,11 @@
       <aside class="role-start-card" aria-label="Role-specific onboarding">
         <p class="micro">Built around the role</p>
         <h2>Start with the job description, not a generic template.</h2>
-        <p>During onboarding, send us the role or job description. We map the responsibilities, recurring decisions and information sources into a first dashboard prototype for the manager to review and tweak.</p>
+        <p>During onboarding, send us the role or job description. We map the responsibilities, recurring decisions and information sources into a first dashboard prototype. Where useful, approved targets, budgets or forecasts can also be added so OASYS can compare what the organisation expected with what is actually happening.</p>
         <div class="role-start-steps">
           <span><b>1</b> Role / job description</span>
-          <span><b>2</b> Prototype dashboard</span>
-          <span><b>3</b> Manager review</span>
+          <span><b>2</b> Targets / forecast + sources</span>
+          <span><b>3</b> Prototype + manager review</span>
         </div>
         <small>No live-system access is needed for this first design step.</small>
       </aside>
@@ -100,6 +100,19 @@
               <p class="demo-label">Morning Brief</p>
               <p id="summary-text" class="demo-summary-text">Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.</p>
             </div>
+          </div>
+
+          <div class="plan-actual-panel" aria-label="Plan versus actual">
+            <div>
+              <p class="demo-label">Plan vs actual</p>
+              <h3 id="plan-title">Today's revenue plan</h3>
+            </div>
+            <div class="plan-actual-values">
+              <span><small>Plan</small><strong id="plan-value">£15,900</strong></span>
+              <span><small>Actual</small><strong id="actual-value">£16,427</strong></span>
+              <span class="variance-chip variance-good"><small>Variance</small><strong id="variance-value">+3.3%</strong></span>
+            </div>
+            <p id="plan-note">Revenue is ahead of plan, but margin and stock-cover exceptions still require attention.</p>
           </div>
 
           <div id="metrics" class="metrics-grid demo-metrics" aria-label="Morning Brief metrics"></div>
@@ -187,12 +200,12 @@
         <h2>Four clear steps from scattered information to a decision-ready brief.</h2>
       </div>
       <div class="steps">
-        <article><span class="step-number">1</span><h3>Bring together approved information</h3><p>Start with the smallest useful set of commercial, cost and operational evidence.</p></article>
-        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates and source confidence are made explicit before interpretation.</p></article>
-        <article><span class="step-number">3</span><h3>Apply defined exception rules</h3><p>Material conditions are surfaced using evidence-backed rules, with provenance retained.</p></article>
+        <article><span class="step-number">1</span><h3>Bring together approved context</h3><p>Start with the role, current evidence and, where useful, the organisation's targets, budget or forecast.</p></article>
+        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates, ownership and source confidence are made explicit before interpretation.</p></article>
+        <article><span class="step-number">3</span><h3>Compare plan with reality</h3><p>OASYS surfaces meaningful variance and defined exceptions while preserving the evidence trail.</p></article>
         <article><span class="step-number">4</span><h3>Human decides</h3><p>The Morning Brief frames attention and evidence. The manager owns the decision.</p></article>
       </div>
-      <p class="boundary">If evidence is incomplete, stale or contradictory, your OASYS dashboard surfaces the uncertainty rather than inventing an answer. The interface is designed so important information and actions remain within three interactions of the main dashboard.</p>
+      <p class="boundary">OASYS does not need to invent a prediction to be useful. It can compare what the organisation said should happen with what is actually happening. If evidence is incomplete, stale or contradictory, the dashboard surfaces that uncertainty rather than inventing an answer. Important information and actions should remain within three interactions of the main dashboard.</p>
     </section>
 
     <section class="band">
@@ -203,9 +216,9 @@
         </div>
         <div class="capability-grid">
           <article><h3>Morning Summary</h3><p>The operating picture in plain language.</p></article>
+          <article><h3>Plan vs Actual</h3><p>Compare approved targets, budgets or forecasts with current reality and surface material variance.</p></article>
           <article><h3>Evidence-backed Exceptions</h3><p>Material conditions triggered by defined rules.</p></article>
           <article><h3>Decisions Waiting</h3><p>Questions that require human judgement.</p></article>
-          <article><h3>Commitments</h3><p>Relevant follow-ups and deadlines.</p></article>
           <article><h3>Data Confidence &amp; Provenance</h3><p>Trace important claims back to their source.</p></article>
           <article><h3>Ask OASYS</h3><p>Find a metric, source or fact without hunting through the underlying systems.</p></article>
         </div>
@@ -219,7 +232,7 @@
         <p>OASYS Organisation is currently being validated with ecommerce and commercial managers. We start with a short personalised prototype using demonstration data. If the dashboard helps the manager orient faster, identify a real exception or make a better-supported decision, the next gate is a controlled own-data test.</p>
         <div class="onboarding-callout">
           <strong>Role-specific onboarding:</strong>
-          <span>Send the role or job description and we will use it to shape the first prototype around that manager's responsibilities, recurring decisions and approved information sources. The manager can then review and tweak it before any own-data test.</span>
+          <span>Send the role or job description and we will shape the first prototype around that manager's responsibilities, recurring decisions and approved information sources. Where relevant, approved targets, budgets or forecasts can be added so the dashboard can show plan vs actual. The manager reviews and tweaks the prototype before any own-data test.</span>
         </div>
         <div class="process-flow" aria-label="Design partner process">
           <div class="process-step">
@@ -269,35 +282,35 @@
             <div class="permission-card-top"><span>Level 1</span><em>Available now</em></div>
             <h3>Brief</h3>
             <p class="permission-outcome">Know what matters before opening the other systems.</p>
-            <ul><li>Morning Brief</li><li>Evidence-backed exceptions</li><li>Decisions waiting</li><li>Source provenance</li></ul>
+            <ul><li>Morning Brief</li><li>Plan vs actual variance</li><li>Evidence-backed exceptions</li><li>Source provenance</li></ul>
             <p class="permission-human"><strong>Human control:</strong> the manager interprets the brief, challenges it where needed and makes every decision.</p>
           </article>
           <article class="permission-card">
             <div class="permission-card-top"><span>Level 2</span><em>Recommend</em></div>
             <h3>Recommend</h3>
             <p class="permission-outcome">See credible options without handing over the decision.</p>
-            <ul><li>Constrained options</li><li>Recommendation rationale</li><li>Risks and trade-offs</li></ul>
+            <ul><li>Constrained options</li><li>Ways to respond to material variance</li><li>Risks and trade-offs</li></ul>
             <p class="permission-human"><strong>Human control:</strong> OASYS can recommend, but the manager selects the option and owns the decision.</p>
           </article>
           <article class="permission-card">
             <div class="permission-card-top"><span>Level 3</span><em>Prepare</em></div>
             <h3>Draft</h3>
             <p class="permission-outcome">Turn a decision into review-ready work.</p>
-            <ul><li>Draft emails</li><li>Draft updates</li><li>Prepared actions</li></ul>
+            <ul><li>Draft emails</li><li>Draft recovery / action updates</li><li>Prepared actions</li></ul>
             <p class="permission-human"><strong>Human control:</strong> drafts remain private until a person reviews, edits and releases them.</p>
           </article>
           <article class="permission-card">
             <div class="permission-card-top"><span>Level 4</span><em>Approve</em></div>
             <h3>Approval-gated action</h3>
             <p class="permission-outcome">Let approved routine actions happen without losing control.</p>
-            <ul><li>Explicit approval gate</li><li>Action log</li><li>Defined permissions</li></ul>
+            <ul><li>Explicit approval gate</li><li>Approved corrective actions</li><li>Action log and defined permissions</li></ul>
             <p class="permission-human"><strong>Human control:</strong> OASYS cannot execute the action until an authorised person explicitly approves it.</p>
           </article>
           <article class="permission-card">
             <div class="permission-card-top"><span>Level 5</span><em>Automate</em></div>
             <h3>Bounded automation</h3>
             <p class="permission-outcome">Automate mature, low-risk work inside agreed limits.</p>
-            <ul><li>Pre-agreed tasks</li><li>Monitoring and audit</li><li>Escalation rules</li></ul>
+            <ul><li>Pre-agreed low-risk corrective tasks</li><li>Monitoring against agreed thresholds</li><li>Escalation rules + manual override</li></ul>
             <p class="permission-human"><strong>Human control:</strong> people set the rules, review performance and retain a manual override to pause or stop automation.</p>
           </article>
         </div>
@@ -318,6 +331,7 @@
         <div class="trust-grid">
           <p><strong>Start with controlled information.</strong><br>The first test uses agreed exports rather than giving OASYS broad access to your live systems.</p>
           <p><strong>No system credentials for the first test.</strong><br>We begin with controlled exports, so you do not need to connect live systems just to find out whether the dashboard is useful.</p>
+          <p><strong>Compare against your own plan.</strong><br>Targets, budgets and forecasts remain organisation-defined inputs. OASYS shows variance; it should not quietly rewrite the target.</p>
           <p><strong>See where a claim came from.</strong><br>Important conclusions keep a route back to the approved source and calculation.</p>
           <p><strong>The human stays accountable.</strong><br>At Level 1, OASYS prepares the operating picture. The manager decides what to do.</p>
         </div>
@@ -342,6 +356,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261014-6"></script>
+  <script src="script.js?v=20261014-7"></script>
 </body>
 </html>

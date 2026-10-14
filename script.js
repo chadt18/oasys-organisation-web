@@ -4,6 +4,7 @@ const sectors = {
     person: "Alex",
     role: "Ecommerce / Commercial Manager",
     summary: "Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.",
+    plan: {title:"Today's revenue plan", plan:"£15,900", actual:"£16,427", variance:"+3.3%", state:"good", note:"Revenue is ahead of plan, but margin and stock-cover exceptions still require attention."},
     metrics: [
       ["Net revenue", "£16,427", "+11.9% vs comparable day", "good"],
       ["Gross margin", "51.8%", "55.9% comparable · −4.0pp", "warn"],
@@ -56,7 +57,7 @@ const sectors = {
         next: "A production dashboard could open the relevant source directly."
       },
       ask: {
-        answer: "SKU-104 is flagged because available stock is 373 units and average daily demand is 151 units, giving 2.5 days of cover. Supplier unit cost also increased from £18.40 to £21.80.",
+        answer: "Today's revenue is £16,427 against a £15,900 plan, so revenue is 3.3% ahead. SKU-104 is still flagged because available stock is 373 units and average daily demand is 151 units, giving 2.5 days of cover, while supplier unit cost increased from £18.40 to £21.80.",
         suggestions:["Why is SKU-104 flagged?","How many days of stock are left?","Show the related supplier email"]
       }
     }
@@ -66,6 +67,7 @@ const sectors = {
     person: "Priya",
     role: "Managing Director / Operations Lead",
     summary: "Client delivery is broadly on plan, but one retainer is using hours faster than expected while important deliverables remain open.",
+    plan: {title:"Retainer hours plan", plan:"52%", actual:"68%", variance:"+16pp", state:"warn", note:"Hours are running ahead of the planned mid-month position while four deliverables remain open."},
     metrics: [
       ["Retainer used", "68%", "At mid-month", "warn"],
       ["Planned run-rate", "52%", "Expected at this point", "neutral"],
@@ -127,6 +129,7 @@ const sectors = {
     person: "Jordan",
     role: "Operations / General Manager",
     summary: "Overall throughput is on plan, but priority orders are running 47 minutes late and the queue has grown from 24 to 38 items.",
+    plan: {title:"Priority service target", plan:"≤ 30 min", actual:"77 min", variance:"+47 min", state:"warn", note:"Overall throughput is on plan, but priority work is outside the organisation's agreed service threshold."},
     metrics: [
       ["Priority orders", "47 min late", "Service target exceeded", "warn"],
       ["Backlog", "38 waiting", "Up from 24 earlier", "warn"],
@@ -178,7 +181,7 @@ const sectors = {
         next: "A production dashboard could open the relevant operational record."
       },
       ask: {
-        answer: "Priority orders are 47 minutes beyond the agreed service target. The queue has grown from 24 to 38 items, an increase of 14, while overall daily throughput remains on plan.",
+        answer: "The agreed priority-service target is 30 minutes or less. Current delay is 77 minutes, so priority work is 47 minutes outside target. The queue has also grown from 24 to 38 items while overall daily throughput remains on plan.",
         suggestions:["Why are priority orders flagged?","How much has the queue grown?","Show Carrier B's latest email"]
       }
     }
@@ -189,6 +192,12 @@ let currentSector = "ecommerce";
 let currentWorkspace = "email";
 
 const metrics = document.getElementById("metrics");
+const planTitle = document.getElementById("plan-title");
+const planValue = document.getElementById("plan-value");
+const actualValue = document.getElementById("actual-value");
+const varianceValue = document.getElementById("variance-value");
+const planNote = document.getElementById("plan-note");
+const varianceChip = document.querySelector(".variance-chip");
 const personName = document.getElementById("person-name");
 const decisionHeading = document.getElementById("decision-heading");
 const roleLabel = document.getElementById("role-label");
@@ -320,6 +329,13 @@ function setSector(key, focusPanel=false){
   decisionHeading.textContent=data.person+", this needs your attention";
   roleLabel.textContent=data.role;
   summaryText.textContent=data.summary;
+  planTitle.textContent=data.plan.title;
+  planValue.textContent=data.plan.plan;
+  actualValue.textContent=data.plan.actual;
+  varianceValue.textContent=data.plan.variance;
+  planNote.textContent=data.plan.note;
+  varianceChip.classList.toggle("variance-good", data.plan.state==="good");
+  varianceChip.classList.toggle("variance-warn", data.plan.state==="warn");
   renderMetrics(data.metrics);
   exceptionTitle.textContent=data.exceptionTitle;
   exceptionText.textContent=data.exceptionText;
