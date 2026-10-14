@@ -1,13 +1,14 @@
 const sectors = {
   ecommerce: {
     tab: "tab-ecommerce",
+    person: "Alex",
     role: "Ecommerce / Commercial Manager",
     summary: "Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.",
     metrics: [
       ["Net revenue", "£16,427", "+11.9% vs comparable day"],
       ["Gross margin", "51.8%", "55.9% comparable · −4.0pp"],
       ["SKU-104 stock cover", "2.5 days", "373 available ÷ 151/day"],
-      ["Data confidence", "3/3 current", "Core structured sources refreshed"]
+      ["Demo sources", "3/3 refreshed", "Synthetic sources for this demonstration"]
     ],
     exceptionTitle: "Margin + stock pressure on SKU-104",
     exceptionText: "Supplier unit cost increased while the product remains a strong seller and available cover is below four days.",
@@ -20,13 +21,14 @@ const sectors = {
   },
   agency: {
     tab: "tab-agency",
+    person: "Priya",
     role: "Managing Director / Operations Lead",
     summary: "Client delivery is broadly on plan, but one retainer has exceeded its agreed hours run-rate while significant deliverables remain open.",
     metrics: [
       ["Retainer hours used", "68%", "Mid-month"],
       ["Planned run-rate", "52%", "At current point in month"],
       ["Open deliverables", "4", "2 client-critical"],
-      ["Data confidence", "3/3 current", "Time, SOW and project status"]
+      ["Demo sources", "3/3 refreshed", "Synthetic time, SOW and project status"]
     ],
     exceptionTitle: "Retainer run-rate is ahead of plan",
     exceptionText: "Client A has used 68% of monthly retainer hours by mid-month against a 52% planned run-rate.",
@@ -39,13 +41,14 @@ const sectors = {
   },
   operations: {
     tab: "tab-operations",
+    person: "Jordan",
     role: "Operations / General Manager",
     summary: "Throughput remains within daily plan overall, but one priority workflow is outside its service threshold and backlog is increasing.",
     metrics: [
       ["Priority delay", "+47 min", "Beyond agreed threshold"],
       ["Backlog", "38 items", "Up across 2 checks"],
       ["Daily throughput", "On plan", "Overall operation"],
-      ["Data confidence", "3/3 current", "Queue, threshold and capacity"]
+      ["Demo sources", "3/3 refreshed", "Synthetic queue, threshold and capacity"]
     ],
     exceptionTitle: "Priority workflow outside service threshold",
     exceptionText: "The priority dispatch queue is 47 minutes outside the agreed threshold and the backlog has increased across two consecutive checks.",
@@ -59,6 +62,8 @@ const sectors = {
 };
 
 const metrics = document.getElementById("metrics");
+const personName = document.getElementById("person-name");
+const decisionHeading = document.getElementById("decision-heading");
 const roleLabel = document.getElementById("role-label");
 const summaryText = document.getElementById("summary-text");
 const exceptionTitle = document.getElementById("exception-title");
@@ -88,6 +93,8 @@ function setSector(key, focusPanel = false) {
     btn.setAttribute("aria-selected", String(active));
   });
   panel.setAttribute("aria-labelledby", data.tab);
+  personName.textContent = data.person;
+  decisionHeading.textContent = data.person + ", this needs your attention";
   roleLabel.textContent = data.role;
   summaryText.textContent = data.summary;
   renderMetrics(data.metrics);
