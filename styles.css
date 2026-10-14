@@ -539,3 +539,165 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
 @media (max-width:620px){
   .hero-mantra{display:block}
 }
+
+
+/* =========================================================
+   OASYS Organisation v1.3 — freeze fixes
+   ========================================================= */
+.sector-tabs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.sector-tab{
+  width:100%;
+  min-width:0;
+}
+
+.metric{
+  position:relative;
+  padding-top:16px;
+  box-shadow:0 5px 16px rgba(15,23,42,.045);
+}
+.metric::before{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  top:0;
+  height:3px;
+  border-radius:0 0 999px 999px;
+  background:#D7E0EA;
+}
+.metric:nth-child(1)::before{background:#4B8E8B}
+.metric:nth-child(2)::before{background:#E7A21A}
+.metric:nth-child(3)::before{background:#E7A21A}
+.metric:nth-child(4)::before{background:#63809D}
+.metric-value{
+  font-size:1.42rem;
+  line-height:1.15;
+}
+
+.process-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+  margin-top:30px;
+}
+.process-step{
+  min-width:0;
+}
+.process-step div{min-width:0}
+.process-step strong{
+  display:block;
+  font-size:.96rem;
+  line-height:1.25;
+}
+.process-step small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:.76rem;
+  line-height:1.4;
+}
+.process-arrow{
+  display:grid;
+  place-items:center;
+  min-width:20px;
+  font-size:1.1rem;
+  color:#6D7B8E;
+}
+.process-note{
+  margin-top:13px!important;
+}
+
+.levels-link{
+  display:inline-flex;
+  margin-top:18px;
+  color:white;
+  font-weight:800;
+  text-underline-offset:4px;
+}
+
+.levels-section{
+  background:#fff;
+}
+.levels-explainer{
+  max-width:760px;
+  color:var(--muted);
+  font-size:1.04rem;
+}
+.levels-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+}
+.level-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:260px;
+  padding:20px;
+  border:1px solid #D7E0EA;
+  border-radius:16px;
+  background:#F9FBFD;
+  box-shadow:0 6px 18px rgba(15,23,42,.04);
+}
+.level-card.is-current{
+  background:#FFF7F4;
+  border-color:#E8A59B;
+  box-shadow:inset 0 -4px var(--coral),0 8px 22px rgba(15,23,42,.06);
+}
+.level-badge{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:var(--ink);
+  color:white;
+  font-weight:850;
+  box-shadow:inset 0 -4px var(--coral);
+}
+.level-card h3{
+  margin-bottom:8px;
+  font-size:1rem;
+}
+.level-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+}
+.level-card small{
+  display:inline-block;
+  margin-top:14px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:var(--coral);
+  color:var(--ink);
+  font-weight:800;
+}
+.levels-note{
+  margin:22px 0 0;
+  padding:13px 15px;
+  border-left:4px solid var(--coral);
+  background:#FFF8F5;
+  border-radius:0 10px 10px 0;
+  color:#3C4A5B;
+}
+
+@media (max-width:1100px){
+  .levels-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:950px){
+  .process-flow{grid-template-columns:1fr}
+  .process-arrow{height:20px;transform:rotate(90deg)}
+  .levels-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:700px){
+  .sector-tabs{grid-template-columns:1fr}
+  .levels-grid{grid-template-columns:1fr}
+  .level-card{min-height:0}
+}
