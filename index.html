@@ -13,7 +13,7 @@
   <meta property="og:description" content="A decision-ready Morning Brief for ecommerce managers. Explore fictional examples, see evidence and test the concept.">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261019-1">
+  <link rel="stylesheet" href="styles.css?v=20261019-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -103,6 +103,7 @@
           <div class="demo-header-meta">
             <div class="demo-mode-badges">
               <span class="demo-badge">Level 1 · Brief</span>
+              <a class="demo-levels-link" href="#levels" aria-label="Learn about the five OASYS levels">How Levels 1–5 differ ↓</a>
               <span class="demo-badge demo-badge-muted">Sample figures · no live systems connected</span>
             </div>
             <button id="demo-home" class="demo-home" type="button">⌂ Dashboard home</button>
@@ -142,6 +143,9 @@
             </div>
           </div>
 
+          <details class="dashboard-group" data-mobile-open="false" open>
+            <summary>Plan vs actual <span class="dashboard-group-hint">View targets and variance</span></summary>
+            <div class="dashboard-group-body">
           <div class="plan-actual-panel" aria-label="Plan versus actual">
             <div>
               <p class="demo-label">Plan vs actual</p>
@@ -155,8 +159,19 @@
             <p id="plan-note">Revenue is ahead of plan, but margin and stock-cover exceptions still require attention.</p>
           </div>
 
-          <div id="metrics" class="metrics-grid demo-metrics" aria-label="Morning Brief metrics"></div>
+          </div>
+          </details>
 
+          <details class="dashboard-group" data-mobile-open="false" open>
+            <summary>Performance metrics <span class="dashboard-group-hint">View the key numbers</span></summary>
+            <div class="dashboard-group-body">
+          <div id="metrics" class="metrics-grid demo-metrics" aria-label="Morning Brief metrics"></div>
+            </div>
+          </details>
+
+          <details class="dashboard-group" data-mobile-open="true" open>
+            <summary>Needs your attention <span class="dashboard-group-hint">Exceptions and decisions</span></summary>
+            <div class="dashboard-group-body">
           <div class="demo-focus-grid">
             <article class="brief-card warning-card demo-exception">
               <p class="micro"><span class="status-icon" aria-hidden="true">!</span> Evidence-backed exception</p>
@@ -187,6 +202,12 @@
             </article>
           </div>
 
+            </div>
+          </details>
+
+          <details class="dashboard-group" data-mobile-open="false" open>
+            <summary>Workspace examples <span class="dashboard-group-hint">Emails, calendar and files</span></summary>
+            <div class="dashboard-group-body">
           <div class="workspace-zone">
             <div class="workspace-heading">
               <div>
@@ -218,6 +239,12 @@
             <p class="demo-disclaimer">Fictional example only. Names, messages and numbers are invented. Sample answers are prewritten; this page does not connect to, read from or send anything through your email, calendar or external systems.</p>
           </div>
 
+            </div>
+          </details>
+
+          <details class="dashboard-group" data-mobile-open="false" open>
+            <summary>Evidence trail <span class="dashboard-group-hint">Where the figures came from</span></summary>
+            <div class="dashboard-group-body">
           <div class="source-zone">
             <div>
               <span class="source-title">Evidence trail</span>
@@ -225,6 +252,8 @@
             </div>
             <div id="source-list" class="source-tags" aria-label="Source provenance"></div>
           </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -385,6 +414,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261019-1"></script>
+  <script src="script.js?v=20261019-2"></script>
 </body>
 </html>
