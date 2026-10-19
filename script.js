@@ -402,6 +402,7 @@ document.getElementById("header-ask-form").addEventListener("submit",e=>{
     btn.setAttribute("aria-selected","false");
   });
   renderAsk(query,true);
+  document.querySelector(".workspace-zone").closest("details")?.setAttribute("open", "");
   document.getElementById("workspace-panel").scrollIntoView({behavior:"smooth",block:"center"});
   setTimeout(()=>document.getElementById("ask-demo-input")?.focus(),450);
 });
