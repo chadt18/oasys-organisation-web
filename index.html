@@ -3,12 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OASYS Organisation — A Morning Brief for Better Operational Decisions</title>
-  <meta name="description" content="OASYS Organisation turns approved commercial and operational information into a role-specific Morning Brief with evidence-backed exceptions, decisions waiting and source provenance.">
-  <meta property="og:title" content="OASYS Organisation — Morning Brief">
-  <meta property="og:description" content="See what needs your attention before you open six different tabs.">
+  <title>OASYS Organisation | Ecommerce Morning Brief Dashboard</title>
+  <meta name="description" content="Explore a fictional ecommerce Morning Brief dashboard with plan vs actual, stock exceptions, evidence trails and manager-owned decisions. Book a 20-minute prototype test.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://organisation.oasys-cloud.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organisation.oasys-cloud.com/">
+  <meta property="og:title" content="OASYS Organisation | Ecommerce Morning Brief Dashboard">
+  <meta property="og:description" content="A decision-ready Morning Brief for ecommerce managers. Explore fictional examples, see evidence and test the concept.">
+  <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="styles.css?v=20261014-9">
+  <link rel="stylesheet" href="styles.css?v=20261019-1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -38,7 +43,7 @@
         <p class="principle hero-mantra"><strong>AI prepares. Humans decide. Evidence stays traceable.</strong></p>
         <p class="hero-support">OASYS reduces the time spent assembling information so managers can spend more time applying judgement, coordinating action and owning the decision.</p>
         <div class="cta-row">
-          <a class="button" href="#demo">Explore the dashboard demo</a>
+          <a class="button" href="#how">See how it works</a>
           <a class="secondary-cta" href="mailto:chad@oasys-cloud.com?subject=OASYS%20prototype%20test">Book a 20-minute prototype test</a>
         </div>
       </div>
@@ -55,24 +60,56 @@
       </aside>
     </section>
 
+    <section class="sample-story shell section" aria-labelledby="sample-story-title">
+      <div class="section-heading">
+        <p class="eyebrow">At a glance · a fictional example</p>
+        <h2 id="sample-story-title">From scattered signals to a decision in one Morning Brief.</h2>
+        <p>Imagine Morgan manages an online retailer. These figures and people are invented to demonstrate the method, not to describe your company or role.</p>
+      </div>
+      <div class="sample-story-grid">
+        <article><span>1 · What changed</span><h3>A busy product faces a stock risk</h3><p>Sales are healthy, but supplier costs rose and stock cover has fallen to about 2.5 days.</p></article>
+        <article><span>2 · What OASYS shows</span><h3>The exception and its evidence</h3><p>The brief compares targets with current figures and links the warning to its source and threshold.</p></article>
+        <article><span>3 · Who decides</span><h3>The manager chooses the action</h3><p>Review the promotion, replenish stock or accept the risk. OASYS prepares the evidence; it does not decide.</p></article>
+      </div>
+      <p class="sample-story-next"><a href="#how">See the four steps</a> · <a href="#demo">Try the fictional dashboard</a></p>
+    </section>
+
+    <section id="how" class="shell section">
+      <div class="section-heading">
+        <p class="eyebrow">How OASYS works</p>
+        <h2>Four clear steps from scattered information to a decision-ready brief.</h2>
+      </div>
+      <div class="steps">
+        <article><span class="step-number">1</span><h3>Bring together approved context</h3><p>Start with the role, decision rights, operating rhythm, current evidence and, where useful, the organisation's targets, budget or forecast.</p></article>
+        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates, ownership, cadence and source confidence are made explicit before interpretation.</p></article>
+        <article><span class="step-number">3</span><h3>Compare plan with reality</h3><p>OASYS surfaces meaningful variance and defined exceptions while preserving the evidence trail.</p></article>
+        <article><span class="step-number">4</span><h3>Human decides</h3><p>The Morning Brief frames attention and evidence. The manager owns the decision.</p></article>
+      </div>
+      <p class="boundary">OASYS does not need to invent a prediction to be useful. It can compare what the organisation said should happen with what is actually happening. If evidence is incomplete, stale or contradictory, the dashboard surfaces that uncertainty rather than inventing an answer. Important information and actions should remain within three interactions of the main dashboard.</p>
+    </section>
+
     <section id="demo" class="dashboard-demo-section">
       <div class="demo-shell">
+        <div class="demo-guide" aria-label="About this interactive example">
+          <strong>TRY IT YOURSELF · FICTIONAL EXAMPLE</strong>
+          <p>Meet Morgan, an invented ecommerce manager. Click a different role below to see how a Morning Brief might change. <b>These are not your details, your job or live company data.</b></p>
+        </div>
         <div class="demo-header">
           <div>
-            <p class="demo-kicker">OASYS Dashboard · Interactive demonstration</p>
-            <h2><span id="person-name">Alex</span>, what needs your attention today?</h2>
+            <p class="demo-kicker">OASYS Dashboard · Fictional interactive example</p>
+            <h2><span id="person-name">Morgan</span>’s example Morning Brief</h2>
             <p id="role-label" class="demo-role">Ecommerce / Commercial Manager</p>
           </div>
           <div class="demo-header-meta">
             <div class="demo-mode-badges">
               <span class="demo-badge">Level 1 · Brief</span>
-              <span class="demo-badge demo-badge-muted">Illustrative snapshot · 3 sources aligned</span>
+              <span class="demo-badge demo-badge-muted">Sample figures · no live systems connected</span>
             </div>
             <button id="demo-home" class="demo-home" type="button">⌂ Dashboard home</button>
             <form id="header-ask-form" class="header-ask-form" role="search">
-              <label for="header-ask-input">Ask OASYS</label>
+              <label for="header-ask-input">Try a sample question</label>
               <div>
-                <input id="header-ask-input" type="search" placeholder="Find a metric, email or file">
+                <input id="header-ask-input" type="search" placeholder="Why is stock flagged?">
                 <button type="submit" aria-label="Search OASYS">⌕</button>
               </div>
             </form>
@@ -80,7 +117,7 @@
         </div>
 
         <div class="demo-sector-row">
-          <p id="sector-label">Switch role example:</p>
+          <p id="sector-label">Explore fictional roles:</p>
           <div class="sector-tabs demo-sector-tabs" role="tablist" aria-labelledby="sector-label">
             <button class="sector-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="sector-panel" id="tab-ecommerce" data-sector="ecommerce">
               E-commerce &amp; Retail
@@ -143,9 +180,9 @@
 
             <article class="brief-card decision-card demo-decision">
               <p class="micro">Decision waiting</p>
-              <h3 id="decision-heading">Alex, this needs your attention</h3>
+              <h3 id="decision-heading">Decision for Morgan</h3>
               <p id="decision-text">Review promotion, accept the stockout risk, or investigate expedited replenishment / revised supplier terms.</p>
-              <div class="decision-owner"><strong>Decision owner:</strong> <span id="decision-owner">Alex · Commercial Manager</span></div>
+              <div class="decision-owner"><strong>Decision owner:</strong> <span id="decision-owner">Morgan · Commercial Manager</span></div>
               <div class="decision-principle">You decide. OASYS prepares the evidence.</div>
             </article>
           </div>
@@ -178,7 +215,7 @@
                 <div id="workspace-content"></div>
               </div>
             </div>
-            <p class="demo-disclaimer">Demonstration only. This page does not connect to, read from or send anything through email, calendar or external systems.</p>
+            <p class="demo-disclaimer">Fictional example only. Names, messages and numbers are invented. Sample answers are prewritten; this page does not connect to, read from or send anything through your email, calendar or external systems.</p>
           </div>
 
           <div class="source-zone">
@@ -198,20 +235,6 @@
         <h2>The problem is not a lack of data. It is the effort required to assemble a trustworthy operating picture.</h2>
         <p>Managers often begin the day moving between commerce platforms, stock systems, finance reports, spreadsheets, campaign dashboards, messages and internal documents. That assembly work is not the manager's highest-value contribution. Their value is judgement: prioritising, challenging assumptions, coordinating people and making accountable decisions. OASYS reduces the assembly burden so that judgement can be applied sooner, with a clearer evidence trail.</p>
       </div>
-    </section>
-
-    <section id="how" class="shell section">
-      <div class="section-heading">
-        <p class="eyebrow">How OASYS works</p>
-        <h2>Four clear steps from scattered information to a decision-ready brief.</h2>
-      </div>
-      <div class="steps">
-        <article><span class="step-number">1</span><h3>Bring together approved context</h3><p>Start with the role, decision rights, operating rhythm, current evidence and, where useful, the organisation's targets, budget or forecast.</p></article>
-        <article><span class="step-number">2</span><h3>Standardise and check freshness</h3><p>Definitions, dates, ownership, cadence and source confidence are made explicit before interpretation.</p></article>
-        <article><span class="step-number">3</span><h3>Compare plan with reality</h3><p>OASYS surfaces meaningful variance and defined exceptions while preserving the evidence trail.</p></article>
-        <article><span class="step-number">4</span><h3>Human decides</h3><p>The Morning Brief frames attention and evidence. The manager owns the decision.</p></article>
-      </div>
-      <p class="boundary">OASYS does not need to invent a prediction to be useful. It can compare what the organisation said should happen with what is actually happening. If evidence is incomplete, stale or contradictory, the dashboard surfaces that uncertainty rather than inventing an answer. Important information and actions should remain within three interactions of the main dashboard.</p>
     </section>
 
     <section class="band">
@@ -362,6 +385,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261014-9"></script>
+  <script src="script.js?v=20261019-1"></script>
 </body>
 </html>
