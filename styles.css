@@ -1603,3 +1603,24 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
   font-size:.75rem;
 }
 .decision-owner strong{color:#fff}
+
+/* OASYS Organisation — 19 Oct 2026 validation clarity pass */
+.sample-story{padding-top:26px;padding-bottom:58px}
+.sample-story .section-heading{margin-bottom:22px}
+.sample-story .section-heading p:last-child{color:var(--muted);max-width:730px}
+.sample-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sample-story-grid article{padding:22px;border:1px solid #D7E1EA;border-radius:16px;background:#F6F9FC}
+.sample-story-grid article span{color:#267879;font-size:.78rem;font-weight:850;letter-spacing:.025em}
+.sample-story-grid article h3{font-size:1.08rem;margin:12px 0 8px}
+.sample-story-grid article p{color:var(--muted);margin:0}
+.sample-story-next{margin:20px 0 0;font-weight:750}
+.sample-story-next a{color:#155F66;text-underline-offset:3px}
+.demo-guide{margin:0 0 24px;padding:16px 20px;border:2px solid #77C7C6;border-radius:14px;background:#17363E;color:#F2FEFE}
+.demo-guide strong{display:block;color:#A8ECE5;font-size:.75rem;letter-spacing:.12em}
+.demo-guide p{margin:7px 0 0;max-width:960px;color:#EDF8F9;line-height:1.55}
+.demo-guide b{color:#FFF}
+@media (max-width:700px){
+  .sample-story{padding:25px 0 45px}
+  .sample-story-grid{grid-template-columns:1fr}
+  .demo-guide{padding:14px}
+}
