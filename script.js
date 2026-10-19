@@ -1,9 +1,9 @@
 const sectors = {
   ecommerce: {
     tab: "tab-ecommerce",
-    person: "Alex",
+    person: "Morgan",
     role: "Ecommerce / Commercial Manager",
-    decisionOwner: "Alex · Commercial Manager",
+    decisionOwner: "Morgan · Commercial Manager",
     summary: "Revenue is ahead of the comparable day, but margin and stock cover on a fast-selling SKU need attention.",
     plan: {title:"Today's revenue plan", plan:"£15,900", actual:"£16,427", variance:"+3.3%", state:"good", note:"Revenue is ahead of plan, but margin and stock-cover exceptions still require attention."},
     metrics: [
@@ -283,15 +283,15 @@ function renderFiles(item){
 function renderAsk(query="", answerNow=false){
   const item = sectors[currentSector].workspace.ask;
   workspaceContent.innerHTML = `
-    <p class="workspace-eyebrow">Ask OASYS</p>
-    <h4>Find something without opening another system.</h4>
+    <p class="workspace-eyebrow">Sample question · prewritten response</p>
+    <h4>Explore how an evidence-backed answer could look.</h4>
     <form id="ask-demo-form" class="ask-demo-form">
       <label for="ask-demo-input">Ask about the approved evidence</label>
       <div><input id="ask-demo-input" type="text" value="${escapeHtml(query)}" placeholder="Why is this flagged?"><button type="submit">Ask</button></div>
     </form>
     <div class="ask-suggestions">${item.suggestions.map(s => `<button type="button" data-question="${escapeHtml(s)}">${escapeHtml(s)}</button>`).join("")}</div>
     <div id="ask-demo-answer" class="ask-demo-answer" ${answerNow ? "" : "hidden"}>${answerNow ? escapeHtml(item.answer) : ""}</div>
-    <div class="workspace-next">Answers stay grounded in the approved evidence shown in this demonstration.</div>`;
+    <div class="workspace-next">This is an illustrative, prewritten response for the sample role, not a live search or an answer about your systems.</div>`;
   const form=document.getElementById("ask-demo-form");
   const input=document.getElementById("ask-demo-input");
   const answer=document.getElementById("ask-demo-answer");
@@ -338,7 +338,7 @@ function setSector(key, focusPanel=false){
   });
   panel.setAttribute("aria-labelledby",data.tab);
   personName.textContent=data.person;
-  decisionHeading.textContent=data.person+", this needs your attention";
+  decisionHeading.textContent="Decision for "+data.person;
   roleLabel.textContent=data.role;
   summaryText.textContent=data.summary;
   planTitle.textContent=data.plan.title;
