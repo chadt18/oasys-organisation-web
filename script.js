@@ -422,3 +422,18 @@ document.getElementById("demo-home").addEventListener("click",()=>{
 
 setSector("ecommerce");
 setWorkspace("email");
+
+/* Responsive view: keep the mobile overview short and desktop details visible. */
+const mobileDashboard = window.matchMedia("(max-width: 700px)");
+const dashboardGroups = [...document.querySelectorAll(".dashboard-group")];
+function setDashboardLayout(e) {
+  dashboardGroups.forEach(group => {
+    group.open = e.matches ? group.dataset.mobileOpen === "true" : true;
+  });
+}
+setDashboardLayout(mobileDashboard);
+if (typeof mobileDashboard.addEventListener === "function") {
+  mobileDashboard.addEventListener("change", setDashboardLayout);
+} else if (typeof mobileDashboard.addListener === "function") {
+  mobileDashboard.addListener(setDashboardLayout);
+}
