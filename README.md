@@ -97,3 +97,22 @@ The current PR should remain **review-gated** until technical, email-delivery an
 - Colour treatment uses bright cool blue, deep navy and crisp teal, not beige or low-contrast warm neutrals.
 - The approved production audio voice was verified against the CalmStack narration standard: Google Cloud TTS **en-GB-Studio-B**; browser TTS removed, with no recorded/audio asset in this PR.
 - Revised reviewable, self-contained V3 HTML mockup saved separately for user sign-off. It approximates the site, and is not a deployment test.
+
+
+### Final sector fit and differentiation check — 23 October 2026
+This public-sector discovery offering remains a subordinate route of **OASYS Organisation**, not a separate product family/site or a change to the commercial ecommerce Morning Brief ICP.
+
+**Human first** replaces 'Role first': OASYS works alongside skilled staff, keeps professional judgement and accountability with the authorised human, makes source evidence/uncertainty visible, and respects the public organisation's control of authoritative records and an exit route. The three principles on the page are Human first, Evidence in context, and Organisation in control. In-product approved learning is optional and not the hero.
+The illustrative catalogue is five scenarios: council planning, waste, procurement, future high-risk revenues and benefits, plus fictional **NHS non-clinical estates-maintenance** case handover with no patient data or clinical decisions. Do not imply NHS connections, clinical use or procurement approvals.
+
+**Competitive reality as at 23 Oct 2026 (supplier/product claims, not independent comparison trials):**
+- Civica local-government/case management already offers configurable case flows, integrated data, automation, and shorter onboarding: https://www.civica.com/en-gb/sector-pages/local-government/ and https://www.civica.com/en-gb/product-pages/case-management-software/
+- Granicus govService already offers forms, case-management, connected staff and workflow automation: https://granicus.com/uk/product/govservice/
+- Microsoft Power Platform already offers process automation and process insights; benchmark it against an authority's existing licensing/configuration: https://learn.microsoft.com/en-us/power-automate/faqs-copilot-in-process-mining
+- NHS Federated Data Platform already connects systems and supports care coordination/waiting lists/discharge, supplies trust-level data control, and funds deployment/training. This is a particularly strong NHS incumbent: https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/nhs-fdp-explained/ and https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/support-for-nhs-staff/
+
+**Differentiation is a hypothesis**: combine an actual person's tasks, source provenance, rule/uncertainty explanation, bounded decisions, auditable handback, exit and optional approved in-flow guidance into the smallest necessary coordinating interface. Do not claim that any individual element is unique, or that cost/time savings or government compliance have been demonstrated. Compare configuration of the incumbent, a Power Platform option and OASYS total cost before recommending a pilot.
+
+**NHS diligence gate**: start only with non-clinical administrative discovery. For any NHS connection, address controller/legal access, DPIA where required, NHS information governance, DSPT where applicable, interoperability, security and staff involvement. Determine whether DTAC, DCB0129/0160, medical device requirements or clinical-safety review apply to the specific proposed use (not every non-clinical tool triggers identical requirements). No patient-record connections or clinical triage in the static demonstration. Reference https://digital.nhs.uk/services/digital-technology-assessment-criteria-dtac and https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/review-of-digital-clinical-safety-standards-dcb0129-and-dcb0160
+
+**Release status**: PR stays draft and unmerged until enquiry route, privacy/accessible QA, asset/narration gate if sound is to be advertised, and post-merge live URL checks are properly handled. The canonical family domain remains organisation.oasys-cloud.com.
