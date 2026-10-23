@@ -13,6 +13,7 @@
   <meta property="og:url" content="https://organisation.oasys-cloud.com/public-sector/">
   <meta name="theme-color" content="#0f172a">
   <link rel="stylesheet" href="public-sector.css">
+  <script src="audio-overview.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -28,9 +29,9 @@
 <section class="ps-shell ps-hero" aria-labelledby="hero-title">
   <div>
     <p class="ps-eyebrow">OASYS Organisation / Public Sector / Concept development</p>
-    <h1 id="hero-title">Better systems should make public-service work easier to understand.</h1>
-    <p class="ps-lead">OASYS is exploring an evidence-linked workspace that helps public-sector employees work across approved information, handle exceptions and make accountable decisions — without replacing the specialist systems their organisation relies on.</p>
-    <p><strong>Technology works alongside employees. People retain the judgement. Organisations retain control.</strong></p>
+    <h1 id="hero-title">Make public-service work clearer. Help people grow into the job.</h1>
+    <p class="ps-lead">Imagine one role-specific view that brings together the right evidence, the next decision and approved guidance. Less time hunting between systems; more time on the work that needs human judgement.</p>
+    <p><strong>Work alongside existing systems. Keep people in control. Build capability while the job gets done.</strong></p>
     <div class="ps-actions">
       <a class="ps-button" href="/public-sector/enquire/">Discuss a workflow</a>
       <a class="ps-button ps-button-outline" href="/public-sector/how-it-works/">How the concept works</a>
@@ -49,6 +50,33 @@
     </div>
     <p class="ps-mini">Synthetic illustration only. No real records, accounts or connectors.</p>
   </aside>
+</section>
+<section class="ps-shell ps-audio-feature" id="audio-overview" aria-labelledby="audio-heading">
+  <div class="ps-audio-intro">
+    <p class="ps-eyebrow">Start here · Quick introduction</p>
+    <h2 id="audio-heading">Listen: the OASYS idea in about two minutes</h2>
+    <p>A short overview of the operating and learning benefits. Use your browser's voice or read the transcript. Nothing plays automatically.</p>
+  </div>
+  <div class="ps-audio-controls" id="psAudioOverview">
+    <span class="ps-label">Browser-generated read-aloud · Approx. 2 min · Not a recorded narration</span>
+    <div class="ps-actions" aria-label="Audio controls">
+      <button type="button" id="psAudioPlay" class="ps-button" hidden>Listen</button>
+      <button type="button" id="psAudioPause" class="ps-button ps-button-outline" hidden>Pause</button>
+      <button type="button" id="psAudioStop" class="ps-button ps-button-outline" hidden>Stop</button>
+    </div>
+    <p id="psAudioStatus" class="ps-quiet" role="status" aria-live="polite">Read the transcript below, or press Listen if supported by your browser.</p>
+    <details class="ps-transcript">
+      <summary>Read the complete two-minute transcript</summary>
+      <div id="psAudioTranscript" class="ps-transcript-text">
+        Imagine starting your day in a public-service role. The information you need sits in several specialist systems. You know your responsibilities, but finding the latest record, checking policy and working out which exception needs attention can take longer than the decision itself.
+        OASYS Organisation is exploring a simpler approach: one role-specific working view, built around the systems your team already uses. With appropriate permission, it could show what needs attention, where the evidence comes from, what remains uncertain and which person is authorised to decide.
+        That is the practical benefit. Less searching and repeating information, more time to focus on the public service itself. Those gains would need to be tested against your existing tools, rather than assumed.
+        There is another important part: learning. Approved procedures and fictional practice exercises could sit alongside the work, helping new colleagues understand not only what to do, but why. Organisations could also use separate digital-workplace training without buying the operating software.
+        The design keeps your organisation in control. Your existing systems remain authoritative, access is limited by role and purpose, important decisions remain with people, and a sensible exit route is part of the plan.
+        This is an early-stage public-sector concept, not a live council platform. We are looking for service teams with one recurring workflow that deserves a closer look. Tell us where time, clarity or training could improve, and we can explore whether an additional layer would genuinely help.
+      </div>
+    </details>
+  </div>
 </section>
 <section class="ps-shell ps-section" aria-labelledby="audience-title">
   <p class="ps-eyebrow">Who we want to hear from</p>
@@ -72,7 +100,7 @@
     <article class="ps-card"><span class="ps-kicker">03 / Control first</span><h3>Keep decisions accountable.</h3><p>Permission boundaries, human approval, audit and manual fallback are part of the design, not afterthoughts.</p></article>
   </div>
 </section>
-<section class="ps-band"><div class="ps-shell ps-section">
+<details class="ps-explore ps-shell" id="examples"><summary><span><span class="ps-explore-kicker">Illustrative applications</span><strong>Explore four public-service examples</strong><small>Fictional situations in planning, environmental services, procurement and validation.</small></span><span class="ps-expand-label" aria-hidden="true">Explore +</span></summary><div class="ps-explore-body"><section class="ps-band"><div class="ps-shell ps-section">
   <p class="ps-eyebrow">Illustrative applications</p><h2>Start with one job that needs doing better.</h2>
   <div class="ps-grid two">
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario A · Planning administration</span><h3>Consultation submission review</h3><p>Surface incomplete information, potential duplicates and evidence for an officer to inspect. Official planning decisions stay with authorised staff.</p></article>
@@ -81,16 +109,16 @@
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario D · Future / higher sensitivity</span><h3>Revenues &amp; Benefits validation</h3><p>Explore narrowly permitted document-checking support, subject to additional statutory, privacy and operational safeguards.</p></article>
   </div>
   <p class="ps-quiet">These are possible use cases for discovery, not products currently available for purchase or deployment.</p>
-</div></section>
-<section class="ps-shell ps-section">
+</div></section></div></details>
+<details class="ps-explore ps-shell" id="learning"><summary><span><span class="ps-explore-kicker">Working and learning</span><strong>See how work and learning could fit together</strong><small>Staff guidance, synthetic practice and the option of separate digital-readiness training.</small></span><span class="ps-expand-label" aria-hidden="true">Explore +</span></summary><div class="ps-explore-body"><section class="ps-shell ps-section">
   <p class="ps-eyebrow">Working and learning</p><h2>Make the work clearer. Help the knowledge endure.</h2>
   <p class="ps-sectionlead">Role guidance could sit alongside the work, helping employees understand the purpose behind approved procedures. Synthetic exercises could support supervised practice. The same digital-workplace skills could later form a separate training offer without requiring anyone to use the operational software.</p>
   <div class="ps-grid two">
     <article class="ps-card"><h3>Optional learning beside work</h3><p>Approved procedures, explanations and fictional examples aligned to the role. Training never silently changes an employee's permissions.</p></article>
     <article class="ps-card"><h3>Independent digital-readiness training</h3><p>A possible standalone programme covering trustworthy data, digital workflows, dashboards, privacy and sensible use of AI.</p></article>
   </div>
-</section>
-<section class="ps-band"><div class="ps-shell ps-section">
+</section></div></details>
+<details class="ps-explore ps-shell" id="principles"><summary><span><span class="ps-explore-kicker">Trust and service continuity</span><strong>Explore privacy, human control and exit principles</strong><small>The organisation stays accountable and retains control of its own services.</small></span><span class="ps-expand-label" aria-hidden="true">Explore +</span></summary><div class="ps-explore-body"><section class="ps-band"><div class="ps-shell ps-section">
   <p class="ps-eyebrow">Trust and service continuity</p><h2>Designed to work with existing authority — not override it.</h2>
   <div class="ps-grid">
     <article class="ps-card"><h3>Minimum necessary data</h3><p>Explore task-specific access, client separation and controlled pseudonymisation. Pseudonymised records remain subject to data-protection law.</p></article>
@@ -98,7 +126,7 @@
     <article class="ps-card"><h3>Customer control and exit</h3><p>The source system remains authoritative. Organisations should be able to understand the workflow, maintain service continuity and leave OASYS.</p></article>
   </div>
   <div class="ps-callout"><p><strong>Important:</strong> the concept is being designed with UK public-sector standards and ICO guidance in mind. No specific council integration, official approval, certification or production compliance claim is being made.</p></div>
-</div></section>
+</div></section></div></details>
 <section class="ps-corner"><div class="ps-shell">
   <p class="ps-eyebrow" style="color:#b4d8e8">Public-sector discovery</p>
   <h2>Which workflow takes more effort than it should?</h2>
