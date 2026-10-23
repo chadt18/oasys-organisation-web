@@ -8,17 +8,17 @@ No generic browser TTS, no autoplay, no false audio duration.
 
 ## Narration script
 
-Public organisations, including councils and NHS teams, already have specialist software. But the work between systems can still take time: checking one record against another, following up exceptions, finding the current rule and knowing who has authority to act.
+Think about a council officer starting work. They're good at their job, but the information they need is spread across different systems. Before they can act, they may have to check several screens, find the latest rule and work out which record is right.
 
-OASYS Organisation is exploring a human-first operating layer built around a professional's actual role and expertise. Rather than replacing existing systems or creating another full database, it could bring approved, minimum-necessary information into one work view.
+OASYS is an idea for making that part of the job easier. It would sit alongside the software a council or other public organisation already uses. It could bring together the information a member of staff is allowed to see, show what needs checking and point back to where each detail came from.
 
-Imagine a council planning officer opening their day. Instead of searching across different screens, they see which submissions need checking, why each one has been flagged, when the source information was updated and where to find the original evidence. The officer brings their experience to the evidence, reviews the information and decides what happens next.
+Imagine a planning team with fifty consultation responses. One is missing information. Another might be a duplicate. Instead of searching through everything, the officer could see those two items, open the original responses and decide what to do. OASYS wouldn't make the planning decision.
 
-This is not simply another dashboard. The proposed difference is human expertise supported by task-specific evidence, transparent decision ownership, tightly bounded permissions and a clear handback to the systems that hold the official record. If existing software does the job well, there may be no reason to add OASYS.
+That's the important difference we're exploring. Rather than another dashboard full of numbers, it would help people understand what needs their attention, why it matters and what they are allowed to do next. The organisation would still own its records and stay in charge.
 
-Approved guidance and realistic practice could also sit alongside the work, helping organisations preserve knowledge and develop employees without replacing supervisors or human collaboration. Learning is an optional capability, not a requirement for the operating software.
+Clear instructions and practice examples could sit alongside the work too, if a team found them useful. But training isn't the main product.
 
-The concept is at discovery stage, including NHS use only as a future, non-clinical discovery possibility. We're looking for public-service teams with one recurring workflow that could be simpler, clearer or more reliable. The first step is to understand the problem and check whether this approach genuinely adds value.
+We haven't built a live council or NHS service. We're looking for teams who can tell us about one part of the job that takes more effort than it should. Together, we can see whether OASYS would genuinely help.
 
 ## Production gate
 1. Editorial approval of the text, including claim accuracy against the blueprint.
