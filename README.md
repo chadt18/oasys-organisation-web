@@ -45,3 +45,26 @@ The current CTA uses a `mailto:` route to the established OASYS business email s
 ## Validation freeze
 
 Once deployed, do not add new pages, sectors, integrations or product capabilities without external validation evidence.
+
+## Public Sector concept route (separate from active commercial ICP)
+
+This repository also includes three **concept/discovery** pages:
+
+- `/public-sector/` — role-specific public-service operating concept.
+- `/public-sector/how-it-works/` — fictional planning consultation workflow, accountability, privacy and optional learning.
+- `/public-sector/enquire/` — early-stage enquiry instructions and a browser/email-application form handoff.
+
+The public-sector pages **do not represent a deployed council SaaS product**, approved procurement status, working council integrations or an interactive demo. The root page's current ecommerce validation offer, price and primary CTA are unchanged. Only a footer discovery link is proposed.
+
+### Launch acceptance / deployment checklist
+
+1. Check all three pages and the root footer link on desktop and mobile; keyboard and screen-reader acceptance; contrast and reflow.
+2. Verify the declared domain resolves correctly, GitHub Pages is configured and HTTPS is valid. These paths should not be advertised until an actual 200 response is observed after merge.
+3. Confirm the existing business mailbox receives the exact subject `OASYS Public Sector enquiry` and replies can be sent. A dedicated alias such as `publicsector@` must be provisioned and verified in the mail administrator separately; do not publish an invented address.
+4. The current enquiry form is intentionally a user-controlled `mailto:` handoff and may not work in all browsers. The fallback direct email link remains visible. A true submit-and-confirm enquiry form requires a verified recipient, a privacy notice, safe data-handling and spam measures, and an explicitly approved form delivery processor or endpoint.
+5. Set up Gmail routing or an equivalent rule for the public-sector subject and an accountable monitored enquiry queue. A label without an applied filter is not automatic routing.
+6. Review all page claims, disclaimers, privacy boundaries, accessibility, meta descriptions, canonicals, sitemap and `robots.txt`. No real citizen data or credentials in the first contact.
+7. Merge only after review. Confirm live paths and that current ecommerce interaction and primary CTA still work. Submit sitemap through the domain's existing webmaster/Search Console route when available and check indexing; `index,follow` does not guarantee visibility.
+8. Monitor genuine enquiries and conversion quality before investing in a production council demo, service integrations or third-party tooling.
+
+The current PR should remain **review-gated** until technical, email-delivery and page acceptance checks are complete. A GitHub commit or PR is not a live publication.
