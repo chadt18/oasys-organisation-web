@@ -1,49 +1,49 @@
 (() => {
-  const email = "chad@oasys-cloud.com";
+  "use strict";
+  const form = document.getElementById("psEnquiryForm");
+  const prepare = document.getElementById("psEnquiryPrepare");
+  const copy = document.getElementById("psEnquiryCopy");
+  const status = document.getElementById("psEnquiryStatus");
+  const manual = document.getElementById("psEnquiryManual");
+  const manualText = document.getElementById("psEnquiryManualText");
+  if (!form || !prepare || !copy || !status || !manual || !manualText) return;
+  const address = "chad@oasys-cloud.com";
   const subject = "[Public Sector] OASYS discovery enquiry";
-  const template = [
-    "Organisation:",
-    "Department / team:",
-    "Your name and role:",
-    "Reply email:",
-    "",
-    "Which existing systems do you use?",
-    "",
-    "What recurring workflow would you improve?",
-    "",
-    "Please do not include personal case records or confidential information."
-  ].join("\n");
-  const status = document.getElementById("copyStatus");
-  const fallback = document.getElementById("copyFallback");
-  const buttons = document.querySelectorAll("[data-copy]");
-  function notify(message) {
-    if (status) status.textContent = message;
+  prepare.hidden = false;
+  copy.hidden = false;
+  function get(id) { return document.getElementById(id).value.trim(); }
+  function message() {
+    return [
+      "OASYS Public Sector discovery enquiry", "",
+      "Name: " + get("psName"), "Work email: " + get("psWorkEmail"),
+      "Organisation: " + get("psOrganisation"),
+      "Department or role: " + (get("psDepartment") || "Not specified"), "",
+      "Workflow to improve:", get("psChallenge"), "",
+      "Please do not include sensitive records or passwords."
+    ].join("\n");
   }
-  async function copyText(value) {
-    if (navigator.clipboard && window.isSecureContext) {
+  function check() { return form.reportValidity(); }
+  function showManual(value) {
+    manual.hidden = false; manualText.value = "To: " + address + "\nSubject: " + subject + "\n\n" + value;
+    manualText.focus(); manualText.select();
+  }
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!check()) return;
+    const draft = "mailto:" + address + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message());
+    status.textContent = "Opening your email application. Review the draft and press Send there. If it does not open, use Copy enquiry details or the direct-email alternative.";
+    window.location.href = draft;
+  });
+  copy.addEventListener("click", async () => {
+    if (!check()) return;
+    const value = "To: " + address + "\nSubject: " + subject + "\n\n" + message();
+    try {
+      if (!navigator.clipboard || !window.isSecureContext) throw new Error("No clipboard support");
       await navigator.clipboard.writeText(value);
-      return;
+      status.textContent = "Enquiry details copied. Paste them into your own email application and press Send.";
+    } catch {
+      showManual(message());
+      status.textContent = "Select and copy the highlighted enquiry details, then paste them into your email application.";
     }
-    throw new Error("Clipboard unavailable");
-  }
-  buttons.forEach((button) => {
-    button.hidden = false;
-    button.addEventListener("click", async () => {
-      const value = button.dataset.copy === "email" ? email : ("To: " + email + "\nSubject: " + subject + "\n\n" + template);
-      try {
-        await copyText(value);
-        notify(button.dataset.copy === "email" ? "Email address copied." : "Email address, subject and message template copied.");
-      } catch {
-        if (fallback) {
-          const container = document.getElementById("manualCopy");
-          if (container) container.hidden = false;
-          fallback.hidden = false;
-          fallback.value = value;
-          fallback.focus();
-          fallback.select();
-        }
-        notify("Automatic copying is unavailable. Select and copy the highlighted text.");
-      }
-    });
   });
 })();
