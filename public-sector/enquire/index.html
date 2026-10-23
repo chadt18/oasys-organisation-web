@@ -10,6 +10,7 @@
   <meta property="og:description" content="Explore whether a role-specific, evidence-linked working view could address a real workflow challenge.">
   <meta property="og:url" content="https://organisation.oasys-cloud.com/public-sector/enquire/">
   <meta name="theme-color" content="#0f172a"><link rel="stylesheet" href="../public-sector.css">
+  <script src="copy-enquiry.js" defer></script>
   
 </head>
 <body>
@@ -29,40 +30,41 @@
   <div class="ps-grid two ps-enquiry-layout">
     <div>
       <div class="ps-panel">
-        <h2>Prepare an email enquiry</h2>
-        <p class="ps-quiet">This basic form uses your email application to prepare a message; it does not submit to a website server. <strong>You must review the email and press Send yourself.</strong> Some browsers do not support email forms; the direct email link alongside is the reliable alternative.</p>
-        <form class="ps-form" id="publicSectorEnquiryForm" action="mailto:chad@oasys-cloud.com?subject=OASYS%20Public%20Sector%20enquiry" method="post" enctype="text/plain">
-          <div class="ps-fields">
-            <div class="ps-field"><label for="contactName">Your name <span aria-hidden="true">*</span></label><input id="contactName" name="contactName" autocomplete="name" required maxlength="120"></div>
-            <div class="ps-field"><label for="workEmail">Work email <span aria-hidden="true">*</span></label><input id="workEmail" name="workEmail" type="email" autocomplete="email" required maxlength="180"></div>
-            <div class="ps-field"><label for="organisation">Organisation <span aria-hidden="true">*</span></label><input id="organisation" name="organisation" autocomplete="organization" required maxlength="160"></div>
-            <div class="ps-field"><label for="role">Your role</label><input id="role" name="role" maxlength="140" autocomplete="organization-title"></div>
+        <h2>Start a public-sector discovery enquiry</h2>
+        <p class="ps-quiet">Tell us about one recurring problem in your service. For this early discovery phase, enquiries go through your own email application; this page does not send or store a form submission.</p>
+        <div class="ps-form">
+          <div class="ps-field">
+            <label for="psContactAddress">Email our team</label>
+            <p id="psContactAddress" class="ps-contact-display"><a class="ps-visible-email" href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry">chad@oasys-cloud.com</a></p>
+            <button type="button" class="ps-button ps-button-outline" data-copy="email" hidden>Copy email address</button>
           </div>
           <div class="ps-field">
-            <label for="area">Area of interest</label>
-            <select name="area" id="area">
-              <option value="General discovery">General discovery</option>
-              <option value="Planning / consultations">Planning / consultations</option>
-              <option value="Environmental services">Environmental services</option>
-              <option value="Procurement administration">Procurement administration</option>
-              <option value="Service / correspondence">Service / correspondence</option>
-              <option value="Training and capability">Training and capability</option>
-              <option value="Another workflow">Another workflow</option>
-            </select>
+            <p class="ps-field-heading">Suggested subject</p>
+            <p class="ps-template-subject">[Public Sector] OASYS discovery enquiry</p>
           </div>
-          <div class="ps-field"><label for="workflow">What is the recurring workflow problem? <span aria-hidden="true">*</span></label><textarea id="workflow" name="workflow" required maxlength="1300" placeholder="Describe the steps involved, current systems and the frustration — without including any identifiable case or citizen information."></textarea><small>A brief, non-sensitive description is all we need.</small></div>
-          <div class="ps-check"><input type="checkbox" id="safeContent" required><label for="safeContent">I confirm that this enquiry does not contain personal case records, service-user details, passwords, documents or other confidential operational information.</label></div>
-          <div class="ps-form-note"><p>This form prepares an email draft; it does not store or submit data to a website server. Your email provider may retain the message when you send it. Please do not include sensitive information. The enquiry will be reviewed as part of early product discovery.</p></div>
-          <button class="ps-button" type="submit">Open email draft</button>
-          <p class="ps-quiet">If nothing happens, please use the direct email link shown on this page.</p>
-        </form>
+          <div class="ps-form-note">
+            <p><strong>What to include:</strong> your organisation and department, your role, which existing systems you use, and the recurring workflow problem. Please do not include resident case information, passwords or confidential documents.</p>
+          </div>
+          <div class="ps-actions">
+            <a class="ps-button" href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry&amp;body=Organisation%3A%0D%0ADepartment%20%2F%20team%3A%0D%0AYour%20name%20and%20role%3A%0D%0AReply%20email%3A%0D%0A%0D%0AWhich%20existing%20systems%20do%20you%20use%3F%0D%0A%0D%0AWhat%20recurring%20workflow%20would%20you%20improve%3F%0D%0A%0D%0APlease%20do%20not%20include%20personal%20case%20records%20or%20confidential%20information.">Open pre-filled email</a>
+            <button class="ps-button ps-button-outline" type="button" data-copy="template" hidden>Copy email + enquiry template</button>
+          </div>
+          <div class="ps-form-note">
+            <p><strong>Before sending:</strong> an email application must be configured for the first button. If it does not open, copy the address or template and paste into webmail. Review your message and press Send there; this page cannot confirm delivery.</p>
+          </div>
+          <p id="copyStatus" class="ps-quiet" role="status" aria-live="polite"></p>
+          <div class="ps-field" id="manualCopy">
+            <label for="copyFallback">Copy manually if needed</label>
+            <textarea id="copyFallback" rows="6" readonly hidden aria-describedby="copyStatus"></textarea>
+          </div>
+        </div>
       </div>
     </div>
     <aside>
       <div class="ps-card">
         <span class="ps-kicker">Prefer email directly?</span>
         <h3>Write to the OASYS business inbox.</h3>
-        <p>Send a short description to <a class="ps-visible-email" href="mailto:chad@oasys-cloud.com?subject=OASYS%20Public%20Sector%20enquiry">chad@oasys-cloud.com</a> with the subject <strong>OASYS Public Sector enquiry</strong>.</p>
+        <p>Use <a class="ps-visible-email" href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry">chad@oasys-cloud.com</a>, with <strong>[Public Sector] OASYS discovery enquiry</strong> in the subject. That makes the enquiry identifiable for triage.</p>
         <p style="margin-top:16px">A dedicated project address and a true hosted form are planned only after delivery, privacy notice and spam protections have been verified.</p>
       </div>
       <div class="ps-card" style="margin-top:14px">
