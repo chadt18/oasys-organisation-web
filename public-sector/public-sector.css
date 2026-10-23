@@ -7,3 +7,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 .ps-grid.ps-enquiry-layout{grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr)}
 @media(max-width:700px){.ps-grid.ps-enquiry-layout{grid-template-columns:1fr}}
+
+/* Minimum practical target sizes, clear focus and copy controls for public-sector discovery. */
+[hidden]{display:none!important}
+.ps-button,.ps-nav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.ps-nav a{padding:8px 2px}
+.ps-nav a.ps-nav-cta{padding:9px 13px}
+.ps-contact-display{margin:3px 0 10px;font-size:1.1rem;overflow-wrap:anywhere}
+.ps-template-subject{margin:0;color:var(--ink);font-weight:700;overflow-wrap:anywhere}
+.ps-field-heading{font-weight:750;font-size:.9rem;margin:0 0 6px}
+.ps-field textarea[readonly]{min-height:110px}
+.ps-faq summary{min-height:44px;display:list-item;align-content:center}
+@media(max-width:600px){.ps-nav{gap:10px}.ps-actions .ps-button{width:100%;text-align:center}}
