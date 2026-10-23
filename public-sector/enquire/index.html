@@ -22,51 +22,56 @@
 <main id="main">
 <section class="ps-shell ps-pageintro">
   <p class="ps-eyebrow">OASYS Organisation / Public Sector / Design-partner discovery</p>
-  <h1>What's one workflow you'd like to improve?</h1>
-  <p class="ps-lead">Tell us about the role, the systems you use and the biggest source of friction. A short description is enough to start.</p>
+  <h1>Tell us about the work you want to improve.</h1>
+  <p class="ps-lead">No lengthy proposal needed. Tell us where work gets slowed down, which systems are involved and what would make the job easier.</p>
   <p class="ps-quiet">We do not need citizen case records, confidential documents or credentials for a discovery enquiry. Please do not send them. An operational public-sector platform is not currently being offered.</p>
 </section>
-<section class="ps-shell ps-section" aria-labelledby="enquiry-heading">
+<section class="ps-shell ps-section ps-enquiry-section" aria-labelledby="enquiry-heading">
   <div class="ps-enquiry-new">
     <div class="ps-panel ps-enquiry-primary">
-      <p class="ps-eyebrow">A quick first step</p>
-      <h2 id="enquiry-heading">Tell us the problem. We'll explore the possibilities.</h2>
-      <p class="ps-quiet">Only five short fields. There is no obligation, sales account or live-data upload.</p>
+      <h2 id="enquiry-heading">Public-sector enquiry</h2>
+      <p class="ps-quiet">A few details are enough to begin. No account or documents required.</p>
+      <div class="ps-guidance">
+        <strong>Helpful things to include</strong>
+        <ul>
+          <li><strong>The task:</strong> what does your team do regularly?</li>
+          <li><strong>The systems:</strong> where does the information currently sit?</li>
+          <li><strong>The difficulty:</strong> what takes too long, gets repeated or is hard to explain?</li>
+        </ul>
+      </div>
       <form id="psEnquiryForm" class="ps-form" novalidate>
         <div class="ps-fields">
           <div class="ps-field"><label for="psName">Your name *</label><input id="psName" name="name" autocomplete="name" maxlength="100" required></div>
           <div class="ps-field"><label for="psWorkEmail">Work email *</label><input id="psWorkEmail" name="email" type="email" autocomplete="email" maxlength="180" required></div>
           <div class="ps-field"><label for="psOrganisation">Organisation *</label><input id="psOrganisation" name="organisation" autocomplete="organization" maxlength="140" required></div>
-          <div class="ps-field"><label for="psDepartment">Department or role</label><input id="psDepartment" name="department" autocomplete="organization-title" maxlength="140" placeholder="e.g. Environmental services"></div>
+          <div class="ps-field"><label for="psDepartment">Team or role (optional)</label><input id="psDepartment" name="department" autocomplete="organization-title" maxlength="140" placeholder="e.g. Planning administration"></div>
         </div>
-        <div class="ps-field"><label for="psChallenge">What would you like to make easier? *</label><textarea id="psChallenge" name="challenge" maxlength="1000" rows="5" required placeholder="Describe one repeat task, hand-off or training challenge. What software do you currently use?"></textarea><small>Please do not include resident details, case records, passwords or confidential documents.</small></div>
-        <div class="ps-form-note"><p><strong>How this draft works:</strong> this first version prepares an email in your own email application. <strong>It does not send a website form or confirm delivery.</strong> You must review the message and press Send in your email app. A direct-submit form is planned before outreach.</p></div>
+        <div class="ps-field"><label for="psChallenge">What would you like to make easier? *</label><textarea id="psChallenge" name="challenge" maxlength="1000" rows="5" required placeholder="For example: our team checks the same case details across three tools, and new starters find the hand-offs hard to follow."></textarea><small>One simple example is plenty. Please do not send resident details, case records, passwords or confidential information.</small></div>
         <div class="ps-actions">
           <button id="psEnquiryPrepare" class="ps-button" type="submit" hidden>Prepare enquiry email</button>
-          <button id="psEnquiryCopy" class="ps-button ps-button-outline" type="button" hidden>Copy enquiry details</button>
+          <button id="psEnquiryCopy" class="ps-button ps-button-outline" type="button" hidden>Copy details</button>
         </div>
-        <p class="ps-quiet" id="psEnquiryStatus" role="status" aria-live="polite">If your browser cannot open an email app, use the direct email alternative alongside this form.</p>
-        <div id="psEnquiryManual" class="ps-field" hidden><label for="psEnquiryManualText">Copy these details into your email service</label><textarea id="psEnquiryManualText" readonly rows="7"></textarea></div>
+        <p class="ps-quiet" id="psEnquiryStatus" role="status" aria-live="polite">This draft prepares an email in your email application. It does not send it automatically. Check the draft and press Send there.</p>
+        <div id="psEnquiryManual" class="ps-field" hidden><label for="psEnquiryManualText">Copy into your email service</label><textarea id="psEnquiryManualText" readonly rows="7"></textarea></div>
       </form>
+      <details class="ps-contact-alternative">
+        <summary>Can't use the form? Email us instead</summary>
+        <p>Send a short email to <a href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry">chad@oasys-cloud.com</a> and describe the role and workflow. The current address is a fallback while the dedicated OASYS Organisation inbox is being configured.</p>
+      </details>
     </div>
     <aside class="ps-enquiry-aside">
-      <div class="ps-card">
-        <span class="ps-kicker">What happens next?</span>
-        <h3>One conversation. No commitment.</h3>
-        <p>We review your description, compare the problem with what your current systems already provide, and may arrange a short discovery conversation. An optional fictional walkthrough can follow later.</p>
+      <div class="ps-card ps-next-box">
+        <span class="ps-kicker">After you get in touch</span>
+        <h3>We'll start with your real-world challenge.</h3>
+        <p>We'll read what you've shared, see what your existing software already covers, and, where useful, have a conversation about what could work better. No sprawling forms. No promise that another system is always the answer.</p>
       </div>
-      <details class="ps-contact-alternative">
-        <summary>Prefer to email us directly?</summary>
-        <p>Use the existing OASYS business inbox: <a href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry">chad@oasys-cloud.com</a>. Suggested subject: <strong>[Public Sector] OASYS discovery enquiry</strong>.</p>
-        <p class="ps-quiet">A dedicated Organisation address is planned but has not yet been configured.</p>
-      </details>
-      <p class="ps-quiet ps-contact-privacy">Contact details provided in an email are used to review and respond to the enquiry. Email handling is separate from the website. An accurate published enquiry privacy notice is required before launch.</p>
+      <p class="ps-quiet ps-contact-privacy">We only need professional contact details and a non-sensitive description to respond. Before public launch the enquiry route also requires an accurate privacy notice and verified delivery.</p>
     </aside>
   </div>
 </section>
 <section class="ps-corner"><div class="ps-shell">
-  <h2>Prefer to understand the idea first?</h2>
-  <p>Read the process walkthrough, including the limits of the current concept and its human-control design.</p>
+  <h2>Want to see the idea in context?</h2>
+  <p>See how a fictional planning team could review exceptions with the source evidence and human decision still intact.</p>
   <div class="ps-actions"><a class="ps-button" href="/public-sector/how-it-works/">How it could work</a><a class="ps-button ps-button-outline" href="/public-sector/">Overview</a></div>
 </div></section>
 </main>
