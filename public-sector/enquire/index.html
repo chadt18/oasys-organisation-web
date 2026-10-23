@@ -10,7 +10,7 @@
   <meta property="og:description" content="Explore whether a role-specific, evidence-linked working view could address a real workflow challenge.">
   <meta property="og:url" content="https://organisation.oasys-cloud.com/public-sector/enquire/">
   <meta name="theme-color" content="#0f172a"><link rel="stylesheet" href="../public-sector.css">
-  <script src="../enquiry.js" defer></script>
+  
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,8 +30,8 @@
     <div>
       <div class="ps-panel">
         <h2>Prepare an email enquiry</h2>
-        <p class="ps-quiet">Complete the short form to prepare an email in your own email application. <strong>Nothing is submitted to OASYS by this webpage.</strong> Check the draft and press Send in your email application to deliver it.</p>
-        <form class="ps-form" id="publicSectorEnquiryForm" action="mailto:chad@oasys-cloud.com" method="get">
+        <p class="ps-quiet">This basic form uses your email application to prepare a message; it does not submit to a website server. <strong>You must review the email and press Send yourself.</strong> Some browsers do not support email forms; the direct email link alongside is the reliable alternative.</p>
+        <form class="ps-form" id="publicSectorEnquiryForm" action="mailto:chad@oasys-cloud.com?subject=OASYS%20Public%20Sector%20enquiry" method="post" enctype="text/plain">
           <div class="ps-fields">
             <div class="ps-field"><label for="contactName">Your name <span aria-hidden="true">*</span></label><input id="contactName" name="contactName" autocomplete="name" required maxlength="120"></div>
             <div class="ps-field"><label for="workEmail">Work email <span aria-hidden="true">*</span></label><input id="workEmail" name="workEmail" type="email" autocomplete="email" required maxlength="180"></div>
@@ -54,7 +54,7 @@
           <div class="ps-check"><input type="checkbox" id="safeContent" required><label for="safeContent">I confirm that this enquiry does not contain personal case records, service-user details, passwords, documents or other confidential operational information.</label></div>
           <div class="ps-form-note"><p>This form prepares an email draft; it does not store or submit data to a website server. Your email provider may retain the message when you send it. Please do not include sensitive information. The enquiry will be reviewed as part of early product discovery.</p></div>
           <button class="ps-button" type="submit">Open email draft</button>
-          <p class="ps-quiet" id="emailAssist" role="status" aria-live="polite"></p>
+          <p class="ps-quiet">If nothing happens, please use the direct email link shown on this page.</p>
         </form>
       </div>
     </div>
