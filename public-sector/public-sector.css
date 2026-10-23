@@ -92,3 +92,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .ps-button-outline:hover{background:#e6f6fd}
 @media(max-width:800px){.ps-audio-pending{grid-template-columns:1fr}}
 @media(max-width:600px){.ps-hero{padding-block:28px 18px}.ps-audio-feature{padding:18px}.ps-explore>summary{background:#eff9ff}.ps-case-preview{margin-top:6px}}
+
+/* Five fictional workflows: last NHS card spans the second row without implying a deployed offering. */
+.ps-explore .ps-grid.two>.ps-card:last-child:nth-child(odd){grid-column:1/-1}
+@media(max-width:600px){.ps-explore .ps-grid.two>.ps-card:last-child:nth-child(odd){grid-column:auto}}
