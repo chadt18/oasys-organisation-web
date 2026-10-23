@@ -27,6 +27,7 @@
     throw new Error("Clipboard unavailable");
   }
   buttons.forEach((button) => {
+    button.hidden = false;
     button.addEventListener("click", async () => {
       const value = button.dataset.copy === "email" ? email : ("To: " + email + "\nSubject: " + subject + "\n\n" + template);
       try {
@@ -34,6 +35,8 @@
         notify(button.dataset.copy === "email" ? "Email address copied." : "Email address, subject and message template copied.");
       } catch {
         if (fallback) {
+          const container = document.getElementById("manualCopy");
+          if (container) container.hidden = false;
           fallback.hidden = false;
           fallback.value = value;
           fallback.focus();
