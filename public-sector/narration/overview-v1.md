@@ -1,5 +1,5 @@
 # OASYS Organisation — Public Sector Overview Narration v1 (SOURCE ONLY)
-Source: OASYS Public Sector Master Product & Delivery Blueprint v0.2, 23 October 2026
+Source: OASYS Public Sector Master Product & Delivery Blueprint v0.2 (human-first NHS discovery update, 23 October 2026)
 Voice: Google Cloud Text-to-Speech en-GB-Studio-B (approved Studio B production voice)
 Status: editorial draft, NOT synthesised, QC-approved, uploaded, playable or published
 Public surface: organisation.oasys-cloud.com/public-sector/
@@ -8,17 +8,17 @@ No generic browser TTS, no autoplay, no false audio duration.
 
 ## Narration script
 
-Councils already have specialist software. But the work between those systems can still take time: checking one record against another, following up exceptions, finding the current rule and working out who has authority to act.
+Public organisations, including councils and NHS teams, already have specialist software. But the work between systems can still take time: checking one record against another, following up exceptions, finding the current rule and knowing who has authority to act.
 
-OASYS Organisation is exploring an operating layer built around a person's actual role. Rather than replacing the council's systems or creating another full database, it could draw approved, minimum-necessary information into one work view.
+OASYS Organisation is exploring a human-first operating layer built around a professional's actual role and expertise. Rather than replacing existing systems or creating another full database, it could bring approved, minimum-necessary information into one work view.
 
-Imagine a planning officer opening their day. Instead of searching across different screens, they see which submissions need checking, why each one has been flagged, when the source information was updated and where to find the original evidence. The officer reviews the information and decides what happens next.
+Imagine a council planning officer opening their day. Instead of searching across different screens, they see which submissions need checking, why each one has been flagged, when the source information was updated and where to find the original evidence. The officer brings their experience to the evidence, reviews the information and decides what happens next.
 
-This is not simply another dashboard. The proposed difference is the combination of task-specific evidence, transparent decision ownership, tightly bounded permissions and a clear handback to the systems that already hold the official record. If existing software does the job well, there may be no reason to add OASYS.
+This is not simply another dashboard. The proposed difference is human expertise supported by task-specific evidence, transparent decision ownership, tightly bounded permissions and a clear handback to the systems that hold the official record. If existing software does the job well, there may be no reason to add OASYS.
 
 Approved guidance and realistic practice could also sit alongside the work, helping organisations preserve knowledge and develop employees without replacing supervisors or human collaboration. Learning is an optional capability, not a requirement for the operating software.
 
-The concept is at discovery stage. We're looking for public-service teams with one recurring workflow that could be simpler, clearer or more reliable. The first step is to understand the problem and check whether this approach genuinely adds value.
+The concept is at discovery stage, including NHS use only as a future, non-clinical discovery possibility. We're looking for public-service teams with one recurring workflow that could be simpler, clearer or more reliable. The first step is to understand the problem and check whether this approach genuinely adds value.
 
 ## Production gate
 1. Editorial approval of the text, including claim accuracy against the blueprint.
