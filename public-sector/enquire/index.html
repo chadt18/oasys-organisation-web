@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Public Sector Enquiry | OASYS Organisation</title>
+  <meta name="description" content="Talk to OASYS Organisation about one public-sector workflow. Early-stage concept and design-partner discovery: no citizen records or sensitive information required.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://organisation.oasys-cloud.com/public-sector/enquire/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Discuss a public-sector workflow | OASYS Organisation">
+  <meta property="og:description" content="Explore whether a role-specific, evidence-linked working view could address a real workflow challenge.">
+  <meta property="og:url" content="https://organisation.oasys-cloud.com/public-sector/enquire/">
+  <meta name="theme-color" content="#0f172a"><link rel="stylesheet" href="../public-sector.css">
+  <script src="copy-enquiry.js" defer></script>
+  
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="ps-header"><div class="ps-shell ps-topbar">
+  <a class="ps-logo" href="/" aria-label="OASYS Organisation home">OASYS <span>Organisation</span></a>
+  <nav class="ps-nav" aria-label="Public sector"><a href="/public-sector/">Public Sector</a><a href="/public-sector/how-it-works/">How it works</a><a href="/public-sector/enquire/" aria-current="page" class="ps-nav-cta">Discuss a workflow</a></nav>
+</div></header>
+<main id="main">
+<section class="ps-shell ps-pageintro">
+  <p class="ps-eyebrow">OASYS Organisation / Public Sector / Enquiries</p>
+  <h1>Tell us what's making the job harder.</h1>
+  <p class="ps-lead">A few lines are enough. Tell us what your team does, where things get stuck and what you'd like to work better.</p>
+  <p class="ps-quiet">Please don't send anyone's private records, passwords or confidential documents. We're here to discuss an idea, not to take over a live service.</p>
+</section>
+<section class="ps-shell ps-section ps-enquiry-section" aria-labelledby="enquiry-heading">
+  <div class="ps-enquiry-new">
+    <div class="ps-panel ps-enquiry-primary">
+      <h2 id="enquiry-heading">Public-sector enquiry</h2>
+      <p class="ps-quiet">Just your contact details and a short description. No account or documents needed.</p>
+      <div class="ps-guidance">
+        <strong>Not sure what to write?</strong>
+        <ul>
+          <li><strong>The job:</strong> what does your team do each day?</li>
+          <li><strong>The software:</strong> what systems do you use now?</li>
+          <li><strong>The problem:</strong> what takes too long or keeps getting in the way?</li>
+        </ul>
+      </div>
+      <form id="psEnquiryForm" class="ps-form" novalidate>
+        <div class="ps-fields">
+          <div class="ps-field"><label for="psName">Your name *</label><input id="psName" name="name" autocomplete="name" maxlength="100" required></div>
+          <div class="ps-field"><label for="psWorkEmail">Work email *</label><input id="psWorkEmail" name="email" type="email" autocomplete="email" maxlength="180" required></div>
+          <div class="ps-field"><label for="psOrganisation">Organisation *</label><input id="psOrganisation" name="organisation" autocomplete="organization" maxlength="140" required></div>
+          <div class="ps-field"><label for="psDepartment">Team or role (optional)</label><input id="psDepartment" name="department" autocomplete="organization-title" maxlength="140" placeholder="e.g. Planning administration"></div>
+        </div>
+        <div class="ps-field"><label for="psChallenge">What would make your team's work easier? *</label><textarea id="psChallenge" name="challenge" maxlength="1000" rows="5" required placeholder="For example: our team checks the same case details across three tools, and new starters find the hand-offs hard to follow."></textarea><small>One example is plenty. Please don't include private case details or passwords.</small></div>
+        <div class="ps-actions">
+          <button id="psEnquiryPrepare" class="ps-button" type="submit" hidden>Prepare enquiry email</button>
+          <button id="psEnquiryCopy" class="ps-button ps-button-outline" type="button" hidden>Copy details</button>
+        </div>
+        <p class="ps-quiet" id="psEnquiryStatus" role="status" aria-live="polite">This opens a ready-to-send email in your own email app. Please check it and press Send. The website can't send it for you.</p>
+        <div id="psEnquiryManual" class="ps-field" hidden><label for="psEnquiryManualText">Copy into your email service</label><textarea id="psEnquiryManualText" readonly rows="7"></textarea></div>
+      </form>
+      <details class="ps-contact-alternative">
+        <summary>Prefer to write an email yourself?</summary>
+        <p>You can write directly to <a href="mailto:chad@oasys-cloud.com?subject=%5BPublic%20Sector%5D%20OASYS%20discovery%20enquiry">chad@oasys-cloud.com</a> and describe the work you'd like to improve. We're using our existing business address while the separate Organisation inbox is being set up.</p>
+      </details>
+    </div>
+    <aside class="ps-enquiry-aside">
+      <div class="ps-card ps-next-box">
+        <span class="ps-kicker">What happens next?</span>
+        <h3>We'll read what you send.</h3>
+        <p>If it sounds like something we could help with, we'll get back to you and talk it through. We'll also tell you if the software you already have might be the better answer.</p>
+      </div>
+      <details class="ps-contact-alternative ps-enquiry-privacy" id="enquiry-privacy">
+        <summary>How we handle your enquiry</summary>
+        <p>When you choose to send an email, it goes from your email service to the existing OASYS business mailbox. This webpage doesn't save what you type or send it to a website server.</p>
+        <p>We'll use your name, work email, organisation and description to read and reply to your question, and arrange a conversation if you want one. We won't put you on a marketing mailing list just for getting in touch.</p>
+        <p>People responsible for OASYS enquiries, and the email services involved, may handle your message. We'll keep it only for as long as needed to manage the conversation and any business record-keeping requirements. We haven't set a fixed retention period for these early enquiries yet.</p>
+        <p>To ask about your information, correct something or request deletion, use the direct email address above. Please avoid sending residents' details, patient records, passwords or confidential documents.</p>
+        <p class="ps-quiet">This is a practical explanation of how the current email enquiry works, not a claim that a full website submission system has been implemented. Formal privacy details must be finalised before any replacement hosted form is launched.</p>
+      </details>
+    </aside>
+  </div>
+</section>
+<section class="ps-corner"><div class="ps-shell">
+  <h2>Want to see an example first?</h2>
+  <p>See how a planning officer might check two unusual responses and decide what to do next.</p>
+  <div class="ps-actions"><a class="ps-button" href="/public-sector/how-it-works/">How it could work</a><a class="ps-button ps-button-outline" href="/public-sector/">Overview</a></div>
+</div></section>
+</main>
+<footer class="ps-footer"><div class="ps-shell ps-footline"><span>OASYS Organisation · Public Sector concept</span><span><a href="/">Main OASYS Organisation</a> · <a href="/public-sector/">Overview</a> · <a href="/public-sector/how-it-works/">How it works</a></span></div></footer>
+</body>
+</html>
