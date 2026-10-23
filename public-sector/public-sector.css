@@ -96,3 +96,71 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 /* Five fictional workflows: last NHS card spans the second row without implying a deployed offering. */
 .ps-explore .ps-grid.two>.ps-card:last-child:nth-child(odd){grid-column:1/-1}
 @media(max-width:600px){.ps-explore .ps-grid.two>.ps-card:last-child:nth-child(odd){grid-column:auto}}
+
+
+/* 2026-10-23 — final explicit button contrast states.
+   Previous generic .ps-button background overrode .ps-button-outline backgrounds. */
+a.ps-button,button.ps-button,.ps-button:not(.ps-button-outline){
+  background-color:#064c76;
+  border-color:#064c76;
+  color:#ffffff!important;
+  text-decoration:none;
+}
+a.ps-button:visited{color:#ffffff!important}
+a.ps-button:hover,button.ps-button:hover,.ps-button:not(.ps-button-outline):hover{
+  background-color:#073754;
+  border-color:#073754;
+  color:#ffffff!important;
+}
+a.ps-button.ps-button-outline,button.ps-button.ps-button-outline{
+  background-color:#ffffff;
+  border-color:#24749b;
+  color:#064c76!important;
+}
+a.ps-button.ps-button-outline:visited{color:#064c76!important}
+a.ps-button.ps-button-outline:hover,button.ps-button.ps-button-outline:hover{
+  background-color:#e6f4fc;
+  border-color:#075d87;
+  color:#073754!important;
+}
+a.ps-button:focus-visible,button.ps-button:focus-visible,.ps-nav a.ps-nav-cta:focus-visible{
+  outline:3px solid #e9a13f;
+  outline-offset:3px;
+}
+.ps-nav a.ps-nav-cta,.ps-nav a.ps-nav-cta:visited{
+  background-color:#064c76;
+  border-color:#064c76;
+  color:#ffffff;
+  text-decoration:none;
+}
+.ps-nav a.ps-nav-cta:hover{
+  background-color:#073754;
+  border-color:#073754;
+  color:#ffffff;
+  text-decoration:none;
+}
+.ps-corner a.ps-button,.ps-corner button.ps-button,
+.ps-corner a.ps-button:visited{
+  background-color:#ffffff;
+  border-color:#ffffff;
+  color:#0c203c!important;
+}
+.ps-corner a.ps-button:hover,.ps-corner button.ps-button:hover{
+  background-color:#dceffa;
+  border-color:#dceffa;
+  color:#0c203c!important;
+}
+.ps-corner a.ps-button.ps-button-outline,.ps-corner button.ps-button.ps-button-outline,
+.ps-corner a.ps-button.ps-button-outline:visited{
+  background-color:transparent;
+  border-color:#e1f3ff;
+  color:#ffffff!important;
+}
+.ps-corner a.ps-button.ps-button-outline:hover,.ps-corner button.ps-button.ps-button-outline:hover{
+  background-color:#17456b;
+  border-color:#ffffff;
+  color:#ffffff!important;
+}
+@media(forced-colors:active){
+  .ps-button,.ps-nav a.ps-nav-cta{forced-color-adjust:auto}
+}
