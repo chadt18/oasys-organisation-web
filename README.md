@@ -125,3 +125,13 @@ The homepage remains the existing commercial/ecommerce Morning Brief. A small, v
 Every sector page now has an explicit **Business & commercial** return route as well as the OASYS Organisation logo home link. The sector's three existing routes, privacy boundaries, pricing (none), human-first proposition and mailto-assisted enquiry are unchanged. No fourth sector homepage, product sub-brand, redirect or additional hosting has been created. The main site's commercial CTA, demo, page title, canonical URL and ecommerce offer are preserved.
 
 The `utm_source=chatgpt.com` query string sometimes seen when opening a link through ChatGPT is a referral parameter, not a new page or an instruction to publish a ChatGPT page. Use the clean canonical URLs in outreach. Static checks on the feature branch include accessibility-target contrast and responsive route layout, but browser/deployment verification is still necessary after merging.
+
+
+### Unified Organisation header, telephone and narrated overview sources — 24 October 2026
+
+- All four public-facing pages now use the same **OASYS Organisation** header pattern: brand, clickable contact telephone **0115 975 6077** (`tel:+441159756077`), and a two-choice switch, **Business & commercial** / **Public Sector**. The selected offering is clearly marked. Each section retains only its own relevant contextual links and enquiry action.
+- Business & commercial links: **How it works / Dashboard / Levels / Trust / Book a prototype test**. Public Sector links: **How it works / Examples / Trust / Discuss a workflow**. This is shared navigation, not a product merge or independent hosting change.
+- The prior homepage-only offering selector was removed. `offering-nav.css` supplies mobile-responsive navigation and contrast/focus styling across all pages. CSS version query parameters avoid stale styles.
+- Commercial ~two-minute explanatory script at `narration/commercial-overview-v1.md`; public-sector counterpart remains `public-sector/narration/overview-v1.md`. Both specify **Google Cloud en-GB-Studio-B** and need editorial lock, synthesis, verifiable MP3, listening QA, duration and transcript sync before playback controls go live.
+- **No prerecorded audio has been generated or uploaded by this repo update.** Website shows accessible text and clear not-yet-available audio status, without a nonfunctional Play control.
+- Existing commercial Morning Brief pricing, design-partner CTA and synthetic dashboard remain unchanged; the public-sector concept retains its discovery-only boundaries and email-assisted enquiry.
