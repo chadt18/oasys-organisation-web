@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="public-sector.css?v=20261024-nav2">
   
   <link rel="stylesheet" href="/offering-nav.css?v=20261024-1">
+  <script src="/public-sector/role-demo.js?v=20261024-1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -29,7 +30,10 @@
     <a href="#trust">Trust</a>
     <a class="ps-nav-cta" href="/public-sector/enquire/">Make an enquiry</a>
   </nav>
-  <div class="oasys-contact-actions" aria-label="Contact OASYS Organisation"><a href="mailto:chad@oasys-cloud.com" aria-label="Email OASYS Organisation at chad@oasys-cloud.com" title="Email OASYS Organisation"><svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a><a href="tel:+441159756077" aria-label="Call OASYS Organisation on 0115 975 6077" title="Call 0115 975 6077"><svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3a4 4 0 0 1-4 4A16 16 0 0 1 3 7a4 4 0 0 1 4-4Z"/></svg></a></div>
+  <div class="oasys-contact-actions" aria-label="Contact OASYS Organisation"><a href="mailto:chad@oasys-cloud.com" aria-label="Email OASYS Organisation at chad@oasys-cloud.com" title="Email OASYS Organisation"><svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a><details class="oasys-phone-menu">
+  <summary aria-label="Show OASYS telephone number" title="Show telephone number"><svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h3l2 5-2 2a15 15 0 0 0 4 4l2-2 5 2v3a4 4 0 0 1-4 4A16 16 0 0 1 3 7a4 4 0 0 1 4-4Z"/></svg><span class="oasys-phone-hover" aria-hidden="true">0115 975 6077</span></summary>
+  <div class="oasys-phone-panel"><strong>0115 975 6077</strong><p>Call us using your phone, or use the link below if your device supports calling.</p><a href="tel:+441159756077">Call from this device</a></div>
+</details></div>
 </div><div class="offering-band"><div class="ps-shell offering-switch-wrap">
   <span class="offering-caption">Choose your area</span>
   <nav class="offering-switch" aria-label="Choose OASYS Organisation offering">
@@ -87,17 +91,43 @@
   </aside>
 </section>
 
-<section id="dashboard" class="ps-band ps-dashboard" aria-labelledby="ps-dashboard-title"><div class="ps-shell ps-section">
-  <p class="ps-eyebrow">Dashboard · Fictional planning team</p>
-  <h2 id="ps-dashboard-title">What needs checking today?</h2>
-  <p class="ps-sectionlead">This is a sample of the kind of work queue OASYS might show. All figures and records are invented, and nothing is connected to a council system.</p>
-  <div class="ps-grid">
-    <article class="ps-card"><span class="ps-kicker">Work received</span><h3>50 consultation responses</h3><p>Example source: planning portal. The original records stay there.</p></article>
-    <article class="ps-card"><span class="ps-kicker">Needs a closer look</span><h3>2 possible issues</h3><p>One response is incomplete; another may be a duplicate.</p></article>
-    <article class="ps-card"><span class="ps-kicker">Who decides</span><h3>The planning officer</h3><p>OASYS could prepare the evidence. The officer checks it and decides.</p></article>
+<section id="dashboard" class="ps-band ps-dashboard" aria-labelledby="ps-dashboard-title">
+  <div class="ps-shell ps-section">
+    <p class="ps-eyebrow">Role-based dashboard · Fictional demonstration</p>
+    <h2 id="ps-dashboard-title">One clear working view for the job you do.</h2>
+    <p class="ps-sectionlead">Different roles need different information. Switch between these made-up examples to see the same OASYS approach: what needs attention, why it was flagged, where the evidence lives and who decides.</p>
+    <div class="ps-role-switch" role="group" aria-label="Choose a fictional public-sector role">
+      <button type="button" data-ps-role="planning" aria-pressed="true">Planning officer</button>
+      <button type="button" data-ps-role="waste" aria-pressed="false">Environmental services</button>
+      <button type="button" data-ps-role="estates" aria-pressed="false">NHS estates</button>
+    </div>
+    <div class="ps-role-view" data-ps-panel="planning" aria-label="Fictional planning work view">
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Planning administration</span><h3>Consultation review</h3><p>Example queue: 50 responses received · 2 to check · 48 without flags</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>50</strong><span>Responses</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Decisions automated</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-014</span><h4>Submission has a missing field</h4><p>Check the source response before requesting anything else.</p></div><details><summary>See evidence and source</summary><p><strong>Source system:</strong> fictional planning consultation register, sample export v3.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Current / Responses / register_v3.csv</p><p><strong>Check:</strong> required date field absent. Source and checklist versions would need verifying.</p><p><strong>Decision owner:</strong> authorised planning officer. No letter sent automatically.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-031</span><h4>Possible duplicate response</h4><p>Two items may refer to the same submission. Nothing is removed automatically.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional consultation register v3, sample response references P-031 and P-032.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Guidance / duplicate_check_v2.pdf</p><p><strong>Uncertainty:</strong> matching details are not proof of a duplicate. The officer checks and records the reason.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-role-view" data-ps-panel="waste" aria-label="Fictional environmental services work view" hidden>
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Environmental services</span><h3>Missed collection reports</h3><p>Example queue: 18 reports received · 3 need a closer look</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>18</strong><span>Reports</span></div><div><strong>3</strong><span>Need checking</span></div><div><strong>0</strong><span>Actions sent</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-008</span><h4>Report conflicts with the route record</h4><p>The resident report and vehicle record show different collection statuses.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> made-up service request queue and route completion export.</p><p><strong>Shared folder example:</strong> Environmental Services / Routes / Weekly Exports / route_sheet_v5.xlsx</p><p><strong>Uncertainty:</strong> one file is marked "latest", but the version and update time need checking.</p><p><strong>Decision owner:</strong> an authorised service coordinator.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-011</span><h4>Follow-up has no recorded owner</h4><p>Show the handover gap so a supervisor can assign it.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional handover list, version 2.</p><p><strong>Shared folder example:</strong> Environmental Services / Handover / Open Jobs / Monday_handover_v2.docx</p><p><strong>Decision owner:</strong> the service supervisor assigns responsibility.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-role-view" data-ps-panel="estates" aria-label="Fictional NHS estates work view" hidden>
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">NHS estates · Non-clinical</span><h3>Maintenance handover</h3><p>Example queue: 12 work orders · 2 unclear handovers</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>12</strong><span>Work orders</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Orders changed</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-004</span><h4>Contractor update does not match the work order</h4><p>Check which update is current before changing job status.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> invented facilities work-order list and contractor handover.</p><p><strong>Shared folder example:</strong> Estates / Contractors / Handover / open_jobs_v4.xlsx</p><p><strong>Uncertainty:</strong> the spreadsheet may be older than the source work-order record.</p><p><strong>Decision owner:</strong> authorised estates team member. No patient data involved.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-010</span><h4>Approval still outstanding</h4><p>Show the person responsible rather than guessing that a job can proceed.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional estates approval tracker, revision 3.</p><p><strong>Shared folder example:</strong> Estates / Approvals / Planned Works / approvals_v3.xlsx</p><p><strong>Decision owner:</strong> the approved estates manager. No clinical decisions or live connections.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-dashboard-follow"><strong>What OASYS would change:</strong> fewer searches across unexplained folders, clearer warnings, traceable source files and the right person making the decision. <strong>What it would not do:</strong> replace official systems or assume a file called "final" is correct. Every document and figure shown above is fictional.</div>
   </div>
-  <div class="ps-dashboard-follow"><strong>Why was this flagged?</strong> Each item would link back to the original record, the check that raised it and its last update. <a href="/public-sector/how-it-works/#planning-example">Follow the planning example</a>.</div>
-</div></section>
+</section>
 <section class="ps-shell ps-section" aria-labelledby="audience-title">
   <p class="ps-eyebrow">Who we want to hear from</p>
   <h2 id="audience-title">Public-service teams, managers and digital leaders.</h2>
@@ -131,15 +161,19 @@
   </div>
   <p class="ps-quiet">These are ideas to discuss, not services already in use. Any NHS work would need separate privacy, security and safety checks.</p>
 </div></section></div></details>
-<section id="levels" class="ps-shell ps-section" aria-labelledby="ps-levels-title">
-<p class="ps-eyebrow">Ways to work together</p>
-<h2 id="ps-levels-title">Start small. Agree what happens next.</h2>
-<p class="ps-sectionlead">We first check whether your current software could solve the problem. These are stages to discuss, not a ready-made public-sector price list.</p>
-<div class="ps-grid">
-<article class="ps-card"><span class="ps-kicker">01 · Enquire</span><h3>Describe one problem</h3><p>Tell us about a role, a repeated task and where things get stuck.</p></article>
-<article class="ps-card"><span class="ps-kicker">02 · Scope</span><h3>Examine the options</h3><p>If a deeper review, SWOT or specification is useful, we would agree the work and fee before starting. The answer might be to improve what you already have.</p></article>
-<article class="ps-card"><span class="ps-kicker">03 · Test</span><h3>See if it earns its place</h3><p>Start with a fictional example or bounded prototype. Any live-data pilot needs separate funding, permissions and security review.</p></article>
-</div><p class="ps-quiet">No public-sector prices are currently published. Any paid work would be agreed in advance.</p>
+<section id="levels" class="ps-shell ps-section ps-permission-levels" aria-labelledby="ps-levels-title">
+  <p class="ps-eyebrow">OASYS Levels 1–5</p>
+  <h2 id="ps-levels-title">The same five levels, with public-service safeguards.</h2>
+  <p class="ps-sectionlead">The levels describe what OASYS could be allowed to do, not five packages to buy. The higher the level, the more important the permissions, checks and human oversight. These Public Sector examples are design proposals, not deployed features.</p>
+  <div class="ps-permission-scale"><span>People review every decision</span><span aria-hidden="true">→</span><span>Carefully limited routine actions</span></div>
+  <div class="ps-permission-grid">
+    <article class="ps-card ps-permission-card"><span class="ps-kicker">Level 1 · Brief</span><h3>See what needs attention</h3><p>A planning officer sees 50 responses, two possible exceptions and links to their original records. Nothing is changed automatically.</p><p class="ps-human-line"><strong>Human control:</strong> the officer checks the evidence and decides what to do.</p></article>
+    <article class="ps-card ps-permission-card"><span class="ps-kicker">Level 2 · Recommend</span><h3>See possible next steps</h3><p>Show approved ways to check an incomplete record or a possible duplicate, with the relevant council guidance.</p><p class="ps-human-line"><strong>Human control:</strong> staff choose the next step, not the software.</p></article>
+    <article class="ps-card ps-permission-card"><span class="ps-kicker">Level 3 · Draft</span><h3>Prepare work for review</h3><p>Prepare a draft case note or request for missing information using the council's approved wording.</p><p class="ps-human-line"><strong>Human control:</strong> a person reviews and releases every draft.</p></article>
+    <article class="ps-card ps-permission-card"><span class="ps-kicker">Level 4 · Approval-gated action</span><h3>Act only after approval</h3><p>A permitted routine update could be prepared, but nothing is sent or changed until an authorised person approves it.</p><p class="ps-human-line"><strong>Human control:</strong> roles, approval and an audit record are required.</p></article>
+    <article class="ps-card ps-permission-card"><span class="ps-kicker">Level 5 · Bounded automation</span><h3>Automate only safe, agreed tasks</h3><p>In a future approved service, tightly defined, reversible, low-risk housekeeping could run within set limits.</p><p class="ps-human-line"><strong>Human control:</strong> staff set the limits, review outcomes and can stop it immediately. No automatic planning, welfare or clinical decisions.</p></article>
+  </div>
+  <div class="ps-discovery-path"><h3>How working together would start</h3><p><strong>Enquire</strong> with one problem → <strong>Agree a scope</strong> if deeper assessment is useful → <strong>Test a fictional example</strong> before discussing any controlled pilot.</p><p>A deeper workflow or SWOT review would be a separate, agreed piece of work if needed. There are no fixed Public Sector packages or prices on this page.</p><a href="/public-sector/enquire/">Tell us about a workflow</a></div>
 </section>
 <details class="ps-explore ps-shell" id="learning"><summary><span><span class="ps-explore-kicker">Optional capability · Work and learning</span><strong>See how guidance and training could help</strong><small>Useful if your team wants it, but not essential to the main system.</small></span><span class="ps-expand-label" aria-hidden="true">Explore +</span></summary><div class="ps-explore-body"><section class="ps-shell ps-section">
   <p class="ps-eyebrow">Working and learning</p><h2>Keep useful know-how close to the work.</h2>
@@ -150,13 +184,13 @@
   </div>
 </section></div></details>
 <details class="ps-explore ps-shell" id="trust" open><summary><span><span class="ps-explore-kicker">Trust and service continuity</span><strong>Trust: your team keeps control</strong><small>Your organisation stays in control, even if it decides to leave OASYS.</small></span><span class="ps-expand-label" aria-hidden="true">Explore +</span></summary><div class="ps-explore-body"><section class="ps-band"><div class="ps-shell ps-section">
-  <p class="ps-eyebrow">Trust and service continuity</p><h2>Built to support the people and systems you already trust.</h2>
+  <p class="ps-eyebrow">Trust and service continuity</p><h2>People stay responsible. Records stay where they belong.</h2><p class="ps-sectionlead">The more connected a public-service workflow becomes, the clearer its responsibilities need to be. These are checks we'd design and test with each organisation, not guarantees of a finished product.</p>
   <div class="ps-grid">
-    <article class="ps-card"><h3>Only what's needed</h3><p>Give people access only to the information needed for their job. Keep different organisations' data separate. Privacy law still applies.</p></article>
-    <article class="ps-card"><h3>People make important decisions</h3><p>Software can point something out or prepare a task. The right person still makes important decisions. Any future automated steps would need strict limits and checks.</p></article>
-    <article class="ps-card"><h3>You can still work without us</h3><p>Your existing system keeps the official information. Your team should be able to carry on working even if OASYS is switched off.</p></article>
+    <article class="ps-card"><h3>Only the right information</h3><p>Agree which source systems and fields a team actually needs. Access would be enforced by role and purpose, not simply hidden on a screen. Different organisations' information must stay separate.</p></article>
+    <article class="ps-card"><h3>People approve important decisions</h3><p>Show the record, the rule, any uncertainty and the person responsible. OASYS might prepare a note, but official decisions remain with authorised staff. Any future action would need a traceable approval.</p></article>
+    <article class="ps-card"><h3>Keep a route back</h3><p>Official records stay in the original system. Staff should be able to find the source, correct an error, keep working manually, review what happened and leave OASYS without losing the service.</p></article>
   </div>
-  <div class="ps-callout"><p><strong>Important:</strong> we're using UK public-sector and data-protection guidance while developing this idea. We are not claiming government approval, certification or live council or NHS connections.</p></div>
+  <details class="ps-trust-checks"><summary>What would we check before connecting real systems?</summary><ul><li><strong>Source and ownership:</strong> who owns the record, where does it live and which version is approved?</li><li><strong>Permission and privacy:</strong> why is access needed, who approves it and what information can be used?</li><li><strong>Human review:</strong> who can act, what happens if the information is wrong and how is the decision recorded?</li><li><strong>Continuity:</strong> how does the team work if a source or OASYS is unavailable, and how do they exit?</li></ul><p>NHS work would also need its own information-governance, security and, where relevant, clinical-safety assessment.</p></details><div class="ps-callout"><p><strong>Current status:</strong> these are design requirements guided by UK public-sector and data-protection standards. OASYS does not claim government approval, certification or live council or NHS connections.</p></div>
 </div></section></div></details>
 <section class="ps-corner"><div class="ps-shell">
   <p class="ps-eyebrow" style="color:#b4d8e8">Public-sector enquiries</p>

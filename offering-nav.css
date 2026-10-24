@@ -89,3 +89,20 @@ nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #d78d28;ou
 .ps-header .brand-word{letter-spacing:-.01em;white-space:nowrap;font-size:1rem}
 @media(max-width:1180px){.site-header .nav-wrap,.ps-header .ps-topbar{flex-wrap:wrap}.site-header nav.organisation-section-nav,.ps-header nav.ps-nav{order:4;flex-basis:100%;justify-content:flex-start}}
 @media(max-width:620px){.oasys-section-tag{font-size:.7rem;padding:4px 7px}.ps-header .brand-word{font-size:.84rem}.ps-header .brand-mark{width:32px;height:32px}.oasys-contact-actions>a{width:42px;height:42px}}
+
+/* Telephone disclosure works with hover, keyboard, and touch.
+   Clicking the icon reveals a real selectable number; it never automatically dials. */
+.oasys-phone-menu{position:relative;display:block;flex:none}
+.oasys-phone-menu>summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;color:#064c76;background:#fff;border:1px solid #c9d9e4;border-radius:9px}
+.oasys-phone-menu>summary::-webkit-details-marker{display:none}
+.oasys-phone-menu>summary:hover{background:#e2f2fb;border-color:#287a9e}
+.oasys-phone-menu>summary:focus-visible{outline:3px solid #b86e11;outline-offset:2px}
+.oasys-phone-hover{display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:30;white-space:nowrap;background:#0c203c;color:#fff;padding:7px 11px;border-radius:8px;font-size:.86rem;font-weight:750;box-shadow:0 6px 17px rgba(10,32,60,.16);pointer-events:none}
+@media(hover:hover){.oasys-phone-menu:not([open])>summary:hover .oasys-phone-hover{display:block}}
+.oasys-phone-menu:not([open])>summary:focus-visible .oasys-phone-hover{display:block}
+.oasys-phone-panel{position:absolute;top:calc(100% + 8px);right:0;z-index:35;width:min(284px,calc(100vw - 32px));padding:16px 17px;background:#fff;border:1px solid #9dc4da;border-radius:12px;box-shadow:0 12px 28px rgba(12,32,60,.17);color:#0c203c;line-height:1.4}
+.oasys-phone-panel strong{display:block;font-size:1.35rem;font-weight:800;white-space:nowrap}
+.oasys-phone-panel p{font-size:.84rem;color:#41536b;margin:9px 0}
+.oasys-phone-panel a{display:inline-block;color:#064c76;font-size:.89rem;font-weight:800;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
+.oasys-phone-panel a:focus-visible{outline:3px solid #b86e11;outline-offset:3px}
+@media(max-width:620px){.oasys-phone-menu>summary{width:42px;height:42px}}
