@@ -116,3 +116,12 @@ The illustrative catalogue is five scenarios: council planning, waste, procureme
 **NHS diligence gate**: start only with non-clinical administrative discovery. For any NHS connection, address controller/legal access, DPIA where required, NHS information governance, DSPT where applicable, interoperability, security and staff involvement. Determine whether DTAC, DCB0129/0160, medical device requirements or clinical-safety review apply to the specific proposed use (not every non-clinical tool triggers identical requirements). No patient-record connections or clinical triage in the static demonstration. Reference https://digital.nhs.uk/services/digital-technology-assessment-criteria-dtac and https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/review-of-digital-clinical-safety-standards-dcb0129-and-dcb0160
 
 **Release status**: PR stays draft and unmerged until enquiry route, privacy/accessible QA, asset/narration gate if sound is to be advertised, and post-merge live URL checks are properly handled. The canonical family domain remains organisation.oasys-cloud.com.
+
+### 24 October 2026 — parent Organisation routes, no separate gateway
+The homepage remains the existing commercial/ecommerce Morning Brief. A small, visible **OASYS Organisation offerings** chooser at the top lets visitors select:
+- **Business & commercial** — current validated Morning Brief offer, anchored to the existing homepage.
+- **Public Sector** — separately marked early-stage concept at `/public-sector/`, with councils, non-clinical NHS and public organisations as discovery audiences.
+
+Every sector page now has an explicit **Business & commercial** return route as well as the OASYS Organisation logo home link. The sector's three existing routes, privacy boundaries, pricing (none), human-first proposition and mailto-assisted enquiry are unchanged. No fourth sector homepage, product sub-brand, redirect or additional hosting has been created. The main site's commercial CTA, demo, page title, canonical URL and ecommerce offer are preserved.
+
+The `utm_source=chatgpt.com` query string sometimes seen when opening a link through ChatGPT is a referral parameter, not a new page or an instruction to publish a ChatGPT page. Use the clean canonical URLs in outreach. Static checks on the feature branch include accessibility-target contrast and responsive route layout, but browser/deployment verification is still necessary after merging.
