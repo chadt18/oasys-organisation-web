@@ -180,3 +180,22 @@ a.ps-button:focus-visible,button.ps-button:focus-visible,.ps-nav a.ps-nav-cta:fo
 @media(max-width:600px){
   .ps-nav a.ps-family-home{padding:9px 11px;min-height:44px}
 }
+
+/* Public-sector offering selector fallback, including enquiry page. */
+.ps-header .offering-switch-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.ps-header .offering-band{background:#eef7fd;border-top:1px solid #d2e2ec;border-bottom:1px solid #c6dbe8}
+.ps-header .offering-caption{color:#38516b;font-weight:750;font-size:.76rem}
+.ps-header nav.offering-switch{display:flex;flex-wrap:wrap;gap:9px}
+.ps-header nav.offering-switch>a.offering-choice{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;border:2px solid #bfd3e2;border-radius:10px;background:#fff;color:#124361;text-decoration:none;font-size:.91rem;font-weight:700;line-height:1.25}
+.ps-header nav.offering-switch>a.offering-choice:hover{background:#e5f3fc;color:#082c49;border-color:#18739e}
+.ps-header nav.offering-switch>a.offering-choice.is-current{background:#064c76;border-color:#064c76;color:#fff}
+.ps-header nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #bd7518;outline-offset:3px}
+.ps-header .oasys-contact-number{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:7px 12px;margin-left:auto;border:1px solid #bfd3e2;border-radius:10px;color:#064c76;background:#fff;font-size:.92rem;font-weight:800;text-decoration:none;white-space:nowrap}
+@media(max-width:980px){.ps-header .offering-switch-wrap{flex-wrap:wrap;gap:7px}.ps-header .ps-topbar{display:flex;flex-wrap:wrap}.ps-header .ps-nav{width:100%;justify-content:flex-start}.ps-header .oasys-contact-number{margin-left:auto}}
+@media(max-width:620px){.ps-header .offering-caption{width:100%}.ps-header nav.offering-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}.ps-header nav.offering-switch>a.offering-choice{padding:10px 9px;font-size:.86rem;min-width:0}}
+
+/* Match the two section menus even when an individual page omits the extra sheet. */
+.ps-header .ps-topbar{min-height:70px;gap:16px;padding-block:10px}
+.ps-header .ps-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:14px}
+.ps-header .ps-nav>a:not(.ps-nav-cta){display:inline-flex;align-items:center;min-height:44px;font-size:.9rem}
+.ps-header .ps-nav>a[aria-current="page"]{color:#064c76;font-weight:850;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
