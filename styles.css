@@ -1645,3 +1645,52 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
 .dashboard-group .source-zone{margin-top:0}
 .demo-levels-link{padding-left:0}
 }
+
+
+/* 24 October 2026 — simple parent-site offering choices.
+   Kept separate from the commercial dashboard/demo's existing sector controls. */
+.family-routes{
+  display:grid;
+  grid-template-columns:minmax(190px,.75fr) minmax(0,2fr);
+  align-items:center;
+  gap:22px;
+  margin-top:22px;
+  padding:15px 20px;
+  border:1px solid #cbdde8;
+  border-radius:16px;
+  background:#f3f9fc;
+}
+.family-routes-intro{min-width:0}
+.family-routes-kicker{font-size:.69rem;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:#235c79;margin:0 0 4px}
+.family-routes h2{font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.25;letter-spacing:-.015em;margin:0;color:#0f172a}
+.family-routes-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-width:0}
+.family-route-option{
+  display:flex;flex-direction:column;justify-content:center;gap:3px;
+  min-height:102px;
+  padding:12px 15px;
+  border-radius:12px;
+  background:#fff;
+  border:2px solid #b6cddc;
+  color:#0f172a;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+}
+.family-route-option:hover{background:#e5f3fc;border-color:#2b728f}
+.family-route-option:focus-visible{outline:3px solid #bd7518;outline-offset:3px}
+.family-route-current{background:#e5f0f5;border-color:#275974}
+.family-route-label{font-size:.68rem;line-height:1.25;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#205979}
+.family-route-option strong{font-size:1rem;line-height:1.22}
+.family-route-option small{font-size:.8rem;line-height:1.35;color:#41536b}
+.family-route-public strong span{font-size:.83rem}
+@media(max-width:950px){
+  .family-routes{grid-template-columns:1fr}
+  .family-routes-intro{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .family-routes-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .family-routes{margin-top:12px;padding:13px;gap:12px}
+  .family-routes-options{grid-template-columns:1fr;gap:9px}
+  .family-route-option{min-height:0;padding:11px 13px}
+  .family-routes-intro{display:block}
+  .family-routes h2{font-size:1rem}
+}
