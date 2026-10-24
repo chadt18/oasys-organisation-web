@@ -125,3 +125,13 @@ The homepage remains the existing commercial/ecommerce Morning Brief. A small, v
 Every sector page now has an explicit **Business & commercial** return route as well as the OASYS Organisation logo home link. The sector's three existing routes, privacy boundaries, pricing (none), human-first proposition and mailto-assisted enquiry are unchanged. No fourth sector homepage, product sub-brand, redirect or additional hosting has been created. The main site's commercial CTA, demo, page title, canonical URL and ecommerce offer are preserved.
 
 The `utm_source=chatgpt.com` query string sometimes seen when opening a link through ChatGPT is a referral parameter, not a new page or an instruction to publish a ChatGPT page. Use the clean canonical URLs in outreach. Static checks on the feature branch include accessibility-target contrast and responsive route layout, but browser/deployment verification is still necessary after merging.
+
+
+### 24 October 2026 — Public Sector navigation, work queue and trust clarity
+- Matched OASYS Organisation branding across commercial/Public Sector with a persistent area label in the header: **Business & Commercial** or **Public Sector**. Area switch remains beneath the top bar on all four pages.
+- Replaced large top telephone badge with accessible, compact email and phone icon links at the right; kept the full verified business contact address and **0115 975 6077** in both footers. Icons do not rely on hover and have accessible names.
+- Moved both two-minute explanation/transcript areas directly below the area switch. They are **text-only until verified recordings** using the approved `en-GB-Studio-B` production workflow exist. Moving between routes naturally stops any future native HTML audio from the previous page; do not introduce autoplay.
+- Public Sector nav now links to real **Dashboard / Examples / Levels / Trust / How it works / Make an enquiry** destinations. The dashboard is a visibly fictional planning queue; example accordion starts open, trust accordion starts open and is more prominent.
+- Public-sector **Levels** are engagement steps (enquiry, agreed paid scoping/SWOT, possible fictional test/pilot), NOT the commercial Level 1 / 2 / 3 permission tiers or a public pricing promise. Terms/fee require agreement before deeper review. Existing commercial offer/price retained unchanged.
+- Public Sector footer now spells out enquiry, family connection, email and phone. Public-sector product remains discovery only, with no connected NHS/council data and no procurement-compliance claims.
+- Copy consistency sweep found no em dashes in the four website HTML files. Verify actual colour contrast, mobile wrap, keyboard, active navigation and link destinations after deployment.

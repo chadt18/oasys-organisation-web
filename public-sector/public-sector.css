@@ -199,3 +199,20 @@ a.ps-button:focus-visible,button.ps-button:focus-visible,.ps-nav a.ps-nav-cta:fo
 .ps-header .ps-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:14px}
 .ps-header .ps-nav>a:not(.ps-nav-cta){display:inline-flex;align-items:center;min-height:44px;font-size:.9rem}
 .ps-header .ps-nav>a[aria-current="page"]{color:#064c76;font-weight:850;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* Public Sector work queue, simple stages and clearer trust (October 2026). */
+.ps-dashboard{scroll-margin-top:18px}
+.ps-dashboard .ps-card{border-color:#b9d5e7;box-shadow:0 5px 18px rgba(8,57,91,.04)}
+.ps-dashboard-follow{margin-top:17px;padding:15px 18px;background:#fff;border:1px solid #bfd9e8;border-radius:12px;color:#355169}
+.ps-dashboard-follow a{color:#064c76;font-weight:800}
+.ps-levels{scroll-margin-top:18px}
+.ps-levels .ps-card{border-top:4px solid #1475a0}
+.ps-explore[id="trust"]{scroll-margin-top:18px;border-color:#8dbbd2}
+.ps-explore[id="trust"]>summary{background:#e4f2fa}
+.ps-explore[id="examples"]{scroll-margin-top:18px}
+.ps-footer .ps-footline{align-items:flex-start;gap:22px}
+.ps-footer .ps-footline>div{max-width:350px}
+.ps-footer-links,.ps-footer-contact{display:flex;flex-direction:column;gap:8px}
+.ps-footer-contact a{overflow-wrap:anywhere}
+.ps-footer .ps-quiet{margin:5px 0 0}
+@media(max-width:650px){.ps-footer .ps-footline{display:grid;gap:20px}}
