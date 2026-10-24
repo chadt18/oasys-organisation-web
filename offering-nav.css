@@ -44,3 +44,21 @@ nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #d78d28;ou
  .site-header nav.organisation-section-nav>a:not(.button),.ps-header .ps-nav>a:not(.ps-nav-cta){font-size:.81rem;min-height:40px}
  .site-header nav.organisation-section-nav>a.button,.ps-header .ps-nav>.ps-nav-cta{font-size:.85rem}
 }
+
+/* Same prominent contact number on every OASYS Organisation page. */
+.oasys-contact-number{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;padding:7px 12px;margin-left:auto;
+ border:1px solid #bfd3e2;border-radius:10px;
+ color:#064c76;background:#fff;
+ font-size:.92rem;line-height:1.3;font-weight:800;text-decoration:none;
+ white-space:nowrap
+}
+.oasys-contact-number:hover{background:#e6f4fc;border-color:#24749b;color:#073754}
+.oasys-contact-number:focus-visible{outline:3px solid #bd7518;outline-offset:3px}
+@media(max-width:980px){
+ .oasys-contact-number{margin-left:auto}
+}
+@media(max-width:620px){
+ .oasys-contact-number{font-size:.83rem;padding:8px 10px}
+}
