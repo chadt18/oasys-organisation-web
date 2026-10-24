@@ -1,0 +1,46 @@
+/* Shared OASYS Organisation offering selector across commercial and public-sector pages.
+ * Brand level: offering choice; beneath it: links specific to the selected offering. */
+.site-header,.ps-header{position:static}
+.offering-band{background:#eef7fd;border-top:1px solid #d2e2ec;border-bottom:1px solid #c6dbe8}
+.offering-switch-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.offering-caption{font-size:.76rem;letter-spacing:.02em;font-weight:750;color:#38516b;white-space:nowrap}
+nav.offering-switch{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+nav.offering-switch>a.offering-choice{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;padding:9px 16px;border:2px solid #bfd3e2;border-radius:10px;
+ background:#fff;color:#124361;text-decoration:none;font:700 .91rem/1.25 Inter,ui-sans-serif,system-ui,sans-serif;
+ text-align:center;white-space:normal
+}
+nav.offering-switch>a.offering-choice:hover{border-color:#18739e;background:#e5f3fc;color:#082c49}
+nav.offering-switch>a.offering-choice.is-current,
+nav.offering-switch>a.offering-choice[aria-current="true"]{
+ background:#064c76;border-color:#064c76;color:#fff
+}
+nav.offering-switch>a.offering-choice.is-current:hover,
+nav.offering-switch>a.offering-choice[aria-current="true"]:hover{
+ background:#073754;border-color:#073754;color:#fff
+}
+nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #d78d28;outline-offset:3px}
+.site-header .nav-wrap,.ps-header .ps-topbar{min-height:70px;gap:16px}
+.site-header nav.organisation-section-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px;align-items:center}
+.site-header nav.organisation-section-nav>a:not(.button){display:inline-flex;align-items:center;min-height:44px;color:#41536b;text-decoration:none;font-weight:650;font-size:.9rem}
+.site-header nav.organisation-section-nav>a:not(.button):hover{color:#073754;text-decoration:underline;text-underline-offset:4px}
+.site-header nav.organisation-section-nav>a.button{min-height:44px}
+.ps-header .ps-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px;align-items:center}
+.ps-header .ps-nav>a:not(.ps-nav-cta){display:inline-flex;align-items:center;min-height:44px;font-size:.9rem}
+.ps-header .ps-nav>a[aria-current="page"]{color:#064c76;font-weight:850;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+.ps-header .ps-topbar{padding-block:10px}
+@media(max-width:980px){
+ .site-header .nav-wrap,.ps-header .ps-topbar{display:flex;flex-wrap:wrap;align-items:center}
+ .site-header nav.organisation-section-nav,.ps-header .ps-nav{justify-content:flex-start;gap:7px 14px;width:100%}
+ .offering-switch-wrap{flex-wrap:wrap;gap:7px}
+}
+@media(max-width:620px){
+ .site-header .nav-wrap,.ps-header .ps-topbar{padding-block:10px}
+ .offering-switch-wrap{padding-block:9px}
+ .offering-caption{width:100%;font-size:.73rem}
+ nav.offering-switch{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ nav.offering-switch>a.offering-choice{padding:10px 9px;font-size:.86rem;min-width:0}
+ .site-header nav.organisation-section-nav>a:not(.button),.ps-header .ps-nav>a:not(.ps-nav-cta){font-size:.81rem;min-height:40px}
+ .site-header nav.organisation-section-nav>a.button,.ps-header .ps-nav>.ps-nav-cta{font-size:.85rem}
+}
