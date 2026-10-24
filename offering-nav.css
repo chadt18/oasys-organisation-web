@@ -62,3 +62,12 @@ nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #d78d28;ou
 @media(max-width:620px){
  .oasys-contact-number{font-size:.83rem;padding:8px 10px}
 }
+
+/* Short explainer area. The genuine audio player is gated on a verified recording. */
+.oasys-audio-summary{margin-top:12px;margin-bottom:18px;padding:23px;border:1px solid #bfdded;background:#eef8fd;border-radius:16px}
+.oasys-audio-summary h2{font-size:clamp(1.3rem,2.4vw,1.95rem);line-height:1.22;letter-spacing:-.025em;margin:0 0 10px}
+.oasys-audio-summary p{color:#41536b;margin:0 0 10px}
+.oasys-audio-status{font-size:.85rem;font-weight:750;color:#064c76!important}
+.oasys-audio-transcript{padding:12px 0 0}
+.oasys-audio-transcript summary{cursor:pointer;min-height:44px;align-content:center;color:#064c76;font-weight:800}
+.oasys-audio-transcript p{margin-top:12px}
