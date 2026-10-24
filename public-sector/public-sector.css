@@ -164,3 +164,19 @@ a.ps-button:focus-visible,button.ps-button:focus-visible,.ps-nav a.ps-nav-cta:fo
 @media(forced-colors:active){
   .ps-button,.ps-nav a.ps-nav-cta{forced-color-adjust:auto}
 }
+
+/* OASYS family navigation: public sector is one clearly labelled route. */
+.ps-nav a.ps-family-home{
+  border:1px solid #bfd8e5;
+  background:#f1f9fd;
+  border-radius:9px;
+  padding:8px 11px;
+  font-weight:750;
+  color:#064c76;
+  text-decoration:none;
+}
+.ps-nav a.ps-family-home:hover{background:#e0f1fa;border-color:#24749b;color:#073754}
+.ps-nav a.ps-family-home:focus-visible{outline:3px solid #bd7518;outline-offset:3px}
+@media(max-width:600px){
+  .ps-nav a.ps-family-home{padding:9px 11px;min-height:44px}
+}
