@@ -90,17 +90,43 @@
   </aside>
 </section>
 
-<section id="dashboard" class="ps-band ps-dashboard" aria-labelledby="ps-dashboard-title"><div class="ps-shell ps-section">
-  <p class="ps-eyebrow">Dashboard · Fictional planning team</p>
-  <h2 id="ps-dashboard-title">What needs checking today?</h2>
-  <p class="ps-sectionlead">This is a sample of the kind of work queue OASYS might show. All figures and records are invented, and nothing is connected to a council system.</p>
-  <div class="ps-grid">
-    <article class="ps-card"><span class="ps-kicker">Work received</span><h3>50 consultation responses</h3><p>Example source: planning portal. The original records stay there.</p></article>
-    <article class="ps-card"><span class="ps-kicker">Needs a closer look</span><h3>2 possible issues</h3><p>One response is incomplete; another may be a duplicate.</p></article>
-    <article class="ps-card"><span class="ps-kicker">Who decides</span><h3>The planning officer</h3><p>OASYS could prepare the evidence. The officer checks it and decides.</p></article>
+<section id="dashboard" class="ps-band ps-dashboard" aria-labelledby="ps-dashboard-title">
+  <div class="ps-shell ps-section">
+    <p class="ps-eyebrow">Role-based dashboard · Fictional demonstration</p>
+    <h2 id="ps-dashboard-title">One clear working view for the job you do.</h2>
+    <p class="ps-sectionlead">Different roles need different information. Switch between these made-up examples to see the same OASYS approach: what needs attention, why it was flagged, where the evidence lives and who decides.</p>
+    <div class="ps-role-switch" role="group" aria-label="Choose a fictional public-sector role">
+      <button type="button" data-ps-role="planning" aria-pressed="true">Planning officer</button>
+      <button type="button" data-ps-role="waste" aria-pressed="false">Environmental services</button>
+      <button type="button" data-ps-role="estates" aria-pressed="false">NHS estates</button>
+    </div>
+    <div class="ps-role-view" data-ps-panel="planning" aria-label="Fictional planning work view">
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Planning administration</span><h3>Consultation review</h3><p>Example queue: 50 responses received · 2 to check · 48 without flags</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>50</strong><span>Responses</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Decisions automated</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-014</span><h4>Submission has a missing field</h4><p>Check the source response before requesting anything else.</p></div><details><summary>See evidence and source</summary><p><strong>Source system:</strong> fictional planning consultation register, sample export v3.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Current / Responses / register_v3.csv</p><p><strong>Check:</strong> required date field absent. Source and checklist versions would need verifying.</p><p><strong>Decision owner:</strong> authorised planning officer. No letter sent automatically.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-031</span><h4>Possible duplicate response</h4><p>Two items may refer to the same submission. Nothing is removed automatically.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional consultation register v3, sample response references P-031 and P-032.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Guidance / duplicate_check_v2.pdf</p><p><strong>Uncertainty:</strong> matching details are not proof of a duplicate. The officer checks and records the reason.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-role-view" data-ps-panel="waste" aria-label="Fictional environmental services work view" hidden>
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Environmental services</span><h3>Missed collection reports</h3><p>Example queue: 18 reports received · 3 need a closer look</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>18</strong><span>Reports</span></div><div><strong>3</strong><span>Need checking</span></div><div><strong>0</strong><span>Actions sent</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-008</span><h4>Report conflicts with the route record</h4><p>The resident report and vehicle record show different collection statuses.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> made-up service request queue and route completion export.</p><p><strong>Shared folder example:</strong> Environmental Services / Routes / Weekly Exports / route_sheet_v5.xlsx</p><p><strong>Uncertainty:</strong> one file is marked "latest", but the version and update time need checking.</p><p><strong>Decision owner:</strong> an authorised service coordinator.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-011</span><h4>Follow-up has no recorded owner</h4><p>Show the handover gap so a supervisor can assign it.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional handover list, version 2.</p><p><strong>Shared folder example:</strong> Environmental Services / Handover / Open Jobs / Monday_handover_v2.docx</p><p><strong>Decision owner:</strong> the service supervisor assigns responsibility.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-role-view" data-ps-panel="estates" aria-label="Fictional NHS estates work view" hidden>
+      <div class="ps-demo-top"><div><span class="ps-demo-kicker">NHS estates · Non-clinical</span><h3>Maintenance handover</h3><p>Example queue: 12 work orders · 2 unclear handovers</p></div><span class="ps-demo-status">Example data only</span></div>
+      <div class="ps-demo-metrics"><div><strong>12</strong><span>Work orders</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Orders changed</span></div></div>
+      <div class="ps-demo-work">
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-004</span><h4>Contractor update does not match the work order</h4><p>Check which update is current before changing job status.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> invented facilities work-order list and contractor handover.</p><p><strong>Shared folder example:</strong> Estates / Contractors / Handover / open_jobs_v4.xlsx</p><p><strong>Uncertainty:</strong> the spreadsheet may be older than the source work-order record.</p><p><strong>Decision owner:</strong> authorised estates team member. No patient data involved.</p></details></article>
+        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-010</span><h4>Approval still outstanding</h4><p>Show the person responsible rather than guessing that a job can proceed.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional estates approval tracker, revision 3.</p><p><strong>Shared folder example:</strong> Estates / Approvals / Planned Works / approvals_v3.xlsx</p><p><strong>Decision owner:</strong> the approved estates manager. No clinical decisions or live connections.</p></details></article>
+      </div>
+    </div>
+    <div class="ps-dashboard-follow"><strong>What OASYS would change:</strong> fewer searches across unexplained folders, clearer warnings, traceable source files and the right person making the decision. <strong>What it would not do:</strong> replace official systems or assume a file called "final" is correct. Every document and figure shown above is fictional.</div>
   </div>
-  <div class="ps-dashboard-follow"><strong>Why was this flagged?</strong> Each item would link back to the original record, the check that raised it and its last update. <a href="/public-sector/how-it-works/#planning-example">Follow the planning example</a>.</div>
-</div></section>
+</section>
 <section class="ps-shell ps-section" aria-labelledby="audience-title">
   <p class="ps-eyebrow">Who we want to hear from</p>
   <h2 id="audience-title">Public-service teams, managers and digital leaders.</h2>
