@@ -12,7 +12,7 @@
   <meta property="og:description" content="A human-first public-sector operating concept that preserves professional expertise, source evidence and organisational control alongside existing software.">
   <meta property="og:url" content="https://organisation.oasys-cloud.com/public-sector/">
   <meta name="theme-color" content="#0f172a">
-  <link rel="stylesheet" href="public-sector.css?v=20261024-nav2">
+  <link rel="stylesheet" href="public-sector.css?v=20261103-four-roles-1">
   
   <link rel="stylesheet" href="/offering-nav.css?v=20261103-email-panel-1">
   <script src="/public-sector/role-demo.js?v=20261024-1" defer></script>
@@ -76,7 +76,7 @@
     <p><strong>Your team's knowledge matters. OASYS helps them use it.</strong></p>
     <div class="ps-actions">
       <a class="ps-button" href="/public-sector/enquire/">Make an enquiry</a>
-      <a class="ps-button ps-button-outline" href="/public-sector/how-it-works/#planning-example">See a practical example</a>
+      <a class="ps-button ps-button-outline" href="#dashboard">Explore the role dashboards</a>
     </div>
     <p class="ps-quiet">We are discussing this approach with public-service teams. It is not currently a deployed council or NHS system. <a href="/public-sector/how-it-works/">Read the full approach</a>.</p>
   </div>
@@ -90,45 +90,260 @@
       <div><strong>Evidence available</strong><span>The original record, the reason for the flag and the date</span></div>
       <div><strong>Officer reviews and decides</strong><span>No case changed or correspondence sent automatically</span></div>
     </div>
-    <a class="ps-text-link" href="/public-sector/how-it-works/#planning-example">Explore this example →</a>
+    <a class="ps-text-link" href="#dashboard">View this Morning Brief →</a>
   </aside>
 </section>
 
 <section id="dashboard" class="ps-band ps-dashboard" aria-labelledby="ps-dashboard-title">
   <div class="ps-shell ps-section">
-    <p class="ps-eyebrow">Role-based dashboard · Fictional demonstration</p>
+    <p class="ps-eyebrow">Four role-based Morning Briefs · Interactive fictional demonstration</p>
     <h2 id="ps-dashboard-title">One clear working view for the job you do.</h2>
-    <p class="ps-sectionlead">Different roles need different information. Switch between these made-up examples to see the same OASYS approach: what needs attention, why it was flagged, where the evidence lives and who decides.</p>
+    <p class="ps-sectionlead">Choose a role. The information sources, important figures, exceptions and decision owners change, but the operating principle stays the same: the person can trace the evidence and make the decision.</p>
+    <p class="ps-quiet"><strong>One OASYS Organisation operating model.</strong> A council collection-to-facility handover and a commercial haulage delivery use the same evidence-first method, with different permissions and responsibilities. <a href="/#demo">Explore the commercial Transport &amp; Logistics example</a>. Both remain fictional demonstrations; neither represents a live connection.</p>
+    <p class="ps-demo-global-notice"><strong>Demonstration only.</strong> All names, figures, emails, folders, timestamps and workflows below are invented. This page does not connect to Nottingham City Council, Eastcroft, any NHS organisation or any admissions system.</p>
     <div class="ps-role-switch" role="group" aria-label="Choose a fictional public-sector role">
-      <button type="button" data-ps-role="planning" aria-pressed="true">Planning officer</button>
-      <button type="button" data-ps-role="waste" aria-pressed="false">Environmental services</button>
-      <button type="button" data-ps-role="estates" aria-pressed="false">NHS estates</button>
+      <button type="button" id="ps-role-button-planning" data-ps-role="planning" aria-controls="ps-role-panel-planning" aria-pressed="true">Planning officer</button>
+      <button type="button" id="ps-role-button-waste" data-ps-role="waste" aria-controls="ps-role-panel-waste" aria-pressed="false">Environmental services</button>
+      <button type="button" id="ps-role-button-estates" data-ps-role="estates" aria-controls="ps-role-panel-estates" aria-pressed="false">NHS estates</button>
+      <button type="button" id="ps-role-button-admissions" data-ps-role="admissions" aria-controls="ps-role-panel-admissions" aria-pressed="false">School admissions</button>
     </div>
-    <div class="ps-role-view" data-ps-panel="planning" aria-label="Fictional planning work view">
-      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Planning administration</span><h3>Consultation review</h3><p>Example queue: 50 responses received · 2 to check · 48 without flags</p></div><span class="ps-demo-status">Example data only</span></div>
-      <div class="ps-demo-metrics"><div><strong>50</strong><span>Responses</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Decisions automated</span></div></div>
-      <div class="ps-demo-work">
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-014</span><h4>Submission has a missing field</h4><p>Check the source response before requesting anything else.</p></div><details><summary>See evidence and source</summary><p><strong>Source system:</strong> fictional planning consultation register, sample export v3.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Current / Responses / register_v3.csv</p><p><strong>Check:</strong> required date field absent. Source and checklist versions would need verifying.</p><p><strong>Decision owner:</strong> authorised planning officer. No letter sent automatically.</p></details></article>
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample P-031</span><h4>Possible duplicate response</h4><p>Two items may refer to the same submission. Nothing is removed automatically.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional consultation register v3, sample response references P-031 and P-032.</p><p><strong>Shared folder example:</strong> Planning / Consultations / Guidance / duplicate_check_v2.pdf</p><p><strong>Uncertainty:</strong> matching details are not proof of a duplicate. The officer checks and records the reason.</p></details></article>
-      </div>
-    </div>
-    <div class="ps-role-view" data-ps-panel="waste" aria-label="Fictional environmental services work view" hidden>
-      <div class="ps-demo-top"><div><span class="ps-demo-kicker">Environmental services</span><h3>Missed collection reports</h3><p>Example queue: 18 reports received · 3 need a closer look</p></div><span class="ps-demo-status">Example data only</span></div>
-      <div class="ps-demo-metrics"><div><strong>18</strong><span>Reports</span></div><div><strong>3</strong><span>Need checking</span></div><div><strong>0</strong><span>Actions sent</span></div></div>
-      <div class="ps-demo-work">
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-008</span><h4>Report conflicts with the route record</h4><p>The resident report and vehicle record show different collection statuses.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> made-up service request queue and route completion export.</p><p><strong>Shared folder example:</strong> Environmental Services / Routes / Weekly Exports / route_sheet_v5.xlsx</p><p><strong>Uncertainty:</strong> one file is marked "latest", but the version and update time need checking.</p><p><strong>Decision owner:</strong> an authorised service coordinator.</p></details></article>
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample W-011</span><h4>Follow-up has no recorded owner</h4><p>Show the handover gap so a supervisor can assign it.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional handover list, version 2.</p><p><strong>Shared folder example:</strong> Environmental Services / Handover / Open Jobs / Monday_handover_v2.docx</p><p><strong>Decision owner:</strong> the service supervisor assigns responsibility.</p></details></article>
-      </div>
-    </div>
-    <div class="ps-role-view" data-ps-panel="estates" aria-label="Fictional NHS estates work view" hidden>
-      <div class="ps-demo-top"><div><span class="ps-demo-kicker">NHS estates · Non-clinical</span><h3>Maintenance handover</h3><p>Example queue: 12 work orders · 2 unclear handovers</p></div><span class="ps-demo-status">Example data only</span></div>
-      <div class="ps-demo-metrics"><div><strong>12</strong><span>Work orders</span></div><div><strong>2</strong><span>Need checking</span></div><div><strong>0</strong><span>Orders changed</span></div></div>
-      <div class="ps-demo-work">
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-004</span><h4>Contractor update does not match the work order</h4><p>Check which update is current before changing job status.</p></div><details><summary>See evidence and source</summary><p><strong>Sources:</strong> invented facilities work-order list and contractor handover.</p><p><strong>Shared folder example:</strong> Estates / Contractors / Handover / open_jobs_v4.xlsx</p><p><strong>Uncertainty:</strong> the spreadsheet may be older than the source work-order record.</p><p><strong>Decision owner:</strong> authorised estates team member. No patient data involved.</p></details></article>
-        <article class="ps-demo-item"><div><span class="ps-demo-kicker">Needs review · Sample E-010</span><h4>Approval still outstanding</h4><p>Show the person responsible rather than guessing that a job can proceed.</p></div><details><summary>See evidence and source</summary><p><strong>Source:</strong> fictional estates approval tracker, revision 3.</p><p><strong>Shared folder example:</strong> Estates / Approvals / Planned Works / approvals_v3.xlsx</p><p><strong>Decision owner:</strong> the approved estates manager. No clinical decisions or live connections.</p></details></article>
-      </div>
-    </div>
-    <div class="ps-dashboard-follow"><strong>What OASYS would change:</strong> fewer searches across unexplained folders, clearer warnings, traceable source files and the right person making the decision. <strong>What it would not do:</strong> replace official systems or assume a file called "final" is correct. Every document and figure shown above is fictional.</div>
+    <div class="ps-role-view" id="ps-role-panel-planning" data-ps-panel="planning" role="region" aria-labelledby="ps-role-button-planning">
+  <div class="ps-demo-top">
+    <div><span class="ps-demo-kicker">Planning administration · Fictional role</span><h3>Consultation response review</h3><p>The working view draws attention to two example records in a fictional planning consultation queue; original submissions remain authoritative.</p></div>
+    <span class="ps-demo-status">No live planning system connected</span>
+  </div>
+  <div class="ps-demo-metrics" aria-label="Planning officer demo summary">
+    <div><strong>50</strong><span>Responses logged</span></div>
+    <div><strong>2</strong><span>Need checking</span></div>
+    <div><strong>48</strong><span>No current flags</span></div>
+    <div><strong>0</strong><span>Decisions automated</span></div>
+  </div>
+  <section class="ps-demo-brief" aria-label="Example morning brief"><span class="ps-demo-kicker">Morning brief · What needs attention</span><p>One export lacks a required field; another pair of submissions shares a reference. Neither flag establishes that a response is invalid.</p></section>
+  <h4 class="ps-demo-section-heading">Exceptions waiting for a person</h4>
+  <div class="ps-demo-work"><article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · P-014 · Missing information</span>
+  <h4>Date absent from working register</h4>
+  <p>The sample register row has no receipt date. The original submission may still contain it; the dashboard must not assume it was never received.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Fictional consultation register v3 (CSV) and original response PDF</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example export marked 08:10; original timestamp unverified</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Date field blank in the controlled export; working checklist v2 expects it</dd></div>
+      <div><dt>What remains uncertain</dt><dd>An export omission is not proof of a late or invalid consultation response.</dd></div>
+      <div><dt>Next human check</dt><dd>Open the original record, confirm the relevant guidance version and correct the source through normal controls.</dd></div>
+      <div><dt>Decision owner</dt><dd>Authorised planning case officer</dd></div>
+    </dl>
+  </details>
+</article>
+<article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · P-031 · Possible duplicate</span>
+  <h4>Two responses share a case reference</h4>
+  <p>References P-031 and P-032 match on a case identifier, but might be distinct comments or a revised submission.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Sample portal export v3 and correspondence index v2</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example snapshot 08:12; version order not yet verified</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Matching reference triggered a review flag, not an automatic merge</dd></div>
+      <div><dt>What remains uncertain</dt><dd>A shared reference does not establish duplication.</dd></div>
+      <div><dt>Next human check</dt><dd>Read both original responses, establish their status and record a reason before changing either official record.</dd></div>
+      <div><dt>Decision owner</dt><dd>Planning officer</dd></div>
+    </dl>
+  </details>
+</article></div>
+  <section class="ps-demo-lineage" aria-label="How source records would reach the work view">
+    <h4>How the information gets here</h4>
+    <p>Illustrative source-to-decision path. These are example exports and records, not working connections.</p>
+    <ol class="ps-demo-source-flow"><li><span>1 · Original sources</span><p>Invented consultation portal records and staff-logged correspondence</p></li>
+<li><span>2 · Controlled snapshot</span><p>Controlled consultation register export v3</p></li>
+<li><span>3 · OASYS example check</span><p>Simulated missing-field and possible-duplicate checks</p></li>
+<li><span>4 · Human decision</span><p>Authorised planning officer reviews originals and decides</p></li></ol>
+  </section>
+  <p class="ps-demo-boundary"><strong>Human-control boundary:</strong> No planning verdict, response rejection, correction or correspondence is made by the demonstration.</p>
+</div>
+    <div class="ps-role-view" id="ps-role-panel-waste" data-ps-panel="waste" role="region" aria-labelledby="ps-role-button-waste" hidden>
+  <div class="ps-demo-top">
+    <div><span class="ps-demo-kicker">Council collections ↔ Eastcroft interface · Fictional role</span><h3>Collections and delivery handover</h3><p>A council service coordinator sees where collection records, resident reports and an illustrative Eastcroft delivery record need reconciliation.</p></div>
+    <span class="ps-demo-status">Invented sources · Eastcroft not connected</span>
+  </div>
+  <div class="ps-demo-metrics" aria-label="Environmental services demo summary">
+    <div><strong>18</strong><span>Resident reports</span></div>
+    <div><strong>2</strong><span>Review flags</span></div>
+    <div><strong>1</strong><span>Delivery query</span></div>
+    <div><strong>0</strong><span>Actions sent</span></div>
+  </div>
+  <section class="ps-demo-brief" aria-label="Example morning brief"><span class="ps-demo-kicker">Morning brief · What needs attention</span><p>A resident report conflicts with a council route status. A separate delivery reference needs checking against a hypothetical energy-from-waste receipt.</p></section>
+  <h4 class="ps-demo-section-heading">Exceptions waiting for a person</h4>
+  <div class="ps-demo-work"><article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · W-008 · Status mismatch</span>
+  <h4>Resident report differs from crew route status</h4>
+  <p>A fictional resident reports no collection, while the crew's route export indicates the round was completed.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Council request queue (sample) and route_sheet_v5.xlsx (fictional)</dd></div>
+      <div><dt>Example timing / version</dt><dd>Sample report 07:55; sample route update 07:40</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Conflicting statuses are shown together with their timestamps</dd></div>
+      <div><dt>What remains uncertain</dt><dd>A completed round does not establish whether an individual property was serviced.</dd></div>
+      <div><dt>Next human check</dt><dd>Confirm the address-level evidence and route notes, then decide whether a revisit or resident update is warranted.</dd></div>
+      <div><dt>Decision owner</dt><dd>Council waste-service coordinator</dd></div>
+    </dl>
+  </details>
+</article>
+<article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · W-017 · Delivery handover</span>
+  <h4>Transfer reference is missing from the illustrative receipt</h4>
+  <p>A made-up council transfer manifest lists one delivery reference, but the sample Eastcroft energy-from-waste receipt list does not show the same reference.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Invented transfer_manifest_v2.csv and example Eastcroft receipt_register_v1.csv</dd></div>
+      <div><dt>Example timing / version</dt><dd>Simulated updates 08:05 and 08:18; data may be incomplete</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Reference-level reconciliation found no matching sample receipt</dd></div>
+      <div><dt>What remains uncertain</dt><dd>Receipt timing, reference formats or an incomplete export could explain the difference.</dd></div>
+      <div><dt>Next human check</dt><dd>Ask the authorised council or facility liaison to verify the source record before reconciling or escalating.</dd></div>
+      <div><dt>Decision owner</dt><dd>Authorised waste contract liaison</dd></div>
+    </dl>
+  </details>
+</article></div>
+  <section class="ps-demo-lineage" aria-label="How source records would reach the work view">
+    <h4>How the information gets here</h4>
+    <p>Illustrative source-to-decision path. These are example exports and records, not working connections.</p>
+    <ol class="ps-demo-source-flow"><li><span>1 · Original sources</span><p>Fictional council service-request log and crew route export</p></li>
+<li><span>2 · Controlled snapshot</span><p>Illustrative council transfer manifest and Eastcroft EfW receipt</p></li>
+<li><span>3 · OASYS example check</span><p>Simulated status/reference cross-checks with uncertain matches</p></li>
+<li><span>4 · Human decision</span><p>Council service coordinator or authorised contract officer checks and decides</p></li></ol>
+  </section>
+  <p class="ps-demo-boundary"><strong>Human-control boundary:</strong> Eastcroft is an energy-from-waste facility, not the operator of council bin collection rounds. This is an invented handoff example, not an integration with Eastcroft or Nottingham City Council.</p>
+</div>
+    <div class="ps-role-view" id="ps-role-panel-estates" data-ps-panel="estates" role="region" aria-labelledby="ps-role-button-estates" hidden>
+  <div class="ps-demo-top">
+    <div><span class="ps-demo-kicker">NHS estates · Non-clinical · Fictional role</span><h3>Maintenance and contractor handover</h3><p>A facilities team sees competing work-order statuses, missing sign-off and where to check the authoritative record.</p></div>
+    <span class="ps-demo-status">No NHS connections or patient information</span>
+  </div>
+  <div class="ps-demo-metrics" aria-label="NHS estates demo summary">
+    <div><strong>12</strong><span>Work orders</span></div>
+    <div><strong>2</strong><span>Handover flags</span></div>
+    <div><strong>4</strong><span>Contractor updates</span></div>
+    <div><strong>0</strong><span>Jobs closed by OASYS</span></div>
+  </div>
+  <section class="ps-demo-brief" aria-label="Example morning brief"><span class="ps-demo-kicker">Morning brief · What needs attention</span><p>One contractor update says work is complete without a matching site acceptance. A separate proposed job lacks recorded authorisation.</p></section>
+  <h4 class="ps-demo-section-heading">Exceptions waiting for a person</h4>
+  <div class="ps-demo-work"><article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · E-004 · Sign-off missing</span>
+  <h4>Contractor completion is not site acceptance</h4>
+  <p>The sample contractor note says complete, but the internal work order does not show the required acceptance check.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Fictional work-order system export and contractor_handover_v2.docx</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example contractor note 07:25; work-order snapshot 08:00</dd></div>
+      <div><dt>Why it was flagged</dt><dd>No authorised site sign-off recorded in the compared sample fields</dd></div>
+      <div><dt>What remains uncertain</dt><dd>A late update or separate acceptance record may exist.</dd></div>
+      <div><dt>Next human check</dt><dd>Check the original job and handover documents before changing its status.</dd></div>
+      <div><dt>Decision owner</dt><dd>Authorised estates supervisor</dd></div>
+    </dl>
+  </details>
+</article>
+<article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · E-010 · Approval pending</span>
+  <h4>Planned maintenance has no matched approval</h4>
+  <p>A proposed maintenance job appears in a sample schedule, but the linked approval reference has not been confirmed.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Fictional planned_works_v3.xlsx and approvals_v3.csv</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example extracts 08:15 and 08:20</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Work item has no verified matching authorisation entry</dd></div>
+      <div><dt>What remains uncertain</dt><dd>The approval could be held in another authorised record.</dd></div>
+      <div><dt>Next human check</dt><dd>Locate the formal approval before releasing instructions to the contractor.</dd></div>
+      <div><dt>Decision owner</dt><dd>NHS estates authorising manager</dd></div>
+    </dl>
+  </details>
+</article></div>
+  <section class="ps-demo-lineage" aria-label="How source records would reach the work view">
+    <h4>How the information gets here</h4>
+    <p>Illustrative source-to-decision path. These are example exports and records, not working connections.</p>
+    <ol class="ps-demo-source-flow"><li><span>1 · Original sources</span><p>Invented estates work-order log, contractor report and approval register</p></li>
+<li><span>2 · Controlled snapshot</span><p>Controlled handover export open_jobs_v4.xlsx</p></li>
+<li><span>3 · OASYS example check</span><p>Simulated sign-off and approval cross-checks</p></li>
+<li><span>4 · Human decision</span><p>Authorised estates team checks the source systems and approves any change</p></li></ol>
+  </section>
+  <p class="ps-demo-boundary"><strong>Human-control boundary:</strong> This is a non-clinical workflow illustration only: no patients, live hospital systems, clinical decisions or procurement/security approvals are implied.</p>
+</div>
+    <div class="ps-role-view" id="ps-role-panel-admissions" data-ps-panel="admissions" role="region" aria-labelledby="ps-role-button-admissions" hidden>
+  <div class="ps-demo-top">
+    <div><span class="ps-demo-kicker">School place coordination · Fictional role</span><h3>Applications, places and source checks</h3><p>Online forms and staff-entered paper applications are brought into a hypothetical review view beside approved admission arrangements and school returns.</p></div>
+    <span class="ps-demo-status">No applicant records · No offers automated</span>
+  </div>
+  <div class="ps-demo-metrics" aria-label="School admissions demo summary">
+    <div><strong>146</strong><span>Sample preferences for School A</span></div>
+    <div><strong>120</strong><span>Published admission number</span></div>
+    <div><strong>3</strong><span>Manual review flags</span></div>
+    <div><strong>0</strong><span>Offers decided by OASYS</span></div>
+  </div>
+  <section class="ps-demo-brief" aria-label="Example morning brief"><span class="ps-demo-kicker">Morning brief · What needs attention</span><p>A school return appears to describe 116 available places while the determined published admission number is 120. An online and paper entry may overlap; a policy version needs review. No allocation or ranking is performed.</p></section>
+  <h4 class="ps-demo-section-heading">Exceptions waiting for a person</h4>
+  <div class="ps-demo-work"><article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · A-012 · Capacity context</span>
+  <h4>School return and published admission number differ</h4>
+  <p>The determined example PAN is 120; a fictional school email reports '116 places available'. The email may refer to a different year group, stage or definition.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Invented 2027 admission-arrangements PDF (PAN 120), school_capacity_return.eml (116) and staff-entry record</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example policy version 2027; email snapshot 08:30, not yet validated</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Two figures with different labels were surfaced for clarification, not treated as interchangeable.</dd></div>
+      <div><dt>What remains uncertain</dt><dd>An emailed vacancy figure does not itself amend a formally determined PAN.</dd></div>
+      <div><dt>Next human check</dt><dd>Confirm the school, year group, reporting date, admission authority and what each figure means before using either in a decision.</dd></div>
+      <div><dt>Decision owner</dt><dd>Authorised admissions officer / admission authority</dd></div>
+    </dl>
+  </details>
+</article>
+<article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · A-046 · Possible double-entry</span>
+  <h4>Paper and online forms may refer to one application</h4>
+  <p>An invented paper form entered by staff shares a sample reference with an online application but the preferences differ.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Fictional online application export and staff-keyed paper_entry_v2.csv</dd></div>
+      <div><dt>Example timing / version</dt><dd>Example entry times 07:45 and 08:40</dd></div>
+      <div><dt>Why it was flagged</dt><dd>Reference match and changed preference fields trigger manual comparison</dd></div>
+      <div><dt>What remains uncertain</dt><dd>The record could be a correction, separate entry or transcription error.</dd></div>
+      <div><dt>Next human check</dt><dd>Check the original applications and recorded amendment rules; keep a complete audit trail.</dd></div>
+      <div><dt>Decision owner</dt><dd>Admissions case officer</dd></div>
+    </dl>
+  </details>
+</article>
+<article class="ps-demo-item">
+  <span class="ps-demo-kicker">Needs human review · A-089 · Policy version</span>
+  <h4>Oversubscription criteria version needs checking</h4>
+  <p>A sample reference to priority criteria points to a superseded draft rather than confirmed arrangements for the entry year.</p>
+  <details>
+    <summary>Open source and evidence</summary>
+    <dl class="ps-evidence-list">
+      <div><dt>Where the example came from</dt><dd>Invented criteria_index_v2.csv and determined_admissions_policy_2027.pdf</dd></div>
+      <div><dt>Example timing / version</dt><dd>Sample index checked 08:50</dd></div>
+      <div><dt>Why it was flagged</dt><dd>The linked criteria version does not match the determined-document register</dd></div>
+      <div><dt>What remains uncertain</dt><dd>No conclusion is made about any individual applicant or their priority.</dd></div>
+      <div><dt>Next human check</dt><dd>Retrieve the formally determined arrangements and have the authorised team confirm the correct policy before assessment.</dd></div>
+      <div><dt>Decision owner</dt><dd>Admission authority / authorised admissions team</dd></div>
+    </dl>
+  </details>
+</article></div>
+  <section class="ps-demo-lineage" aria-label="How source records would reach the work view">
+    <h4>How the information gets here</h4>
+    <p>Illustrative source-to-decision path. These are example exports and records, not working connections.</p>
+    <ol class="ps-demo-source-flow"><li><span>1 · Original sources</span><p>Invented online applications, staff-keyed paper register, school email return and formally determined admission arrangements</p></li>
+<li><span>2 · Controlled snapshot</span><p>Controlled extracts with origin, date and version shown separately</p></li>
+<li><span>3 · OASYS example check</span><p>Simulated mismatch/duplicate/version alerts without assigning eligibility or priority</p></li>
+<li><span>4 · Human decision</span><p>Authorised admission authority / coordinating admissions team verifies evidence and applies published arrangements</p></li></ol>
+  </section>
+  <p class="ps-demo-boundary"><strong>Human-control boundary:</strong> The School Admissions Code and each admission authority's determined arrangements govern offers. This demo does not score children, infer eligibility, rank applications or allocate school places.</p>
+</div>
+    <div class="ps-dashboard-follow"><strong>What OASYS would change:</strong> show source differences, supporting documents, defined review flags and the authorised next step in one place. <strong>What it would not do:</strong> replace the authoritative system, silently accept an unverified export or make high-impact decisions. These are proposed interactions, not proven integrations.</div>
   </div>
 </section>
 <section class="ps-shell ps-section" aria-labelledby="audience-title">
@@ -159,7 +374,7 @@
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario A · Planning administration</span><h3>Checking consultation responses</h3><p>Bring missing details and possible duplicate responses to an officer's attention, with the original responses easy to check. The officer stays responsible.</p></article>
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario B · Environmental services</span><h3>Looking into missed bin collections</h3><p>Help staff spot where a report and the collection record don't agree, while keeping the council's waste system in place.</p></article>
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario C · Procurement teams</span><h3>Keeping track of contracts</h3><p>Bring deadlines, missing paperwork and who needs to approve what into one clear view.</p></article>
-    <article class="ps-card"><span class="ps-kicker">Illustrative Scenario D · Future / higher sensitivity</span><h3>Checking supporting documents</h3><p>A possible later use: help an authorised officer spot missing documents. This would need much stricter checks before any real use.</p></article>
+    <article class="ps-card"><span class="ps-kicker">Illustrative Scenario D · School admissions</span><h3>Checking school place information</h3><p>Show a discrepancy between a school return and the formally determined admission number, plus possible duplicate paper and online entries. The admission authority applies the published rules and decides. <a href="#dashboard">View the fictional admissions dashboard</a>.</p></article>
     <article class="ps-card"><span class="ps-kicker">Illustrative Scenario E · NHS non-clinical operations</span><h3>Handing over hospital maintenance jobs</h3><p>Show a fictional NHS estates team which maintenance jobs need checking, what contractors have reported and who needs to approve the next step. No patient details or clinical decisions.</p></article>
   </div>
   <p class="ps-quiet">These are ideas to discuss, not services already in use. Any NHS work would need separate privacy, security and safety checks.</p>
