@@ -106,3 +106,7 @@ nav.offering-switch>a.offering-choice:focus-visible{outline:3px solid #d78d28;ou
 .oasys-phone-panel a{display:inline-block;color:#064c76;font-size:.89rem;font-weight:800;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
 .oasys-phone-panel a:focus-visible{outline:3px solid #b86e11;outline-offset:3px}
 @media(max-width:620px){.oasys-phone-menu>summary{width:42px;height:42px}}
+
+/* Email uses the same keyboard-, touch- and hover-accessible disclosure as telephone. */
+.oasys-email-panel strong{font-size:.96rem;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.oasys-email-menu .oasys-phone-hover{font-size:.82rem}
