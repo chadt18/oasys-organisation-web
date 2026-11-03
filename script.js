@@ -8,7 +8,7 @@ const sectors = {
     plan: {title:"Today's revenue plan", plan:"£15,900", actual:"£16,427", variance:"+3.3%", state:"good", note:"Revenue is ahead of plan, but margin and stock-cover exceptions still require attention."},
     metrics: [
       ["Net revenue", "£16,427", "+11.9% vs comparable day", "good"],
-      ["Gross margin", "51.8%", "55.9% comparable · −4.0pp", "warn"],
+      ["Gross margin", "51.8%", "55.9% comparable · −4.1pp", "warn"],
       ["SKU-104 stock cover", "2.5 days", "373 available ÷ 151/day", "warn"],
       ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
     ],
@@ -133,26 +133,26 @@ const sectors = {
   operations: {
     tab: "tab-operations",
     person: "Jordan",
-    role: "Operations / General Manager",
-    decisionOwner: "Jordan · Operations / General Manager",
-    summary: "Overall throughput is on plan, but priority orders are running 47 minutes late and the queue has grown from 24 to 38 items.",
-    plan: {title:"Priority service target", plan:"≤ 30 min", actual:"77 min", variance:"+47 min", state:"warn", note:"Overall throughput is on plan, but priority work is outside the organisation's agreed service threshold."},
+    role: "Haulage / Distribution Manager",
+    decisionOwner: "Jordan · Haulage / Distribution Manager",
+    summary: "Daily dispatch throughput is on plan, but a fictional priority consignment is 47 minutes outside the service threshold and a carrier status conflicts with the delivery record.",
+    plan: {title:"Priority delay threshold", plan:"30 min", actual:"77 min", variance:"+47 min", state:"warn", note:"A sample carrier status reports a 77-minute delay against the agreed 30-minute review threshold."},
     metrics: [
-      ["Priority orders", "47 min late", "Service target exceeded", "warn"],
-      ["Backlog", "38 waiting", "Up from 24 earlier", "warn"],
-      ["Daily throughput", "On plan", "Overall operation", "good"],
+      ["Priority load", "47 min over", "Review threshold exceeded", "warn"],
+      ["Pending delivery proof", "1 query", "Carrier and POD records differ", "warn"],
+      ["Dispatch volume", "On plan", "Overall operation", "good"],
       ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
     ],
-    exceptionTitle: "Priority orders are running late",
-    exceptionText: "Priority orders are 47 minutes beyond the agreed service target and the queue has increased from 24 to 38 items.",
-    whyNow: "Priority work is outside the agreed service threshold and the queue has continued to grow across checks.",
-    authority: "The operations manager owns rerouting and capacity decisions. OASYS does not reassign people or reroute work autonomously.",
-    decision: "Reallocate capacity, use an alternative route, or accept the service impact.",
-    sources: ["Shared Drive / Operations / Dispatch queue", "Shared Drive / Operations / Service standards", "Shared Drive / Operations / Capacity plan"],
-    observed: "Priority orders are 47 minutes beyond target; 38 items are waiting, up from 24 earlier.",
-    calculation: "Current queue time minus agreed service threshold = +47 minutes.",
-    source: "Dispatch queue + service threshold + current capacity plan.",
-    boundary: "OASYS can show the service risk; it does not autonomously reroute work.",
+    exceptionTitle: "Priority consignment and delivery record need checking",
+    exceptionText: "A fictional carrier update shows a 77-minute delay against a 30-minute review threshold. A separate delivery-proof record has not yet been matched.",
+    whyNow: "The agreed delay review threshold is exceeded and the carrier status differs from the dispatch evidence.",
+    authority: "The authorised transport manager owns rerouting, customer communications and proof-of-delivery verification. OASYS sends nothing and changes no route.",
+    decision: "Check the carrier update and original delivery record; then decide whether to contact the carrier, advise the customer or approve an alternative plan.",
+    sources: ["Dispatch / Priority consignment register", "Carrier / Status update", "Delivery / Proof-of-delivery record", "Operations / Service threshold rules"],
+    observed: "Invented carrier delay: 77 minutes; agreed example threshold: 30 minutes; one unmatched proof-of-delivery reference.",
+    calculation: "77-minute reported delay − 30-minute review threshold = +47 minutes.",
+    source: "Fictional dispatch export + carrier message + delivery-proof list + review rule.",
+    boundary: "A carrier update is not proof of a failed delivery. The human checks source records and decides; no live dispatch or tracking systems are connected.",
     shortcuts: {emailLabel:"3 unread · 1 needs attention", emailCount:"3", calendarLabel:"Dispatch review · Today 10:30", filesLabel:"3 related items"},
     workspace: {
       email: {
@@ -162,8 +162,8 @@ const sectors = {
         next: "At a higher permission level, OASYS could prepare the reroute request for approval.",
         emails: [
           ["Carrier B","Regional route delay","07:52","We expect a 60–90 minute delay on the regional route affecting priority consignments.","attention"],
-          ["Warehouse Lead","Morning capacity","07:35","Two staff have moved to priority picking until the backlog falls below 20.","normal"],
-          ["Customer Operations","Priority order watchlist","07:20","Four priority customers are currently inside the escalation window.","normal"]
+          ["Dispatch Coordinator","Delivery reference check","07:35","POD-104 is not present in the sample delivery-proof export yet. Carrier confirmation is pending.","normal"],
+          ["Customer Operations","Priority delivery watchlist","07:20","One fictional priority consignment is now above the agreed delay-review threshold.","normal"]
         ]
       },
       calendar: {
@@ -171,8 +171,8 @@ const sectors = {
         title: "Dispatch review · Today at 10:30",
         body: "20 minutes · Operations + Warehouse · Floor meeting",
         items: [
-          ["09:45","Warehouse handover","Review staffing and picking queues"],
-          ["10:30","Dispatch review","Decide whether to reroute priority orders"],
+          ["09:45","Dispatch handover","Review open consignment exceptions"],
+          ["10:30","Dispatch review","Review carrier evidence and decide next authorised step"],
           ["15:00","Carrier performance review","Weekly service review"]
         ],
         meta: "The next relevant action is visible without opening the calendar.",
@@ -182,16 +182,16 @@ const sectors = {
         eyebrow: "Shared Drive · Related evidence",
         title: "Files and folders linked to dispatch",
         items: [
-          ["folder","Operations / Daily Dispatch","Current queue and handover files"],
-          ["sheet","Priority Orders — Today","Live priority-order watchlist"],
-          ["doc","Carrier Service Standards","Agreed thresholds and escalation rules"]
+          ["folder","Transport / Daily Dispatch","Current consignment list and handover files"],
+          ["sheet","Priority Consignments — Sample","Fictional delivery status and exception flags"],
+          ["doc","Carrier Service Standards — Sample","Example escalation thresholds and approvals"]
         ],
         meta: "The manager sees recognisable business files, while the audit layer retains precise source references.",
         next: "A production dashboard could open the relevant operational record."
       },
       ask: {
-        answer: "The agreed priority-service target is 30 minutes or less. Current delay is 77 minutes, so priority work is 47 minutes outside target. The queue has also grown from 24 to 38 items while overall daily throughput remains on plan.",
-        suggestions:["Why are priority orders flagged?","How much has the queue grown?","Show Carrier B's latest email"]
+        answer: "The fictional carrier update reports a 77-minute delay against a 30-minute review threshold, which is 47 minutes over. A sample proof-of-delivery record also needs verifying. Neither flag proves a delivery failure; the transport manager checks the source documents and decides.",
+        suggestions:["Why is the consignment flagged?","How far above threshold is the delay?","Show Carrier B's latest email"]
       }
     }
   }
