@@ -1710,3 +1710,64 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
 .role-knowledge-details p{margin:12px 0}
 .role-knowledge-section :is(a,summary):focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media(max-width:780px){.role-knowledge-grid{grid-template-columns:1fr}.role-knowledge-card{padding:18px}}
+
+
+/* 10 Nov 2026 — mobile/tablet dashboard-room usability; no legal content changes */
+.dashboard-demo-section{scroll-margin-top:105px}
+#role-knowledge,#how,#partner,#trust,#levels{scroll-margin-top:105px}
+.dashboard-demo-section .demo-shell,.dashboard-demo-section :is(.demo-header,.demo-header-meta,.demo-sector-row,.demo-main,.dashboard-group,.dashboard-group-body,.demo-focus-grid,.workspace-grid,.workspace-panel,.plan-actual-panel,.source-zone){min-width:0}
+.dashboard-demo-section :is(h2,h3,h4,p,li,small,strong,span){overflow-wrap:break-word}
+.dashboard-demo-section :is(button,input,summary,a):focus-visible{outline:3px solid #8FE1DA;outline-offset:3px}
+.dashboard-demo-section button{touch-action:manipulation}
+.dashboard-demo-section .sector-tab[aria-selected="true"]{outline:2px solid #77C7C6;outline-offset:-3px}
+.dashboard-demo-section .workspace-action[aria-selected="true"]{border-color:#77C7C6}
+@media(max-width:1100px){
+.dashboard-demo-section .demo-header{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.dashboard-demo-section .demo-header-meta{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,1fr);gap:12px;align-items:start}
+.dashboard-demo-section .header-ask-form{width:100%}
+.dashboard-demo-section .demo-sector-row{grid-template-columns:minmax(0,1fr);gap:10px}
+.dashboard-demo-section .workspace-grid{grid-template-columns:minmax(0,1fr)}
+.dashboard-demo-section .workspace-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.dashboard-demo-section .workspace-action{min-height:72px}
+.dashboard-demo-section .plan-actual-panel,.dashboard-demo-section .demo-focus-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:760px){
+.dashboard-demo-section{padding:24px 0 30px;background:#080f1d}
+.dashboard-demo-section .demo-shell{width:calc(100% - 20px);padding:15px;border-radius:18px}
+.dashboard-demo-section .demo-header h2{font-size:clamp(1.55rem,6vw,2.4rem);line-height:1.14;letter-spacing:-.025em}
+.dashboard-demo-section .demo-header-meta{grid-template-columns:minmax(0,1fr)}
+.dashboard-demo-section .demo-mode-badges{max-width:100%}
+.dashboard-demo-section .demo-home{min-height:44px;width:100%}
+.dashboard-demo-section .header-ask-form{width:100%;max-width:none}
+.dashboard-demo-section .header-ask-form>div{width:100%}
+.dashboard-demo-section .header-ask-form button{min-width:48px}
+.dashboard-demo-section .demo-sector-tabs{grid-template-columns:1fr;gap:5px}
+.dashboard-demo-section .demo-sector-tabs .sector-tab{min-height:52px;padding:10px 12px;text-align:left}
+.dashboard-demo-section .demo-summary-text{font-size:1rem;line-height:1.55}
+.dashboard-demo-section .demo-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+.dashboard-demo-section .demo-metrics .metric{min-height:0;padding:13px}
+.dashboard-demo-section .demo-focus-grid .brief-card{min-height:0;padding:16px}
+.dashboard-demo-section .workspace-actions{grid-template-columns:1fr!important}
+.dashboard-demo-section .workspace-action{min-height:56px}
+.dashboard-demo-section .workspace-panel{padding:14px;min-height:0}
+.dashboard-demo-section .plan-actual-values{grid-template-columns:1fr}
+.dashboard-demo-section .plan-actual-panel{padding:14px}
+.dashboard-demo-section .email-row-top{flex-wrap:wrap}
+.dashboard-demo-section .calendar-row{grid-template-columns:minmax(58px,auto) minmax(0,1fr)}
+.dashboard-demo-section .file-row{grid-template-columns:34px minmax(0,1fr)}
+.dashboard-demo-section .ask-demo-form>div{max-width:100%}
+.dashboard-demo-section .ask-demo-form input{min-width:0}
+.dashboard-demo-section .ask-demo-form button{min-height:44px}
+.dashboard-demo-section .dashboard-group>summary{min-height:56px}
+.dashboard-demo-section .dashboard-group-body{padding:0 10px 12px}
+}
+@media(max-width:380px){
+.dashboard-demo-section .demo-shell{width:calc(100% - 12px);padding:10px}
+.dashboard-demo-section .demo-metrics{grid-template-columns:1fr}
+.dashboard-demo-section .demo-guide{padding:12px}
+.dashboard-demo-section .demo-role{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.dashboard-demo-section .demo-metrics .metric{transition:none!important;transform:none!important}
+}
