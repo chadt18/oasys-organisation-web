@@ -280,6 +280,13 @@ function renderFiles(item){
     <div class="workspace-meta">${escapeHtml(item.meta)}</div>
     <div class="workspace-next">${escapeHtml(item.next)}</div>`;
 }
+function getDemoAnswer(question, item){
+  const text=String(question||"").trim().toLowerCase();
+  const supported=item.suggestions.some(s=>text===s.toLowerCase());
+  const general=/^(what needs my attention|why is this flagged|what changed|show evidence)\??$/.test(text);
+  if(supported||general) return item.answer;
+  return "This fictional demonstration has no verified answer to that question. Select one of the suggested questions to see a prewritten, source-linked example. A production assistant would check permitted evidence and show source dates before answering.";
+}
 function renderAsk(query="", answerNow=false){
   const item = sectors[currentSector].workspace.ask;
   workspaceContent.innerHTML = `
@@ -290,19 +297,19 @@ function renderAsk(query="", answerNow=false){
       <div><input id="ask-demo-input" type="text" value="${escapeHtml(query)}" placeholder="Why is this flagged?"><button type="submit">Ask</button></div>
     </form>
     <div class="ask-suggestions">${item.suggestions.map(s => `<button type="button" data-question="${escapeHtml(s)}">${escapeHtml(s)}</button>`).join("")}</div>
-    <div id="ask-demo-answer" class="ask-demo-answer" ${answerNow ? "" : "hidden"}>${answerNow ? escapeHtml(item.answer) : ""}</div>
+    <div id="ask-demo-answer" class="ask-demo-answer" ${answerNow ? "" : "hidden"}>${answerNow ? escapeHtml(getDemoAnswer(query,item)) : ""}</div>
     <div class="workspace-next">This is an illustrative, prewritten response for the sample role, not a live search or an answer about your systems.</div>`;
   const form=document.getElementById("ask-demo-form");
   const input=document.getElementById("ask-demo-input");
   const answer=document.getElementById("ask-demo-answer");
   form.addEventListener("submit", e => {
     e.preventDefault();
-    answer.textContent=item.answer;
+    answer.textContent=getDemoAnswer(input.value,item);
     answer.hidden=false;
   });
   document.querySelectorAll(".ask-suggestions button").forEach(btn => btn.addEventListener("click", () => {
     input.value=btn.dataset.question;
-    answer.textContent=item.answer;
+    answer.textContent=getDemoAnswer(btn.dataset.question,item);
     answer.hidden=false;
   }));
 }
