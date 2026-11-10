@@ -294,3 +294,134 @@ a.ps-button:focus-visible,button.ps-button:focus-visible,.ps-nav a.ps-nav-cta:fo
 .ps-demo-boundary{margin:17px 0 0;padding:12px 15px;border:1px solid #e1cfa6;border-radius:9px;background:#fffbef;color:#4d3c1e;font-size:.9rem;line-height:1.6}
 @media(max-width:900px){.ps-demo-source-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.ps-demo-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-evidence-list{grid-template-columns:1fr}.ps-demo-source-flow{grid-template-columns:1fr}.ps-demo-brief{padding:13px 15px}.ps-demo-global-notice{padding:12px}}
+
+
+/* 10 November 2026 — one OASYS dashboard room across public and commercial examples.
+   Scoped to the public-sector demo; surrounding guidance and legal content unchanged. */
+.ps-dashboard{
+  background:#080f1d;
+  color:#f5f8fc;
+  scroll-margin-top:24px;
+}
+.ps-dashboard .ps-eyebrow{color:#8edbd5}
+.ps-dashboard h2,.ps-dashboard .ps-sectionlead{color:#f5f8fc}
+.ps-dashboard .ps-quiet{color:#cbd8e5}
+.ps-dashboard a{color:#b7ede7;text-underline-offset:3px}
+.ps-dashboard a:focus-visible,
+.ps-dashboard button:focus-visible,
+.ps-dashboard summary:focus-visible{outline:3px solid #9fe5da;outline-offset:3px}
+.ps-dashboard .ps-demo-global-notice{
+  background:#17363e;
+  border:2px solid #77c7c6;
+  color:#f1fafb;
+}
+.ps-dashboard .ps-role-switch{
+  padding:6px;
+  background:#0a111e;
+  border:1px solid #32465c;
+  border-radius:14px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+}
+.ps-dashboard .ps-role-switch button{
+  min-width:0;
+  min-height:54px;
+  padding:11px 12px;
+  background:#111c2d;
+  border:1px solid #43566d;
+  border-radius:10px;
+  color:#f2f7fb;
+  touch-action:manipulation;
+}
+.ps-dashboard .ps-role-switch button:hover:not([aria-pressed="true"]){
+  background:#21334a;
+  border-color:#77c7c6;
+}
+.ps-dashboard .ps-role-switch button[aria-pressed="true"]{
+  background:#164147;
+  border:2px solid #77c7c6;
+  color:#fff;
+  box-shadow:inset 0 -3px #77c7c6;
+}
+.ps-dashboard .ps-role-view{
+  min-width:0;
+  padding:22px;
+  background:#101a2c;
+  border:1px solid #395067;
+  border-radius:20px;
+  box-shadow:0 20px 48px rgba(0,0,0,.18);
+  color:#f5f8fc;
+}
+.ps-dashboard .ps-demo-top h3,.ps-dashboard .ps-demo-section-heading{color:#fff}
+.ps-dashboard .ps-demo-top p{color:#d1dce9}
+.ps-dashboard .ps-demo-kicker{color:#8edbd5}
+.ps-dashboard .ps-demo-status{
+  background:#142c36;
+  color:#d9f7f3;
+  border:1px solid #4e898b;
+}
+.ps-dashboard .ps-demo-metrics>div{
+  background:#152237;
+  border-color:#3d526a;
+  color:#fff;
+}
+.ps-dashboard .ps-demo-metrics span{color:#ccd8e4}
+.ps-dashboard .ps-demo-brief{
+  background:#17343d;
+  border-left-color:#77c7c6;
+}
+.ps-dashboard .ps-demo-brief p{color:#e4f4f5}
+.ps-dashboard .ps-demo-item{
+  background:#111e30;
+  border-color:#3b5067;
+  color:#fff;
+  box-shadow:none;
+}
+.ps-dashboard .ps-demo-item h4{color:#fff}
+.ps-dashboard .ps-demo-item p{color:#d2dce8}
+.ps-dashboard .ps-demo-item details{border-color:#40566e}
+.ps-dashboard .ps-demo-item summary{color:#b4f0e6}
+.ps-dashboard .ps-evidence-list>div{
+  background:#1b2e44;
+  border:1px solid #40576e;
+}
+.ps-dashboard .ps-evidence-list dt{color:#a7e8df}
+.ps-dashboard .ps-evidence-list dd{color:#ecf4fc}
+.ps-dashboard .ps-demo-lineage{
+  background:#142237;
+  border-color:#3b5269;
+}
+.ps-dashboard .ps-demo-lineage h4{color:#fff}
+.ps-dashboard .ps-demo-lineage>p{color:#cfdae7}
+.ps-dashboard .ps-demo-source-flow li{
+  background:#1c2d42;
+  border-color:#45596d;
+}
+.ps-dashboard .ps-demo-source-flow span{color:#a6e7dd}
+.ps-dashboard .ps-demo-source-flow p{color:#ecf4fc}
+.ps-dashboard .ps-demo-boundary{
+  background:#302816;
+  border-color:#a88143;
+  color:#fff2d9;
+}
+.ps-dashboard .ps-dashboard-follow{
+  background:#152436;
+  border-color:#42576e;
+  color:#f0f6fc;
+}
+.ps-dashboard .ps-dashboard-follow a{color:#b7ede7}
+@media(max-width:900px){
+  .ps-dashboard .ps-role-switch{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .ps-dashboard .ps-section{padding-block:28px}
+  .ps-dashboard .ps-role-view{padding:14px}
+  .ps-dashboard .ps-role-switch{grid-template-columns:1fr;gap:6px}
+  .ps-dashboard .ps-role-switch button{min-height:50px}
+  .ps-dashboard .ps-demo-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ps-dashboard .ps-demo-source-flow{grid-template-columns:1fr}
+}
+@media(max-width:360px){
+  .ps-dashboard .ps-demo-metrics{grid-template-columns:1fr}
+}
