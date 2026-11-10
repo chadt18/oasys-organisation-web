@@ -1,0 +1,21 @@
+name: Organisation demo checks
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'script.js'
+      - 'styles.css'
+      - 'test/demo-contract.test.cjs'
+      - '.github/workflows/demo-checks.yml'
+  workflow_dispatch:
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate demo JavaScript syntax
+        run: node --check script.js
+      - name: Run demo contract smoke tests
+        run: node --test test/demo-contract.test.cjs
