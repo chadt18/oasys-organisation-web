@@ -281,11 +281,11 @@ function renderFiles(item){
     <div class="workspace-next">${escapeHtml(item.next)}</div>`;
 }
 function getDemoAnswer(question, item){
-  const text=String(question||"").trim().toLowerCase();
-  const supported=item.suggestions.some(s=>text===s.toLowerCase());
-  const general=/^(what needs my attention|why is this flagged|what changed|show evidence)\??$/.test(text);
-  if(supported||general) return item.answer;
-  return "This fictional demonstration has no verified answer to that question. Select one of the suggested questions to see a prewritten, source-linked example. A production assistant would check permitted evidence and show source dates before answering.";
+  const text=String(question||"").trim().toLowerCase().replace(/[?!.]+$/,"").replace(/\s+/g," ");
+  const recognised=item.suggestions.some(s=>s.toLowerCase().replace(/[?!.]+$/,"")===text);
+  const general=["what needs my attention","why is this flagged","what changed","show evidence","why is stock flagged","why is the stock flagged"].includes(text);
+  if(recognised||general) return item.answer;
+  return "I cannot verify that from this fictional demonstration. Try one of the sample questions below; no live organisation files or AI search are connected.";
 }
 function renderAsk(query="", answerNow=false){
   const item = sectors[currentSector].workspace.ask;
@@ -320,12 +320,15 @@ function renderWorkspace(){
   if(currentWorkspace==="files") workspaceContent.innerHTML=renderFiles(item);
 }
 function setWorkspace(key, focusPanel=false){
+  if(!["email","calendar","files"].includes(key)) return;
   currentWorkspace=key;
   document.querySelectorAll(".workspace-action").forEach(btn => {
     const active=btn.dataset.workspace===key;
     btn.classList.toggle("is-active",active);
     btn.setAttribute("aria-selected",String(active));
+    btn.tabIndex=active?0:-1;
   });
+  document.getElementById("workspace-panel").setAttribute("aria-label",key==="email"?"Fictional inbox":key==="calendar"?"Fictional calendar":"Fictional files");
   renderWorkspace();
   if(focusPanel) document.getElementById("workspace-panel").focus();
 }
@@ -342,6 +345,7 @@ function setSector(key, focusPanel=false){
     const active=btn.dataset.sector===key;
     btn.classList.toggle("is-active",active);
     btn.setAttribute("aria-selected",String(active));
+    btn.tabIndex=active?0:-1;
   });
   panel.setAttribute("aria-labelledby",data.tab);
   personName.textContent=data.person;
@@ -387,7 +391,19 @@ document.querySelectorAll(".sector-tab").forEach(btn => {
     setSector(tabs[next].dataset.sector);
   });
 });
-document.querySelectorAll(".workspace-action").forEach(btn => btn.addEventListener("click",()=>setWorkspace(btn.dataset.workspace)));
+document.querySelectorAll(".workspace-action").forEach(btn => {
+  btn.addEventListener("click",()=>setWorkspace(btn.dataset.workspace));
+  btn.addEventListener("keydown", e=>{
+    if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","Home","End"].includes(e.key)) return;
+    e.preventDefault();
+    const tabs=[...document.querySelectorAll(".workspace-action")];
+    const at=tabs.indexOf(btn);
+    const next=e.key==="Home"?0:e.key==="End"?tabs.length-1:
+      (at+(e.key==="ArrowLeft"||e.key==="ArrowUp"?-1:1)+tabs.length)%tabs.length;
+    setWorkspace(tabs[next].dataset.workspace);
+    tabs[next].focus();
+  });
+});
 
 const toggle=document.querySelector(".evidence-toggle");
 const evidence=document.getElementById("evidence-detail");
@@ -410,8 +426,8 @@ document.getElementById("header-ask-form").addEventListener("submit",e=>{
   });
   renderAsk(query,true);
   document.querySelector(".workspace-zone").closest("details")?.setAttribute("open", "");
-  document.getElementById("workspace-panel").scrollIntoView({behavior:"smooth",block:"center"});
-  setTimeout(()=>document.getElementById("ask-demo-input")?.focus(),450);
+  document.getElementById("workspace-panel").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+  document.getElementById("ask-demo-input")?.focus({preventScroll:true});
 });
 
 document.getElementById("demo-home").addEventListener("click",()=>{
