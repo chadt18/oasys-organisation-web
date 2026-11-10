@@ -1694,3 +1694,19 @@ nav>a:not(.button):focus::after{transform:scaleX(1)}
   .family-routes-intro{display:block}
   .family-routes h2{font-size:1rem}
 }
+
+
+/* Role knowledge explainer — progressive disclosure, accessible static copy only */
+.role-knowledge-section .section-heading{max-width:960px}
+.role-knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:28px 0 20px}
+.role-knowledge-card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0;display:flex;flex-direction:column}
+.role-knowledge-card h3{font-size:1.2rem;line-height:1.28;margin:8px 0 12px}
+.role-knowledge-card p{margin:0 0 12px}
+.role-knowledge-card a{margin-top:auto;font-weight:700;color:var(--accent-dark);text-underline-offset:3px}
+.role-knowledge-card .micro{font-size:.83rem;font-weight:700;letter-spacing:.025em;color:var(--accent-dark)}
+.role-knowledge-more{border:1px solid var(--line);border-radius:14px;background:#fff;margin:18px 0 20px}
+.role-knowledge-more summary{cursor:pointer;padding:16px 20px;font-weight:700}
+.role-knowledge-details{border-top:1px solid var(--line);padding:8px 20px 14px}
+.role-knowledge-details p{margin:12px 0}
+.role-knowledge-section :is(a,summary):focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:780px){.role-knowledge-grid{grid-template-columns:1fr}.role-knowledge-card{padding:18px}}
