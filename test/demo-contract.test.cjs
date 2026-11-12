@@ -48,3 +48,29 @@ test('fictional role dashboard uses full-width mobile navigation',()=>{
  assert.match(css,/\.dashboard-demo-section \.demo-sector-tabs \.sector-tab\{[\s\S]*?width:100%/);
  assert.match(css,/@media\(max-width:420px\)/);
 });
+
+
+test('fictional what-if maths is bounded and independent of supplied evidence',()=>{
+ const start=js.indexOf('function calculateFictionalCommercialScenario(');
+ const end=js.indexOf('const fictionalWhatIf =',start);
+ assert.ok(start>=0 && end>start);
+ const calc=vm.runInNewContext(js.slice(start,end)+';calculateFictionalCommercialScenario;');
+ const result=calc(1200,936,120);
+ assert.equal(result.profit,264);
+ assert.equal(result.margin,22);
+ assert.equal(result.unitPrice,10);
+ assert.equal(result.unitCost,7.8);
+ assert.equal(calc(100,120,10).margin,-20);
+ for(const bad of [[0,50,10],[100,-1,10],[100,20,0],[100,20,1.1],[Infinity,5,10],[100,1,1000000001]]){
+  assert.throws(()=>calc(...bad),/RangeError/);
+ }
+ assert.match(html,/id="commercial-whatif-form"/);
+ assert.match(html,/id="whatif-sales"/);
+ assert.match(html,/id="whatif-cost"/);
+ assert.match(html,/id="whatif-units"/);
+ assert.match(html,/type="reset" class="commercial-whatif-reset"/);
+ assert.match(html,/These figures are invented and separate from Morgan/);
+ assert.match(html,/Inputs stay in this browser session and are not sent to OASYS/);
+ assert.match(js,/fictionalWhatIf\.addEventListener\("input", updateWhatIf\)/);
+ assert.match(css,/@media\(max-width:700px\)\{[\s\S]*?\.commercial-whatif-fields/);
+});
