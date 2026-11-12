@@ -163,6 +163,29 @@
           <strong>ENTER THE DASHBOARD ROOM · FICTIONAL EXAMPLE</strong>
           <p>Meet Morgan, an invented ecommerce manager. Choose a role, open a dashboard section, review its source evidence, then try the sample inbox, calendar, files or question controls. <b>Every figure and message here is fictional; no live systems are connected.</b> To explore the maths behind everyday commercial decisions, <a href="/business-tools/">try the free business calculators</a>. These tools do not exchange data with the dashboard.</p>
         </div>
+        <details class="commercial-whatif" id="commercial-whatif">
+          <summary>Try your own fictional numbers <span>Sales, costs and units · independent example</span></summary>
+          <div class="commercial-whatif-body">
+            <p>Explore how sales revenue and allocated costs affect gross profit and margin. These figures are invented and separate from Morgan's example, source files, forecasts and other role dashboards.</p>
+            <form id="commercial-whatif-form" novalidate autocomplete="off">
+              <div class="commercial-whatif-fields">
+                <div><label for="whatif-sales">Sales revenue (£)</label><input id="whatif-sales" type="number" min="0.01" max="1000000000" step="any" value="1200" inputmode="decimal" required></div>
+                <div><label for="whatif-cost">Allocated costs (£)</label><input id="whatif-cost" type="number" min="0" max="1000000000" step="any" value="936" inputmode="decimal" required></div>
+                <div><label for="whatif-units">Units sold</label><input id="whatif-units" type="number" min="1" max="1000000000" step="1" value="120" inputmode="numeric" required></div>
+              </div>
+              <p class="commercial-whatif-error" id="commercial-whatif-error" role="alert" hidden></p>
+              <div class="commercial-whatif-results" aria-live="polite" aria-atomic="true" id="commercial-whatif-results">
+                <div><span>Gross profit</span><strong id="whatif-profit">£264.00</strong></div>
+                <div><span>Gross margin</span><strong id="whatif-margin">22.0%</strong></div>
+                <div><span>Revenue per unit</span><strong id="whatif-price">£10.00</strong></div>
+                <div><span>Cost per unit</span><strong id="whatif-unit-cost">£7.80</strong></div>
+              </div>
+              <button type="reset" class="commercial-whatif-reset">Reset fictional values</button>
+            </form>
+            <p class="commercial-whatif-note">Gross profit = revenue − allocated costs. Gross margin = gross profit ÷ revenue × 100. This simplified calculation does not establish net profit, forecast, stock on hand or why costs changed. Inputs stay in this browser session and are not sent to OASYS.</p>
+            <p><a href="/business-tools/gross-margin-markup/">Open the separate Gross Margin &amp; Markup calculator</a></p>
+          </div>
+        </details>
         <div class="demo-header">
           <div>
             <p class="demo-kicker">OASYS Dashboard · Fictional interactive example</p>
