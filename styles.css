@@ -1894,3 +1894,16 @@ html{scroll-behavior:auto}
     line-height:1.55;
   }
 }
+
+/* Fictional evidence previews: sources are keyboard-openable local records. */
+.dashboard-demo-section .source-tags{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+.dashboard-demo-section .fictional-source-record{min-width:0;border:1px solid #46687a;border-radius:12px;background:#101e30;overflow:hidden}
+.dashboard-demo-section .fictional-source-record>summary{min-height:52px;padding:11px 13px;cursor:pointer;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;color:#fff}
+.dashboard-demo-section .fictional-source-record>summary:focus-visible{outline:3px solid #a8ece5;outline-offset:-3px}
+.dashboard-demo-section .fictional-source-record .source-tag{border:0;padding:0;background:transparent;white-space:normal;overflow-wrap:anywhere;color:#edf5fa;font-weight:700}
+.dashboard-demo-section .source-open-hint{font-size:.75rem;color:#a8ece5;font-weight:700}
+.dashboard-demo-section .fictional-source-body{padding:13px 16px;border-top:1px solid #46687a;color:#eff6fa}
+.dashboard-demo-section .fictional-source-body p{margin:0 0 10px;color:#eff6fa;line-height:1.5}
+.dashboard-demo-section .fictional-source-body b,.dashboard-demo-section .fictional-source-body strong{color:#fff}
+.dashboard-demo-section .fictional-source-caution{font-size:.84rem;color:#bcd4e1!important}
+@media(max-width:760px){.dashboard-demo-section .source-tags{grid-template-columns:minmax(0,1fr)}}

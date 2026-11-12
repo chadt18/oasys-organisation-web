@@ -10,7 +10,7 @@ const sectors = {
       ["Net revenue", "£16,427", "+11.9% vs comparable day", "good"],
       ["Gross margin", "51.8%", "55.9% comparable · −4.1pp", "warn"],
       ["SKU-104 stock cover", "2.5 days", "373 available ÷ 151/day", "warn"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "4", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Margin and stock pressure on SKU-104",
     exceptionText: "Supplier unit cost increased while the product remains a strong seller and available cover is below four days.",
@@ -76,7 +76,7 @@ const sectors = {
       ["Retainer used", "68%", "At mid-month", "warn"],
       ["Planned run-rate", "52%", "Expected at this point", "neutral"],
       ["Open deliverables", "4", "2 client-critical", "warn"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "3", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Client A retainer is running ahead of plan",
     exceptionText: "Client A has used 68% of monthly retainer hours by mid-month against a 52% planned run-rate.",
@@ -141,7 +141,7 @@ const sectors = {
       ["Priority load", "47 min over", "Review threshold exceeded", "warn"],
       ["Pending delivery proof", "1 query", "Carrier and POD records differ", "warn"],
       ["Dispatch volume", "On plan", "Overall operation", "good"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "4", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Priority consignment and delivery record need checking",
     exceptionText: "A fictional carrier update shows a 77-minute delay against a 30-minute review threshold. A separate delivery-proof record has not yet been matched.",
@@ -241,8 +241,27 @@ function renderMetrics(items) {
       <span class="metric-note">${escapeHtml(note)}</span>
     </div>`).join("");
 }
-function renderSources(items) {
-  sourceList.innerHTML = items.map(item => `<span class="source-tag">${escapeHtml(item)}</span>`).join("");
+
+/* Local fictional previews paired by index to role source labels. */
+const fictionalEvidenceRecords = {"ecommerce":[["Sample daily sales extract","Daily net revenue £16,427 versus example plan £15,900.","Commercial and finance reader","Illustrative aggregate; not a live report."],["Sample product cost extract","SKU-104 unit cost £18.40 previous, £21.80 current.","Commercial and procurement reader","A cost change does not prove why overall margin changed."],["Sample inventory snapshot","SKU-104: 373 available units, 151 average units per day; estimated cover 2.5 days.","Commercial and stock reader","Point-in-time values require verification."],["Sample review threshold","Flag stock cover below 4 days for manager review.","Authorised commercial manager","A flag does not approve replenishment or supplier spend."]],"agency":[["Sample timesheet","Client A has used 68% of monthly retainer hours at mid-month.","Account and operations reader","Time entries require confirmation before billing."],["Sample statement of work","Planned mid-month run rate is 52%; a 16 percentage-point variance.","Account lead and contract owner","Scope changes require explicit human approval."],["Sample delivery status","Four deliverables remain open; two are marked client-critical.","Assigned delivery team","Verify task ownership, due dates and current status."]],"operations":[["Sample dispatch register","Priority consignment flagged; overall dispatch volume on plan.","Dispatch and transport reader","Dispatch is not proof of completed delivery."],["Sample carrier update","77-minute delay against the sample 30-minute threshold, 47 minutes over.","Transport operations reader","Carrier estimate requires verification."],["Sample proof-of-delivery export","POD-104 unmatched in the fictional export; carrier confirmation pending.","Delivery proof authorised reader","An unmatched item does not prove non-delivery."],["Sample service rule","Human review required above 30 minutes.","Authorised transport manager","An alert does not grant permission to reroute."]]};
+
+function renderSources(items, role) {
+  const records = fictionalEvidenceRecords[role] || [];
+  sourceList.innerHTML = items.map((item, index) => {
+    const record = records[index];
+    if (!record) return `<span class="source-tag">${escapeHtml(item)} · sample unavailable</span>`;
+    const [title, excerpt, access, boundary] = record;
+    return `<details class="fictional-source-record">
+      <summary><span class="source-tag">${escapeHtml(item)}</span><span class="source-open-hint">Open fictional source</span></summary>
+      <div class="fictional-source-body">
+        <p><strong>${escapeHtml(title)}</strong> · invented record preview</p>
+        <p><b>Source excerpt:</b> ${escapeHtml(excerpt)}</p>
+        <p><b>Illustrative access:</b> ${escapeHtml(access)}</p>
+        <p><b>Verification:</b> ${escapeHtml(boundary)}</p>
+        <p class="fictional-source-caution">Public fictional demonstration. No connected files. These roles describe proposed access, not enforced access controls.</p>
+      </div>
+    </details>`;
+  }).join("");
 }
 function renderEmails(item){
   return `<p class="workspace-eyebrow">${escapeHtml(item.eyebrow)}</p>
@@ -365,7 +384,7 @@ function setSector(key, focusPanel=false){
   whyNow.innerHTML="<strong>Why now:</strong> "+escapeHtml(data.whyNow);
   decisionText.textContent=data.decision;
   decisionOwner.textContent=data.decisionOwner;
-  renderSources(data.sources);
+  renderSources(data.sources,key);
   observed.textContent=data.observed;
   calculation.textContent=data.calculation;
   evidenceSource.textContent=data.source;
