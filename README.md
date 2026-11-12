@@ -144,3 +144,25 @@ The `utm_source=chatgpt.com` query string sometimes seen when opening a link thr
 - Enquiry / scope / possible fictional test remain a separate buyer journey. Deeper paid scoping is not automatic: only agreed work after discussion, no published public-sector prices.
 - Trust is more specific: role-purpose access, approved source versions, human review, audit/continuity and exit. Still a set of design requirements, not certified operational controls.
 - Accessibility: use native `details` for phone and evidence; `aria-pressed` buttons for role switching; keyboard focus states; layout changes by viewport. Post-merge desktop/mobile/browser checks remain required; source checks do not prove deployment.
+
+
+## Proposed Free Business Tools (feature branch only; not published)
+
+The \`business-tools/\` directory contains a static hub and three deterministic calculators:
+Gross Margin & Markup, Break-even Units, and Percentage Change.
+
+- No backend, browser storage, accounts, calculator analytics or third-party services.
+- The **Download results (.txt)** action generates a plain-text Blob in the browser on click;
+  it includes numeric inputs, formula, calculation result, assumptions, version and UTC timestamp.
+- The supplied privacy/limitations copy appears on all four pages.
+- The calculator pages do not connect to the fictional dashboard or import customer data.
+- No CSV, PDF, Word, Excel generator, file converter, or dashboard import is in this release.
+- The number parser supports UK-style commas, full-stop decimals (up to six places), and optional currency symbols. Inputs above 1 billion magnitude are rejected.
+- Browser-only form enhancements: without JS, formula/example and an explanatory no-JS message remain.
+- Local preview must be served over HTTP for ES modules: \`python3 -m http.server 8000\`, then visit \`/business-tools/\`.
+- Run \`node --test test/business-tools.test.mjs test/demo-contract.test.cjs\`.
+- Accessibility and browser QA (keyboard, screen reader, 320px layout, 200% zoom, file download, back/refresh, HTTP 200, unchanged Public Sector pages) are mandatory before any merge.
+- This feature branch and draft PR are for review. **Do not merge to main** or publish through GitHub Pages until separately authorised; main-root publishing makes a merge a release.
+
+The commercial landing, £500 setup + £149/month working Level 1 offer,
+primary 20-minute prototype conversation CTA and Public Sector pages remain unchanged.
