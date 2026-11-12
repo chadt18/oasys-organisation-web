@@ -82,3 +82,21 @@ test("downloads use on-device Blob without network or web storage",()=>{
  assert.match(code,/URL\.createObjectURL/);
  for(const bad of [/\bfetch\s*\(/,/localStorage/,/sessionStorage/,/indexedDB/,/XMLHttpRequest/,/navigator\.sendBeacon/])assert.doesNotMatch(code,bad);
 });
+
+
+test("free tools navigation connects Organisation commercial, public sector and each calculator",()=>{
+  const commercial=read("../index.html");
+  const publicSector=read("../public-sector/index.html");
+  const tools=read("../business-tools/index.html");
+  assert.match(commercial,/<a href="\/business-tools\/">Free Business Tools<\/a>/);
+  assert.match(commercial,/try the free business calculators/);
+  assert.match(publicSector,/<a href="\/business-tools\/">Free Business Tools<\/a>/);
+  assert.match(tools,/href="\/public-sector\/#dashboard"/);
+  assert.match(tools,/entered values are never imported into either dashboard/);
+  for(const name of ["break-even","gross-margin-markup","income-tax","percentage-change","salary-hourly-pay","vat"]){
+    const page=read("../business-tools/"+name+"/index.html");
+    for(const href of ["/","/business-tools/","/public-sector/","/#demo"]){
+      assert.ok(page.includes('href="'+href+'"'),name+" must link "+href);
+    }
+  }
+});
