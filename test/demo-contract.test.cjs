@@ -40,3 +40,11 @@ test('contact and pricing preserved',()=>{
  assert.ok(html.includes('£500 setup + £149/month'));
  assert.ok(html.includes('Request a 20-minute prototype conversation'));
 });
+
+
+test('fictional role dashboard uses full-width mobile navigation',()=>{
+ assert.match(css,/fictional role dashboard: narrow-screen full-width reflow/);
+ assert.match(css,/\.dashboard-demo-section \.demo-sector-tabs\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)/);
+ assert.match(css,/\.dashboard-demo-section \.demo-sector-tabs \.sector-tab\{[\s\S]*?width:100%/);
+ assert.match(css,/@media\(max-width:420px\)/);
+});
