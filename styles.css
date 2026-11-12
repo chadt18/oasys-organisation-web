@@ -1828,3 +1828,30 @@ html{scroll-behavior:auto}
 @media(max-width:420px){
   .dashboard-demo-section .demo-metrics{grid-template-columns:minmax(0,1fr)}
 }
+
+
+/* Independent commercial scenario explorer — no coupling to evidence panels. */
+.commercial-whatif{margin:0 0 24px;border:1px solid #77c7c6;border-radius:16px;background:#132639;color:#f8fafc;min-width:0}
+.commercial-whatif>summary{cursor:pointer;padding:17px 20px;font-weight:800;color:#fff;min-height:52px}
+.commercial-whatif>summary span{display:block;color:#c2dae6;font-weight:500;font-size:.85rem;margin-top:3px}
+.commercial-whatif>summary:focus-visible,.commercial-whatif :is(input,button,a):focus-visible{outline:3px solid #a8ece5;outline-offset:3px}
+.commercial-whatif-body{padding:0 20px 20px}
+.commercial-whatif-body p{color:#e5eff5}
+.commercial-whatif-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.commercial-whatif-fields>div{min-width:0}
+.commercial-whatif-fields label{display:block;font-weight:700;color:#fff;margin-bottom:6px}
+.commercial-whatif-fields input{display:block;width:100%;min-width:0;max-width:100%;min-height:48px;padding:10px;border-radius:9px;border:1px solid #a8bfca;background:#fff;color:#0b1322;font:inherit}
+.commercial-whatif-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.commercial-whatif-results>div{padding:13px 15px;border:1px solid #41657b;border-radius:12px;background:#0c1a2b;min-width:0}
+.commercial-whatif-results span{display:block;font-size:.85rem;color:#d4e5ed}
+.commercial-whatif-results strong{display:block;font-size:clamp(1.15rem,3vw,1.55rem);color:#fff;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.commercial-whatif-reset{min-height:44px;border:1px solid #9ecbc8;background:#e5f6f4;color:#0b2937;padding:9px 16px;border-radius:9px;font:inherit;font-weight:750;cursor:pointer}
+.commercial-whatif-error{color:#ffe2bd!important;font-weight:750}
+.commercial-whatif-note{font-size:.89rem}
+.commercial-whatif a{color:#a8ece5}
+@media(max-width:700px){
+ .commercial-whatif{max-width:100%;width:100%}
+ .commercial-whatif>summary{padding:15px}
+ .commercial-whatif-body{padding:0 14px 16px}
+ .commercial-whatif-fields,.commercial-whatif-results{grid-template-columns:minmax(0,1fr)}
+}
