@@ -1855,3 +1855,42 @@ html{scroll-behavior:auto}
  .commercial-whatif-body{padding:0 14px 16px}
  .commercial-whatif-fields,.commercial-whatif-results{grid-template-columns:minmax(0,1fr)}
 }
+
+/* 12 Nov 2026 — desktop fictional-role selector: three full-width role choices.
+   The row has a label, tabs and explanation; avoid auto-placing its third
+   child into a narrow leftover grid cell. Preserve the existing <=760px
+   stacked mobile experience. */
+@media(min-width:761px){
+  .dashboard-demo-section .demo-sector-row{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    align-items:stretch;
+    gap:12px;
+    width:100%;
+  }
+  .dashboard-demo-section .demo-sector-row>p{
+    width:100%;
+    min-width:0;
+  }
+  .dashboard-demo-section .demo-sector-tabs{
+    display:grid;
+    width:100%;
+    min-width:0;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:stretch;
+    gap:8px;
+  }
+  .dashboard-demo-section .demo-sector-tabs .sector-tab{
+    min-width:0;
+    width:100%;
+    min-height:76px;
+    padding:12px 14px;
+    text-align:left;
+    white-space:normal;
+  }
+  .dashboard-demo-section .demo-sector-row>.demo-disclaimer{
+    grid-column:1/-1;
+    max-width:100%;
+    line-height:1.55;
+  }
+}

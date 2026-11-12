@@ -74,3 +74,16 @@ test('fictional what-if maths is bounded and independent of supplied evidence',(
  assert.match(js,/fictionalWhatIf\.addEventListener\("input", updateWhatIf\)/);
  assert.match(css,/@media\(max-width:700px\)\{[\s\S]*?\.commercial-whatif-fields/);
 });
+
+
+test('fictional role selector uses all desktop width without affecting mobile',()=>{
+ assert.match(html,/class="demo-sector-row"/);
+ assert.match(html,/Explore fictional roles:/);
+ for(const role of ['E-commerce &amp; Retail','Professional Services','Transport &amp; Logistics']){
+   assert.ok(html.includes(role),role);
+ }
+ assert.match(css,/@media\(min-width:761px\)/);
+ assert.match(css,/\.dashboard-demo-section \.demo-sector-tabs\{[\s\S]*?grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+ assert.match(css,/\.dashboard-demo-section \.demo-sector-row>\.demo-disclaimer\{[\s\S]*?grid-column:1\/-1/);
+ assert.match(css,/@media\(max-width:760px\)/);
+});
