@@ -56,3 +56,24 @@ footer .shell{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 @media(max-width:340px){.shell{width:calc(100% - 20px)}.actions button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{header nav,.breadcrumbs,.actions,.bridge,footer,.skip-link{display:none!important}main{padding:0}.calc-box,.explanation,.privacy{break-inside:avoid;border-color:#888}.tool-list{display:block}.card{margin-bottom:14px}}
+
+/* Direct six-tool chooser: clearer buttons and spacing. */
+.tool-card{position:relative;min-height:252px;border-color:#d4e0eb;box-shadow:0 8px 25px rgba(15,23,42,.06);transition:box-shadow .15s ease,transform .15s ease}
+.tool-card:hover{box-shadow:0 12px 30px rgba(15,23,42,.13);transform:translateY(-2px)}
+.tool-category{font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:#245a75;font-weight:800}
+.tool-symbol{display:grid;place-items:center;background:#e8f3f8;color:#153b50;font-size:1.35rem;font-weight:800;width:44px;height:44px;border-radius:12px;margin:8px 0}
+.tool-card h2{font-size:1.22rem;line-height:1.24;margin:0 0 9px}
+.tool-card p{font-size:.96rem;margin-bottom:18px}
+.tool-card .tool-button{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:12px 15px;border-radius:10px;text-decoration:none;background:#0f172a;color:white;font-weight:800}
+.tool-card .tool-button:hover,.tool-card .tool-button:focus-visible{background:#153b50;color:white}
+.tool-card .tool-button span{font-size:1.2rem}
+.visual-chart{border-top:1px solid var(--line);margin:20px 0;padding-top:16px;max-width:560px}
+.visual-chart figcaption{font-weight:800;margin-bottom:12px}
+.visual-chart p{font-size:.93rem;color:var(--muted)}
+.chart-bar{display:flex;width:100%;height:26px;border:1px solid #9fb4c5;border-radius:8px;overflow:hidden;background:#edf3f7}
+.chart-primary{background:#245a75}.chart-secondary{background:#d49a51}
+.chart-pie{height:134px;width:134px;border-radius:50%;background:conic-gradient(#245a75 0% 75%, #d49a51 75% 100%);border:1px solid #9fb4c5;margin:10px 0}
+@media(min-width:701px) and (max-width:900px){.tool-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.tool-card{min-height:0}.tool-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.tool-card{transition:none}.tool-card:hover{transform:none}}
+@media print{.tool-card{box-shadow:none}.chart-bar span,.chart-pie{-webkit-print-color-adjust:exact;print-color-adjust:exact}}

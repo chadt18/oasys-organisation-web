@@ -146,7 +146,7 @@ The `utm_source=chatgpt.com` query string sometimes seen when opening a link thr
 - Accessibility: use native `details` for phone and evidence; `aria-pressed` buttons for role switching; keyboard focus states; layout changes by viewport. Post-merge desktop/mobile/browser checks remain required; source checks do not prove deployment.
 
 
-## Proposed Free Business Tools (feature branch only; not published)
+## Free Business Tools (original three-tool version merged)
 
 The \`business-tools/\` directory contains a static hub and three deterministic calculators:
 Gross Margin & Markup, Break-even Units, and Percentage Change.
@@ -162,7 +162,13 @@ Gross Margin & Markup, Break-even Units, and Percentage Change.
 - Local preview must be served over HTTP for ES modules: \`python3 -m http.server 8000\`, then visit \`/business-tools/\`.
 - Run \`node --test test/business-tools.test.mjs test/demo-contract.test.cjs\`.
 - Accessibility and browser QA (keyboard, screen reader, 320px layout, 200% zoom, file download, back/refresh, HTTP 200, unchanged Public Sector pages) are mandatory before any merge.
-- This feature branch and draft PR are for review. **Do not merge to main** or publish through GitHub Pages until separately authorised; main-root publishing makes a merge a release.
+- The original three-tool version was merged by the owner; later additions still require their own release approval.
 
 The commercial landing, £500 setup + £149/month working Level 1 offer,
 primary 20-minute prototype conversation CTA and Public Sector pages remain unchanged.
+
+
+## Six-tool expansion under review — 12 Nov 2026
+Six tools: Gross Margin & Markup, Break-even Units, Percentage Change, VAT (add/remove 20%, 5%, 0%), Salary & Hourly Pay (gross converter), and UK Income Tax Estimator (annual non-savings employment income, 2026–27 England/Wales/Northern Ireland only). Scotland, National Insurance, student loans, pensions and other deductions are excluded. Tax estimate is NOT a full payslip or net take-home pay. Official rates: https://www.gov.uk/income-tax-rates and https://www.gov.uk/vat-rates . Re-check rates each tax year.
+
+Six clearer launch cards and Open calculator buttons, plus accessible text-descibed CSS-only VAT bar and Income Tax pie charts. No external chart library. Local-only calculations and text downloads remain. No backend, account, analytics or sharing with OASYS dashboards. To test: node --test test/demo-contract.test.cjs test/business-tools.test.mjs test/vat-pay-tax.test.mjs . Verify keyboard, mobile, zoom, screen reader, accuracy, downloads and the existing site before separate approval to merge the feature branch. No automatic publication authorised.
