@@ -91,7 +91,7 @@ test('fictional role selector uses all desktop width without affecting mobile',(
 
 test('each fictional job-function source has a local evidence preview and role access warning',()=>{
  const start=js.indexOf('const fictionalEvidenceRecords = ');
- const end=js.indexOf(';', start);
+ const end=js.indexOf(';\n', start);
  assert.ok(start>0 && end>start);
  const records=JSON.parse(js.slice(start+'const fictionalEvidenceRecords = '.length,end));
  assert.deepEqual(Object.keys(records).sort(),['agency','ecommerce','operations']);
