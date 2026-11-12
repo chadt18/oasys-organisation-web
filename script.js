@@ -461,3 +461,60 @@ if (typeof mobileDashboard.addEventListener === "function") {
 } else if (typeof mobileDashboard.addListener === "function") {
   mobileDashboard.addListener(setDashboardLayout);
 }
+
+
+/* Independent, local-only synthetic financial explorer.
+   Never modifies sector fixtures, displayed evidence or other workspaces. */
+function calculateFictionalCommercialScenario(sales, costs, units) {
+  if (![sales, costs, units].every(Number.isFinite) ||
+      sales <= 0 || sales > 1e9 || costs < 0 || costs > 1e9 ||
+      !Number.isSafeInteger(units) || units <= 0 || units > 1e9) {
+    throw new RangeError("Enter positive sales and whole units, and non-negative costs (maximum £1 billion).");
+  }
+  return {
+    profit: sales - costs,
+    margin: (sales - costs) / sales * 100,
+    unitPrice: sales / units,
+    unitCost: costs / units
+  };
+}
+const fictionalWhatIf = document.getElementById("commercial-whatif-form");
+if (fictionalWhatIf) {
+  const salesField = document.getElementById("whatif-sales");
+  const costsField = document.getElementById("whatif-cost");
+  const unitsField = document.getElementById("whatif-units");
+  const resultPanel = document.getElementById("commercial-whatif-results");
+  const error = document.getElementById("commercial-whatif-error");
+  const pounds = value => new Intl.NumberFormat("en-GB", {
+    style: "currency", currency: "GBP", minimumFractionDigits: 2, maximumFractionDigits: 2
+  }).format(value);
+  function updateWhatIf() {
+    try {
+      // Avoid Number("") silently converting an empty input to zero.
+      if ([salesField, costsField, unitsField].some(field => field.value.trim() === "")) {
+        throw new RangeError("Enter all three values to calculate.");
+      }
+      const result = calculateFictionalCommercialScenario(
+        Number(salesField.value), Number(costsField.value), Number(unitsField.value)
+      );
+      document.getElementById("whatif-profit").textContent = pounds(result.profit);
+      document.getElementById("whatif-margin").textContent = result.margin.toFixed(1) + "%";
+      document.getElementById("whatif-price").textContent = pounds(result.unitPrice);
+      document.getElementById("whatif-unit-cost").textContent = pounds(result.unitCost);
+      error.textContent = "";
+      error.hidden = true;
+      resultPanel.hidden = false;
+    } catch (cause) {
+      resultPanel.hidden = true;
+      error.textContent = cause.message;
+      error.hidden = false;
+    }
+  }
+  fictionalWhatIf.addEventListener("input", updateWhatIf);
+  fictionalWhatIf.addEventListener("submit", event => event.preventDefault());
+  fictionalWhatIf.addEventListener("reset", () => {
+    // Native reset completes after this event.
+    queueMicrotask(updateWhatIf);
+  });
+  updateWhatIf();
+}
