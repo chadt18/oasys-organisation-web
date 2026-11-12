@@ -10,7 +10,7 @@ const sectors = {
       ["Net revenue", "£16,427", "+11.9% vs comparable day", "good"],
       ["Gross margin", "51.8%", "55.9% comparable · −4.1pp", "warn"],
       ["SKU-104 stock cover", "2.5 days", "373 available ÷ 151/day", "warn"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "4", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Margin and stock pressure on SKU-104",
     exceptionText: "Supplier unit cost increased while the product remains a strong seller and available cover is below four days.",
@@ -76,7 +76,7 @@ const sectors = {
       ["Retainer used", "68%", "At mid-month", "warn"],
       ["Planned run-rate", "52%", "Expected at this point", "neutral"],
       ["Open deliverables", "4", "2 client-critical", "warn"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "3", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Client A retainer is running ahead of plan",
     exceptionText: "Client A has used 68% of monthly retainer hours by mid-month against a 52% planned run-rate.",
@@ -141,7 +141,7 @@ const sectors = {
       ["Priority load", "47 min over", "Review threshold exceeded", "warn"],
       ["Pending delivery proof", "1 query", "Carrier and POD records differ", "warn"],
       ["Dispatch volume", "On plan", "Overall operation", "good"],
-      ["Evidence sources", "3/3", "Refreshed for this demonstration", "neutral"]
+      ["Fictional source previews", "4", "Open the sample records below", "neutral"]
     ],
     exceptionTitle: "Priority consignment and delivery record need checking",
     exceptionText: "A fictional carrier update shows a 77-minute delay against a 30-minute review threshold. A separate delivery-proof record has not yet been matched.",
