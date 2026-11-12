@@ -8,6 +8,7 @@ on:
       - 'test/demo-contract.test.cjs'
       - 'business-tools/**'
       - 'test/business-tools.test.mjs'
+      - 'test/vat-pay-tax.test.mjs'
       - 'sitemap.xml'
       - 'README.md'
       - '.github/workflows/demo-checks.yml'
@@ -25,6 +26,6 @@ jobs:
         run: node --test test/demo-contract.test.cjs
 
       - name: Check calculator module syntax
-        run: node --check business-tools/calculators.mjs && node --check business-tools/calculator-ui.mjs
+        run: node --check business-tools/calculators.mjs && node --check business-tools/pay-tax.mjs && node --check business-tools/calculator-ui.mjs
       - name: Run calculator and page-contract tests
-        run: node --test test/business-tools.test.mjs
+        run: node --test test/business-tools.test.mjs test/vat-pay-tax.test.mjs
