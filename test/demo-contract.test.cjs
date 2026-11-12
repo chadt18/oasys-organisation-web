@@ -87,3 +87,27 @@ test('fictional role selector uses all desktop width without affecting mobile',(
  assert.match(css,/\.dashboard-demo-section \.demo-sector-row>\.demo-disclaimer\{[\s\S]*?grid-column:1\/-1/);
  assert.match(css,/@media\(max-width:760px\)/);
 });
+
+
+test('each fictional job-function source has a local evidence preview and role access warning',()=>{
+ const start=js.indexOf('const fictionalEvidenceRecords = ');
+ const end=js.indexOf(';', start);
+ assert.ok(start>0 && end>start);
+ const records=JSON.parse(js.slice(start+'const fictionalEvidenceRecords = '.length,end));
+ assert.deepEqual(Object.keys(records).sort(),['agency','ecommerce','operations']);
+ assert.equal(records.ecommerce.length,4);
+ assert.equal(records.agency.length,3);
+ assert.equal(records.operations.length,4);
+ for(const [role,items] of Object.entries(records)){
+   for(const record of items){
+     assert.equal(record.length,4,role);
+     for(const field of record)assert.ok(field.trim().length>12,role);
+   }
+ }
+ assert.match(js,/renderSources\(data\.sources,key\)/);
+ assert.match(js,/<details class="fictional-source-record">/);
+ assert.match(js,/No connected files/);
+ assert.match(js,/not enforced access controls/);
+ assert.match(css,/\.fictional-source-record>summary:focus-visible/);
+ assert.match(css,/\.dashboard-demo-section \.source-tags\{grid-template-columns:minmax\(0,1fr\)/);
+});
