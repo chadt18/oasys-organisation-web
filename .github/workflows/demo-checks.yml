@@ -1,17 +1,7 @@
 name: Organisation demo checks
 on:
+  # Run for every PR so the demo job is a reliable branch-protection check.
   pull_request:
-    paths:
-      - 'index.html'
-      - 'script.js'
-      - 'styles.css'
-      - 'test/demo-contract.test.cjs'
-      - 'business-tools/**'
-      - 'test/business-tools.test.mjs'
-      - 'test/vat-pay-tax.test.mjs'
-      - 'sitemap.xml'
-      - 'README.md'
-      - '.github/workflows/demo-checks.yml'
   workflow_dispatch:
 jobs:
   demo:
@@ -19,7 +9,9 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
       - name: Validate demo JavaScript syntax
         run: node --check script.js
       - name: Run demo contract smoke tests
